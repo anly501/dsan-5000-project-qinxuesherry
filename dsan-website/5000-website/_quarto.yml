@@ -6,14 +6,34 @@ website:
   navbar:
     left:
       - href: index.qmd
-        text: Home
+        text: Introduction
+      - href: ../../index.html
+        text: About Me
+      - href: https://github.com/anly501/dsan-5000-project-qinxuesherry/tree/main/codes
+        text: Code
+      - href: https://github.com/anly501/dsan-5000-project-qinxuesherry/tree/main/data
+        text: Data
+      - href: https://github.com/anly501/dsan-5000-project-qinxuesherry/tree/main/codes/01-data-gathering
+        text: Data Gathering
+      - href: data_cleaning/data_cleaning.qmd
+        text: Data cleaning
       - href: clustering/clustering.qmd
         text: Clustering
+      - href: dimensionality_reduction/dimensionality_reduction.qmd
+        text: Dimensionaliy Reduction
+      - text: Decision Trees
+        menu:
+            - text: Classification
+            - text: Regression
       - href: eda/eda.ipynb
         text: Data Exploration
+      - href: ARM/ARM.qmd
+        text: ARM
+      - href: conclusion/conclusion.qmd
+        text: Conclusion
 format:
   html:
-    theme: cosmo
+    theme: flatly
     toc: true
 
 

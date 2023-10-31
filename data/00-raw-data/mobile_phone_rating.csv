@@ -1,0 +1,154 @@
+Rank,Device,Launch Price,Launch Date,CAMERA,SELFIE,AUDIO,DISPLAY,BATTERY
+1 ,Huawei P60 Pro,1058 ,Mar-23,156 ,-,141 ,146 ,138
+2 ,Apple iPhone 15 Pro Max,1199 ,Sep-23,154 ,149 ,143 ,149 ,-
+3 ,Apple iPhone 15 Pro,999 ,Sep-23,154 ,-,142 ,-,-
+4 ,Oppo Find X6 Pro,908 ,Mar-23,153 ,-,128 ,140 ,151
+5 ,Honor Magic5 Pro,1199 ,Feb-23,152 ,125 ,138 ,151 ,141
+6 ,Oppo Find X6,681 ,Mar-23,150 ,-,127 ,-,-
+7 ,Huawei Mate 50 Pro,1299 ,Sep-22,149 ,145 ,144 ,141 ,103
+8 ,Google Pixel 7 Pro,899 ,Oct-22,147 ,142 ,137 ,146 ,102
+9 ,Honor Magic4 Ultimate,1211 ,Mar-22,147 ,122 ,-,140 ,-
+10 ,Apple iPhone 14 Pro Max,1099 ,Sep-22,146 ,145 ,142 ,149 ,133
+11 ,Apple iPhone 14 Pro,999 ,Sep-22,146 ,145 ,142 ,149 ,119
+12 ,Huawei P50 Pro,907 ,Jul-21,143 ,144 ,119 ,135 ,123
+13 ,Apple iPhone 13 Pro Max,1099 ,Sep-21,141 ,134 ,139 ,145 ,136
+14 ,Apple iPhone 13 Pro,999 ,Sep-21,141 ,134 ,139 ,144 ,118
+15 ,Xiaomi Mi 11 Ultra,1200 ,Mar-21,141 ,125 ,119 ,124 ,108
+16 ,Google Pixel 7,599 ,Oct-22,140 ,138 ,123 ,140 ,98
+17 ,Samsung Galaxy S23 Ultra (Snapdragon),1199 ,Jan-23,140 ,141 ,139 ,148 ,142
+18 ,Vivo X90 Pro+,985 ,Dec-22,140 ,125 ,132 ,135 ,-
+19 ,Xiaomi 13 Ultra,908 ,Apr-23,140 ,-,140 ,130 ,133
+20 ,Huawei Mate 40 Pro+,1363 ,Sep-20,139 ,-,-,-,-
+21 ,Vivo X80 Pro (Snapdragon),1299 ,Apr-22,137 ,-,129 ,133 ,99
+22 ,Vivo X90 Pro,757 ,Dec-22,136 ,-,133 ,133 ,-
+23 ,Xiaomi 13 Pro,1299 ,Dec-22,136 ,-,140 ,136 ,126
+24 ,Xiaomi 12S Ultra,908 ,Jul-22,136 ,114 ,129 ,125 ,-
+25 ,Huawei Mate 40 Pro,1199 ,Sep-20,135 ,142 ,-,-,-
+26 ,Samsung Galaxy S22 Ultra (Snapdragon),1199 ,Feb-22,135 ,-,133 ,136 ,103
+27 ,Vivo X80 Pro (MediaTek),909 ,Apr-22,135 ,-,125 ,134 ,-
+28 ,Google Pixel 6 Pro,899 ,Oct-21,134 ,138 ,138 ,130 ,81
+29 ,Vivo X70 Pro+,833 ,Sep-21,134 ,115 ,109 ,132 ,-
+30 ,Apple iPhone 14 Plus,899 ,Oct-22,133 ,144 ,141 ,140 ,128
+31 ,Apple iPhone 14,799 ,Sep-22,133 ,144 ,141 ,139 ,112
+32 ,Google Pixel Fold,1799 ,Jun-23,133 ,-,133 ,151 ,88
+33 ,Google Pixel 7a,499 ,May-23,133 ,140 ,132 ,140 ,96
+34 ,Samsung Galaxy S23 Plus (Snapdragon),1049 ,Jan-23,133 ,-,137 ,146 ,134
+35 ,Samsung Galaxy S23 (Snapdragon),799 ,Jan-23,133 ,-,133 ,148 ,109
+36 ,Apple iPhone 12 Pro Max,1099 ,Sep-20,131 ,132 ,140 ,127 ,121
+37 ,Samsung Galaxy S22 Ultra (Exynos),1299 ,Feb-22,131 ,135 ,133 ,134 ,98
+38 ,Xiaomi 13T Pro,799 ,Sep-23,131 ,-,-,129 ,120
+39 ,Motorola Edge 40 Pro,899 ,Apr-23,130 ,-,116 ,118 ,-
+40 ,Oppo Find X5 Pro,1299 ,Feb-22,130 ,116 ,128 ,139 ,116
+41 ,Xiaomi 13,999 ,Dec-22,130 ,-,134 ,135 ,128
+42 ,Huawei P40 Pro,1099 ,Feb-20,129 ,141 ,102 ,120 ,-
+43 ,Xiaomi 12T Pro,799 ,Oct-22,129 ,-,127 ,127 ,123
+44 ,Xiaomi 12 Pro,999 ,Mar-22,129 ,-,129 ,122 ,76
+45 ,Xiaomi Mi 10 Ultra,803 ,Jul-20,129 ,115 ,-,98 ,-
+46 ,Oppo Find X3 Pro,1149 ,Mar-21,128 ,-,110 ,126 ,105
+47 ,Samsung Galaxy Z Fold5,1799 ,Aug-23,128 ,-,133 ,152 ,114
+48 ,Apple iPhone 12 Pro,999 ,Sep-20,127 ,132 ,-,123 ,-
+49 ,Asus Smartphone for Snapdragon,1499 ,Jul-21,127 ,-,149 ,-,-
+50 ,OnePlus 11,699 ,Jan-23,127 ,-,128 ,129 ,125
+51 ,Samsung Galaxy Z Flip5,999 ,Aug-23,127 ,-,129 ,149 ,109
+52 ,Google Pixel 6,599 ,Oct-21,126 ,129 ,137 ,125 ,97
+53 ,Honor Magic4 Pro,1099 ,May-22,126 ,-,137 ,130 ,95
+54 ,Vivo X70 Pro (MediaTek),651 ,Sep-21,126 ,-,93 ,125 ,-
+55 ,Vivo X60 Pro+,757 ,Nov-20,126 ,-,91 ,129 ,-
+56 ,Apple iPhone 13 mini,699 ,Sep-21,125 ,134 ,137 ,130 ,99
+57 ,Apple iPhone 13,799 ,Sep-21,125 ,134 ,138 ,136 ,115
+58 ,Samsung Galaxy S22+ (Exynos),1049 ,Feb-22,125 ,-,121 ,135 ,95
+59 ,Vivo X50 Pro+,757 ,May-20,125 ,-,-,-,-
+60 ,Samsung Galaxy Z Fold4,1799 ,Aug-22,124 ,-,134 ,133 ,99
+61 ,Xiaomi Mi 11 Pro,757 ,Mar-21,124 ,-,-,-,-
+62 ,Xiaomi 13T,649 ,Sep-23,123 ,-,-,129 ,-
+63 ,Apple iPhone 11 Pro Max,1099 ,Aug-19,122 ,122 ,125 ,116 ,-
+64 ,Google Pixel 6a,459 ,Jul-22,122 ,-,135 ,125 ,94
+65 ,Honor 90,599 ,Jun-23,122 ,-,-,140 ,116
+66 ,OnePlus 10 Pro,899 ,Jan-22,122 ,-,117 ,129 ,100
+67 ,OnePlus 9 Pro,969 ,Mar-21,122 ,-,121 ,127 ,104
+68 ,Samsung Galaxy S22 (Exynos),799 ,Feb-22,120 ,-,120 ,133 ,75
+69 ,Samsung Galaxy Z Fold3 5G,1799 ,Aug-21,120 ,83 ,120 ,129 ,92
+70 ,Honor Magic Vs,1599 ,May-23,119 ,-,137 ,139 ,108
+71 ,Sony Xperia 5 IV,999 ,Jun-22,119 ,-,111 ,131 ,113
+72 ,Sony Xperia 5 V,999 ,Sep-23,118 ,-,-,128 ,-
+73 ,Sony Xperia 1 IV,1599 ,Jun-22,118 ,-,121 ,126 ,87
+74 ,Apple iPhone 12,799 ,Sep-20,117 ,132 ,140 ,120 ,-
+75 ,Apple iPhone 12 mini,699 ,Sep-20,117 ,132 ,139 ,-,93
+76 ,Samsung Galaxy S21 FE 5G (Snapdragon),699 ,Jan-22,117 ,127 ,118 ,130 ,82
+77 ,Samsung Galaxy S21 Ultra 5G (Snapdragon),1199 ,Jan-21,117 ,133 ,118 ,131 ,111
+78 ,Samsung Galaxy S21 5G (Snapdragon),799 ,Jan-21,117 ,-,118 ,-,108
+79 ,Apple iPhone 11,699 ,Aug-19,116 ,122 ,126 ,-,-
+80 ,Asus Zenfone 8,629 ,May-21,116 ,-,117 ,113 ,102
+81 ,Vivo X60 Pro 5G (Snapdragon),799 ,Feb-21,116 ,119 ,86 ,125 ,133
+82 ,Honor 70,599 ,May-22,115 ,-,109 ,124 ,126
+83 ,Samsung Galaxy S21+ 5G (Snapdragon),999 ,Jan-21,115 ,-,-,-,-
+84 ,Samsung Galaxy S21 Ultra 5G (Exynos),1259 ,Dec-20,115 ,135 ,118 ,131 ,93
+85 ,Xiaomi 12T,599 ,Oct-22,115 ,-,126 ,131 ,118
+86 ,Nothing Phone(1),469 ,Jul-22,114 ,-,106 ,120 ,119
+87 ,OnePlus Nord 2T 5G,399 ,May-22,114 ,-,115 ,-,112
+88 ,Oppo Find N2 Flip,1099 ,Dec-22,114 ,-,131 ,130 ,108
+89 ,Oppo Reno8 Pro 5G,799 ,Jul-22,114 ,-,123 ,122 ,115
+90 ,Oppo Find X5,999 ,Feb-22,114 ,-,109 ,138 ,111
+91 ,OnePlus 8 Pro,899 ,Mar-20,113 ,123 ,117 ,125 ,-
+92 ,Xiaomi Redmi Note 12 Pro+ 5G,499 ,Mar-23,113 ,-,-,-,129
+93 ,Xiaomi 12,749 ,Mar-22,113 ,-,122 ,118 ,100
+94 ,Oppo Reno8 5G,599 ,Jul-22,112 ,-,104 ,124 ,141
+95 ,Samsung Galaxy Z Flip4,999 ,Aug-22,112 ,-,130 ,134 ,95
+96 ,Samsung Galaxy Z Flip3 5G,999 ,Aug-21,111 ,-,-,128 ,-
+97 ,Samsung Galaxy S21 5G (Exynos),859 ,Jan-21,111 ,-,132 ,118 ,100
+98 ,Samsung Galaxy S21+ 5G (Exynos),1059 ,Jan-21,111 ,-,-,-,-
+99 ,Google Pixel 5,699 ,Sep-20,109 ,126 ,113 ,101 ,93
+100 ,Xiaomi 12 Lite 5G,449 ,Jul-22,109 ,-,112 ,-,118
+101 ,Fairphone 5,699 ,Aug-23,108 ,-,-,-,110
+102 ,Vivo X60 Pro 5G (Exynos),799 ,Feb-21,108 ,-,-,-,-
+103 ,Xiaomi 11T Pro,699 ,Sep-21,108 ,121 ,128 ,125 ,126
+104 ,Samsung Galaxy A54 5G,499 ,Mar-23,107 ,-,133 ,120 ,113
+105 ,Oppo Find X3 Neo,799 ,Mar-21,106 ,-,108 ,122 ,126
+106 ,Sony Xperia 1 III,1299 ,Apr-21,105 ,-,113 ,122 ,-
+107 ,Huawei P40,799 ,Feb-20,102 ,-,-,-,-
+108 ,Xiaomi Redmi Note 12 Pro 5G,399 ,Mar-23,102 ,-,-,-,136
+109 ,Black Shark 5 Pro,636 ,Mar-22,101 ,-,161 ,94 ,105
+110 ,Motorola Edge 30 Pro,799 ,Feb-22,101 ,-,115 ,122 ,98
+111 ,Apple iPhone SE (2022),429 ,Mar-22,100 ,-,122 ,122 ,84
+112 ,Google Pixel 4a,349 ,Jul-20,100 ,-,-,-,-
+113 ,ZTE Axon 30 Ultra,749 ,Apr-21,96 ,-,109 ,104 ,-
+114 ,Oppo Find X5 Lite,499 ,Feb-22,95 ,-,103 ,110 ,135
+115 ,Oppo Reno4 5G,549 ,Sep-20,94 ,-,-,-,-
+116 ,Oppo A94 5G,359 ,Mar-21,93 ,-,-,-,127
+117 ,Vivo X80 Lite 5G,410 ,Sep-22,93 ,-,-,94,136
+118 ,Samsung Galaxy A34 5G,399 ,Mar-23,92 ,-,-,-,129
+119 ,Samsung Galaxy A72,449 ,Feb-21,92 ,-,-,-,131
+120 ,Oppo Reno6 5G,499 ,May-21,89 ,106 ,102 ,112,146
+121 ,Samsung Galaxy A52s 5G,459 ,Aug-21,88 ,-,127 ,110 ,-
+122 ,Samsung Galaxy A52 5G,499 ,Mar-21,88 ,,127 ,111 ,106
+123 ,Samsung Galaxy A33 5G,379 ,Mar-22,85 ,-,125 ,-,96
+124 ,OnePlus Nord CE 5G,299 ,Jun-21,84 ,-,-,-,136
+125 ,Vivo Y76 5G,329 ,Jan-22,83 ,-,-,-,133
+126 ,Samsung Galaxy A53 5G,450 ,Mar-22,79 ,-,126 ,104 ,95
+127 ,Sony Xperia 10 V,449 ,Jun-23,78 ,-,-,104,140
+128 ,Xiaomi Redmi Note 11 Pro 5G,369 ,Mar-22,78 ,-,-,-,134
+129 ,TCL 40R 5G,219 ,Feb-23,76 ,-,-,-,123
+130 ,Realme 9i 5G,219 ,Aug-22,75 ,-,-,-,-
+131 ,Honor Magic5 Lite 5G,379 ,Feb-22,74 ,-,97,-,152
+132 ,Honor 90 Lite,218 ,Jun-23,73 ,-,-,-,127
+133 ,Samsung Galaxy A23 5G,299 ,Aug-22,70 ,-,105 ,-,129
+134 ,Fairphone 4,579 ,Oct-21,69 ,-,93 ,87 ,-
+135 ,Oppo A78 5G,295 ,Jan-23,69 ,-,111 ,-,132
+136 ,Xiaomi Redmi Note 12 5G,299 ,Mar-23,69 ,-,-,-,132
+137 ,Motorola Moto G53 5G,249 ,-,68 ,-,-,-,-
+138 ,Samsung Galaxy A14 5G,199 ,Jan-23,67 ,-,-,-,117
+139 ,Motorola Moto G62 5G,279 ,Jun-22,66 ,-,-,-,112
+140 ,Xiaomi Redmi Note 11S 5G,299 ,Apr-22,65 ,-,-,-,133
+141 ,Oppo Reno8 Lite 5G,449 ,Jun-22,64 ,-,106 ,-,139
+142 ,Sony Xperia 10 IV,499 ,May-22,63 ,-,95 ,100 ,138
+143 ,Xiaomi Redmi 12 5G,219 ,Jul-23,63 ,-,-,-,95
+144 ,Xiaomi Redmi Note 12,199 ,Mar-23,63 ,-,-,-,-
+145 ,Honor Magic 4 Lite 5G,349 ,Apr-22,61 ,-,-,-,135
+146 ,Honor X7,219 ,Mar-22,61 ,-,-,-,116
+147 ,Xiaomi Redmi Note 11,199 ,Jan-22,60 ,-,-,-,119
+148 ,Honor 70 Lite,199 ,Mar-23,58 ,-,-,-,-
+149 ,Motorola Moto G23,229 ,Jan-23,54 ,-,-,-,-
+150 ,Oppo A77 5G,329 ,Jun-22,53 ,-,106 ,-,138
+151 ,Honor X8 5G,279 ,Mar-22,52 ,-,-,-,132
+152 ,TCL 406,139 ,Feb-23,52 ,-,-,-,87
+153 ,Xiaomi Redmi 10 2022,179 ,Feb-22,51 ,-,-,-,100

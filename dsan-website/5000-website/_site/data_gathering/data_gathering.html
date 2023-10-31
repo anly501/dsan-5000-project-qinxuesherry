@@ -97,7 +97,7 @@ ul.task-list li input[type="checkbox"] {
  <span class="menu-text">Data</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="https://github.com/anly501/dsan-5000-project-qinxuesherry/tree/main/codes/01-data-gathering" rel="" target="">
+    <a class="nav-link active" href="../data_gathering/data_gathering.html" rel="" target="" aria-current="page">
  <span class="menu-text">Data Gathering</span></a>
   </li>  
   <li class="nav-item">
@@ -145,16 +145,61 @@ ul.task-list li input[type="checkbox"] {
 <!-- sidebar -->
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#data-gathering" id="toc-data-gathering" class="nav-link active" data-scroll-target="#data-gathering">Data Gathering</a>
+  <ul class="collapse">
+  <li><a href="#python" id="toc-python" class="nav-link" data-scroll-target="#python">Python</a></li>
+  <li><a href="#r" id="toc-r" class="nav-link" data-scroll-target="#r">R</a></li>
+  </ul></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 
 
-<p>Data Gathering</p>
+<section id="data-gathering" class="level1">
+<h1>Data Gathering</h1>
+<section id="python" class="level3">
+<h3 class="anchored" data-anchor-id="python">Python</h3>
+<ol type="1">
+<li>Gathering data of hot post from Weibo</li>
+</ol>
+<ul>
+<li>Explaination: crawl data from Chinese social platform, Weibo, to catch some hot posts about people’s reaction to the new publishion of Apple product</li>
+<li><a href="https://github.com/anly501/dsan-5000-project-qinxuesherry/blob/main/codes/01-data-gathering/wb_python_gathering.py">weibo data gathering code (python)</a></li>
+<li><a href="https://github.com/anly501/dsan-5000-project-qinxuesherry/blob/main/data/00-raw-data/%E5%BE%AE%E5%8D%9A%E6%B8%85%E5%8D%95.csv">raw data for weibo(python)</a></li>
+<li>sample raw data <img src="../images/weibo_raw.png" class="img-fluid" alt="weibo raw data Python"></li>
+</ul>
+<ol start="2" type="1">
+<li>Gathering data of news text</li>
+</ol>
+<ul>
+<li>Exaplaination: crawl data by using NewsAPI and try to extract some key words from the news, and see what’s the attitude of media towards the Iphone.</li>
+<li><a href="https://github.com/anly501/dsan-5000-project-qinxuesherry/blob/main/codes/01-data-gathering/news_python_gathering.py">News data gathering code (python)</a></li>
+<li><a href="https://github.com/anly501/dsan-5000-project-qinxuesherry/blob/main/data/00-raw-data/iphone_content.txt">raw data for newsAPI(python)</a></li>
+<li>sample raw data <img src="../images/news_raw.png" class="img-fluid" alt="news raw data Python"></li>
+</ul>
+</section>
+<section id="r" class="level3">
+<h3 class="anchored" data-anchor-id="r">R</h3>
+<ol type="1">
+<li>Gathering data of news from website</li>
+</ol>
+<ul>
+<li>Exaplaination: craw text by using Rvest and get content from the news website.</li>
+<li><a href="https://github.com/anly501/dsan-5000-project-qinxuesherry/blob/main/codes/01-data-gathering/r_gathering.Rmd">News webpage data gathering code (R)</a></li>
+<li><a href="https://github.com/anly501/dsan-5000-project-qinxuesherry/blob/main/data/00-raw-data/R_raw_data.csv">raw data for news webpage(R)</a></li>
+<li>sample raw data <img src="../images/newsweb_raw_R.png" class="img-fluid" alt="news webpage raw data R"></li>
+</ul>
 
 
+</section>
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">

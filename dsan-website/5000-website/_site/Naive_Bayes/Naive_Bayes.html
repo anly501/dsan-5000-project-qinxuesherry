@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>DSAN-5000: Project – eda</title>
+<title>DSAN-5000: Project – naive_bayes</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -60,6 +60,8 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
 </head>
 
@@ -122,11 +124,11 @@ ul.task-list li input[type="checkbox"] {
     </ul>
   </li>
   <li class="nav-item">
-    <a class="nav-link active" href="../eda/eda.html" rel="" target="" aria-current="page">
+    <a class="nav-link" href="../eda/eda.html" rel="" target="">
  <span class="menu-text">Data Exploration</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../Naive_Bayes/Naive_Bayes.html" rel="" target="">
+    <a class="nav-link active" href="../Naive_Bayes/Naive_Bayes.html" rel="" target="" aria-current="page">
  <span class="menu-text">Naïve Bayes</span></a>
   </li>  
   <li class="nav-item">
@@ -153,39 +155,37 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#exploratory-data-analysis-eda" id="toc-exploratory-data-analysis-eda" class="nav-link active" data-scroll-target="#exploratory-data-analysis-eda">Exploratory Data Analysis (EDA)</a>
+  <li><a href="#introduction-to-naive-bayes" id="toc-introduction-to-naive-bayes" class="nav-link active" data-scroll-target="#introduction-to-naive-bayes">Introduction to Naive Bayes:</a>
   <ul class="collapse">
-  <li><a href="#introduction-to-eda" id="toc-introduction-to-eda" class="nav-link" data-scroll-target="#introduction-to-eda">Introduction to EDA:</a></li>
-  <li><a href="#news-articles-dataset" id="toc-news-articles-dataset" class="nav-link" data-scroll-target="#news-articles-dataset">News Articles’ dataset</a>
-  <ul class="collapse">
-  <li><a href="#data-understanding" id="toc-data-understanding" class="nav-link" data-scroll-target="#data-understanding">Data Understanding</a></li>
-  <li><a href="#data-visualization" id="toc-data-visualization" class="nav-link" data-scroll-target="#data-visualization">Data Visualization</a></li>
-  <li><a href="#correlation-analysis" id="toc-correlation-analysis" class="nav-link" data-scroll-target="#correlation-analysis">Correlation Analysis</a></li>
-  <li><a href="#hypothesis-generation" id="toc-hypothesis-generation" class="nav-link" data-scroll-target="#hypothesis-generation">Hypothesis Generation</a></li>
+  <li><a href="#overview" id="toc-overview" class="nav-link" data-scroll-target="#overview">Overview</a></li>
+  <li><a href="#statistics-foundation" id="toc-statistics-foundation" class="nav-link" data-scroll-target="#statistics-foundation">Statistics Foundation</a></li>
+  <li><a href="#different-variants" id="toc-different-variants" class="nav-link" data-scroll-target="#different-variants">different variants</a></li>
+  <li><a href="#how-to-apply-to-my-project" id="toc-how-to-apply-to-my-project" class="nav-link" data-scroll-target="#how-to-apply-to-my-project">How to apply to my Project</a></li>
   </ul></li>
-  <li><a href="#apple-stock-dataset" id="toc-apple-stock-dataset" class="nav-link" data-scroll-target="#apple-stock-dataset">Apple Stock dataset</a>
+  <li><a href="#record-data-mobile-phone-rating-training" id="toc-record-data-mobile-phone-rating-training" class="nav-link" data-scroll-target="#record-data-mobile-phone-rating-training">Record Data – Mobile Phone Rating Training</a>
   <ul class="collapse">
-  <li><a href="#data-understanding-1" id="toc-data-understanding-1" class="nav-link" data-scroll-target="#data-understanding-1">Data Understanding</a></li>
-  <li><a href="#descriptive-statistics" id="toc-descriptive-statistics" class="nav-link" data-scroll-target="#descriptive-statistics">Descriptive Statistics</a></li>
-  <li><a href="#data-visualization-1" id="toc-data-visualization-1" class="nav-link" data-scroll-target="#data-visualization-1">Data Visualization</a></li>
-  <li><a href="#outliers-detect" id="toc-outliers-detect" class="nav-link" data-scroll-target="#outliers-detect">Outliers Detect</a></li>
-  <li><a href="#hypothesis-generation-1" id="toc-hypothesis-generation-1" class="nav-link" data-scroll-target="#hypothesis-generation-1">Hypothesis Generation</a></li>
-  </ul></li>
-  <li><a href="#mobile_phone_rating-dataset" id="toc-mobile_phone_rating-dataset" class="nav-link" data-scroll-target="#mobile_phone_rating-dataset">mobile_phone_rating dataset</a>
+  <li><a href="#prepare-dataset" id="toc-prepare-dataset" class="nav-link" data-scroll-target="#prepare-dataset">Prepare Dataset</a>
   <ul class="collapse">
-  <li><a href="#data-understanding-2" id="toc-data-understanding-2" class="nav-link" data-scroll-target="#data-understanding-2">Data Understanding</a></li>
-  <li><a href="#data-visualization-2" id="toc-data-visualization-2" class="nav-link" data-scroll-target="#data-visualization-2">Data Visualization</a></li>
-  <li><a href="#correlation-analysis-1" id="toc-correlation-analysis-1" class="nav-link" data-scroll-target="#correlation-analysis-1">Correlation Analysis</a></li>
-  <li><a href="#descriptive-statistics-1" id="toc-descriptive-statistics-1" class="nav-link" data-scroll-target="#descriptive-statistics-1">Descriptive Statistics</a></li>
-  <li><a href="#hypothesis-generation-2" id="toc-hypothesis-generation-2" class="nav-link" data-scroll-target="#hypothesis-generation-2">Hypothesis Generation</a></li>
+  <li><a href="#create-labels" id="toc-create-labels" class="nav-link" data-scroll-target="#create-labels">create labels</a></li>
+  <li><a href="#split-data" id="toc-split-data" class="nav-link" data-scroll-target="#split-data">Split data</a></li>
   </ul></li>
-  <li><a href="#iphone_11_review_dataset" id="toc-iphone_11_review_dataset" class="nav-link" data-scroll-target="#iphone_11_review_dataset">iphone_11_review_dataset</a>
+  <li><a href="#feature-selection" id="toc-feature-selection" class="nav-link" data-scroll-target="#feature-selection">Feature Selection</a></li>
+  <li><a href="#naive-bayes-with-labeled-record-data" id="toc-naive-bayes-with-labeled-record-data" class="nav-link" data-scroll-target="#naive-bayes-with-labeled-record-data">Naive Bayes with Labeled Record Data</a>
   <ul class="collapse">
-  <li><a href="#data-understanding-3" id="toc-data-understanding-3" class="nav-link" data-scroll-target="#data-understanding-3">Data Understanding</a></li>
-  <li><a href="#data-visualization-3" id="toc-data-visualization-3" class="nav-link" data-scroll-target="#data-visualization-3">Data Visualization</a></li>
-  <li><a href="#descriptive-statistics-2" id="toc-descriptive-statistics-2" class="nav-link" data-scroll-target="#descriptive-statistics-2">Descriptive Statistics</a></li>
-  <li><a href="#hypothesis-generation-3" id="toc-hypothesis-generation-3" class="nav-link" data-scroll-target="#hypothesis-generation-3">Hypothesis Generation</a></li>
+  <li><a href="#final-result" id="toc-final-result" class="nav-link" data-scroll-target="#final-result">final result</a></li>
   </ul></li>
+  <li><a href="#conclusion" id="toc-conclusion" class="nav-link" data-scroll-target="#conclusion">Conclusion</a></li>
+  </ul></li>
+  <li><a href="#text-data-iphone-11-review-training" id="toc-text-data-iphone-11-review-training" class="nav-link" data-scroll-target="#text-data-iphone-11-review-training">Text Data – iphone 11 Review Training</a>
+  <ul class="collapse">
+  <li><a href="#prepare-dataset-1" id="toc-prepare-dataset-1" class="nav-link" data-scroll-target="#prepare-dataset-1">Prepare Dataset</a>
+  <ul class="collapse">
+  <li><a href="#create-labels-1" id="toc-create-labels-1" class="nav-link" data-scroll-target="#create-labels-1">create labels</a></li>
+  <li><a href="#split-data-1" id="toc-split-data-1" class="nav-link" data-scroll-target="#split-data-1">Split data</a></li>
+  </ul></li>
+  <li><a href="#feature-selection-1" id="toc-feature-selection-1" class="nav-link" data-scroll-target="#feature-selection-1">Feature Selection</a></li>
+  <li><a href="#naive-bayes-with-labeled-text-data" id="toc-naive-bayes-with-labeled-text-data" class="nav-link" data-scroll-target="#naive-bayes-with-labeled-text-data">Naive Bayes with Labeled Text Data</a></li>
+  <li><a href="#conclusion-1" id="toc-conclusion-1" class="nav-link" data-scroll-target="#conclusion-1">conclusion</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -195,260 +195,193 @@ ul.task-list li input[type="checkbox"] {
 
 
 
-<section id="exploratory-data-analysis-eda" class="level1">
-<h1>Exploratory Data Analysis (EDA)</h1>
-<section id="introduction-to-eda" class="level2">
-<h2 class="anchored" data-anchor-id="introduction-to-eda">Introduction to EDA:</h2>
+<section id="introduction-to-naive-bayes" class="level1">
+<h1>Introduction to Naive Bayes:</h1>
+<section id="overview" class="level3">
+<h3 class="anchored" data-anchor-id="overview">Overview</h3>
 <ul>
-<li>In this part, I will use visualization tools to help the audience know more about my project, which will include text clouds, statistic distribution, correlation heatmap, etc. This will help the audience to understand the general partterns in the data, and analysis the data.</li>
+<li>The process of training the Naive Bayes algorithm is actually the process of solving each a priori probability P(Ai) and conditional probability P(Bj|Ai), and then in the prediction and classification process, it is only necessary to substitute each probability value obtained during the training process into the Bayesian formula, so as to obtain the relative probability of the results of the classification labels under the current features. The one with higher relative probability is naturally used as the predicted label.</li>
 </ul>
 </section>
-<section id="news-articles-dataset" class="level2">
-<h2 class="anchored" data-anchor-id="news-articles-dataset">News Articles’ dataset</h2>
-<section id="data-understanding" class="level3">
-<h3 class="anchored" data-anchor-id="data-understanding">Data Understanding</h3>
+<section id="statistics-foundation" class="level3">
+<h3 class="anchored" data-anchor-id="statistics-foundation">Statistics Foundation</h3>
 <ul>
-<li>In this text dataset, the type for this dataset is categorical data.</li>
+<li><span class="math inline">\(P(Y|X) = (P(X|Y) * P(Y))/P(X)\)</span></li>
+<li>P(A|B) is called the a posteriori probability, for the target to be found</li>
+<li>P(A) is the a priori probability, which can be statistically derived from a large amount of data, or empirically provided when the amount of data is small.</li>
+<li>P(B|A) is the conditional probability, which can be statistically derived from a large amount of data, and is usually given by great likelihood estimation, and is actually also the a priori probability</li>
 </ul>
 </section>
-<section id="data-visualization" class="level3">
-<h3 class="anchored" data-anchor-id="data-visualization">Data Visualization</h3>
+<section id="different-variants" class="level3">
+<h3 class="anchored" data-anchor-id="different-variants">different variants</h3>
 <ul>
-<li>code in the news_cleanning.ipynb</li>
-</ul>
-<section id="word-cloud" class="level4">
-<h4 class="anchored" data-anchor-id="word-cloud">Word Cloud</h4>
-<ul>
-<li>Explaination: After I cleaned the data with Numpy and Pandas package as I needed, I use the Wordcloud package to output the most frequent appeared words in those articles.</li>
-<li><div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="../images/text_cloud_newsapi.png" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">text cloud for news articles</figcaption>
-</figure>
-</div></li>
+<li><p>Gaussian Naive Bayes: This variant of Naive Bayes is best suited for datasets where the features are continuous and follow a Gaussian or normal distribution. It assigns a Gaussian distribution to each class and predicts the class of a new data point based on these distributions. Common applications include problems that involve continuous variables, as is often found in real-world datasets.</p></li>
+<li><p>Multinomial Naive Bayes: This type excels with discrete data and finds frequent application in text categorization tasks, where text is converted into word frequency vectors. However, it can also work with tf-idf vectors. It computes the conditional probability of a word given a class, making it a good choice for problems involving discrete data.</p></li>
+<li><p>Bernoulli Naive Bayes: This method is ideal for binary or boolean features and is typically used in text classification tasks where the presence or absence of a word is more important than its frequency. It assumes that all our features are binary-valued and models the input data with a multivariate Bernoulli distribution.</p></li>
 </ul>
 </section>
-</section>
-<section id="correlation-analysis" class="level3">
-<h3 class="anchored" data-anchor-id="correlation-analysis">Correlation Analysis</h3>
+<section id="how-to-apply-to-my-project" class="level3">
+<h3 class="anchored" data-anchor-id="how-to-apply-to-my-project">How to apply to my Project</h3>
+<p>I will use Naive Bayes Algorithmn to train 2 datasets, the objective for using this is for accurately predicting the lebels for my datasets:</p>
 <ul>
-<li>Explaination: I cleared out all the stopwords as needed, and get the most frequent words out to see the correlation between those key words. We can see that the color of words more close to white is more positive related, and the color more close to black is negative related. I used</li>
-<li><div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="../images/corr_heat_newsapi.png" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">correlation heatmap for news articles</figcaption>
-</figure>
-</div></li>
-</ul>
-</section>
-<section id="hypothesis-generation" class="level3">
-<h3 class="anchored" data-anchor-id="hypothesis-generation">Hypothesis Generation</h3>
-<ul>
-<li>from the analysis from above, we can see most of the key words from the news are positive or natural, which means, the public has postive attitude towards apple products.</li>
+<li><p>Mobile phone rating: This is a record dataset. There are features like mobiles camera scores, audio scores, display scores, etc, and those related to the customers’ willingness to buy this phone or not. The main goal for training this dataset is for repeict customer’s willingness to buy a phone or not depends on those feature scores.</p></li>
+<li><p>Iphone 11 reviews: This is a text dataset. The text are customers reviews. The main goal for this data training is by through the reviews, predict the attitutes of the customers.</p></li>
 </ul>
 </section>
 </section>
-<section id="apple-stock-dataset" class="level2">
-<h2 class="anchored" data-anchor-id="apple-stock-dataset">Apple Stock dataset</h2>
-<section id="data-understanding-1" class="level3">
-<h3 class="anchored" data-anchor-id="data-understanding-1">Data Understanding</h3>
+<section id="record-data-mobile-phone-rating-training" class="level1">
+<h1>Record Data – Mobile Phone Rating Training</h1>
+<section id="prepare-dataset" class="level2">
+<h2 class="anchored" data-anchor-id="prepare-dataset">Prepare Dataset</h2>
+<section id="create-labels" class="level3">
+<h3 class="anchored" data-anchor-id="create-labels">create labels</h3>
+<p>I create labels for the mobile phone by its rankings</p>
+<p>(code in codes/data-cleaning/mobile_phone_rating.ipynb).</p>
 <ul>
-<li>For this dataset, it’s all numerical data. The open/close price are closely relate to each other</li>
-<li>code in the code/EDA/apple_stock.ipynb file</li>
+<li>The top 50 ranking phones is Very Willing</li>
+<li>The 51-100 ranking phones is Moderately Willing</li>
+<li>The 101-last ranking ophones is Not Willing</li>
 </ul>
 </section>
-<section id="descriptive-statistics" class="level3">
-<h3 class="anchored" data-anchor-id="descriptive-statistics">Descriptive Statistics</h3>
+<section id="split-data" class="level3">
+<h3 class="anchored" data-anchor-id="split-data">Split data</h3>
+<p>(code in codes/naive_bayes/mobile_phone_rating_training)</p>
 <ul>
-<li><div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="../images/stock_statistics.png" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">statistics for apple stock</figcaption>
-</figure>
-</div></li>
-<li>As shwon in the table, we can the standard deviation for the apple stock is around 19, it show a floating with the apple stock within days.</li>
-<li>however the max and min are similar for each open/close price, shows a stable status for the apple stock.</li>
-</ul>
-</section>
-<section id="data-visualization-1" class="level3">
-<h3 class="anchored" data-anchor-id="data-visualization-1">Data Visualization</h3>
-<section id="open-price-line-plot" class="level4">
-<h4 class="anchored" data-anchor-id="open-price-line-plot">Open Price Line Plot</h4>
-<ul>
-<li>Explaination: I collected the dataset of stock price from Yahoo! finance, and used Matplotlib, plotly and seaborn to plot the stock price in line plot with the open price and the date.</li>
-<li><div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="../images/stock_openprice.png" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">open price for apple stock</figcaption>
-</figure>
-</div></li>
-<li>We can see from this plot that the price is in the increasing trend, which means the apple stock are more popular.</li>
-</ul>
-</section>
-<section id="trading-volume-line-plot" class="level4">
-<h4 class="anchored" data-anchor-id="trading-volume-line-plot">trading volume Line Plot</h4>
-<ul>
-<li>Explaination: I collected the dataset of stock price from Yahoo! finance, and used Matplotlib, plotly and seaborn to plot the stock trading volume in each date in line plot</li>
-<li><div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="../images/apple_stock_volume.png" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">open price for apple stock</figcaption>
-</figure>
-</div></li>
-<li>As shown, we can see the trading volume are decreasing during the time, which may indicate that the apple’s stock are less people buying, and it may related to the price.</li>
+<li>I split data into traning set 70%, validation set 15%, and test set 15%.</li>
+<li>70% in training will increase the accuracy for the model learning. And the rest each 15% for better identify the training results.</li>
 </ul>
 </section>
 </section>
-<section id="outliers-detect" class="level3">
-<h3 class="anchored" data-anchor-id="outliers-detect">Outliers Detect</h3>
+<section id="feature-selection" class="level2">
+<h2 class="anchored" data-anchor-id="feature-selection">Feature Selection</h2>
+<p>(code in codes/naive_bayes/mobile_phone_rating_training)</p>
+<p>According to the number of features, I found out it nearly has no impact on the trainig. - <img src="../images/mobile_phone_feature_training.png" class="img-fluid" alt="number of features"></p>
+<p>Thus I chose to use Vairance Thredhold for this data, after the selection, I find out the optimal thredhold. It turns out the optimal thredhold is 26.51, and the accuracy is around 88%.</p>
+</section>
+<section id="naive-bayes-with-labeled-record-data" class="level2">
+<h2 class="anchored" data-anchor-id="naive-bayes-with-labeled-record-data">Naive Bayes with Labeled Record Data</h2>
+<p>(code in codes/naive_bayes/mobile_phone_rating_training)</p>
+<ul>
+<li>However, after I tried several times for selecting the vairance thredhold, becuase the feature selection process above elimiating some cornor cases, but there are not that many features in my model, if i eliminating them, it would decrease my model accuracy. So after all, I found the optimal thredhold should be 45, so I choose to use that for my model.</li>
+<li>In that way, the ‘Selfie’ column will be deducted, which make sense because when I did data cleaning process, there are many nulls and I use the mean to fill null.</li>
+</ul>
+<section id="final-result" class="level3">
+<h3 class="anchored" data-anchor-id="final-result">final result</h3>
+<section id="evaluation-matrices" class="level4">
+<h4 class="anchored" data-anchor-id="evaluation-matrices">Evaluation Matrices</h4>
 <ul>
 <li><div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="../images/stock_outliers.png" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">Outliers for apple stock</figcaption>
+<p><img src="../images/mobile_phone_accuracy.png" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Evaluation Metrics</figcaption>
 </figure>
 </div></li>
-<li>As shown, there’s no outliers for this stock, so, every points can be inclued in evaluating this data.</li>
+<li>As shown above, the accuracy of my model is 91.3% and which is very high, shows it’s a good model.</li>
+<li>Precision is comparely low for the “not will”, but it’s ok, since the number of that labels are not too many.</li>
+<li>F-1 score and recall performs well.</li>
+<li>Macro Avg: Precision: 86%, Recall: 94%, F1-Score: 89% are all very high schore, shows it’s a good model to fit in.</li>
+<li>Weighted Avg: Precision: 93%, Recall: 91% , F1-Score: 92%, shows it’s a good model to fit in.</li>
+<li>It did not show any overfitting or underfitting,since the test scores perform well.</li>
 </ul>
 </section>
-<section id="hypothesis-generation-1" class="level3">
-<h3 class="anchored" data-anchor-id="hypothesis-generation-1">Hypothesis Generation</h3>
-<ul>
-<li>from the analysis from above, we can see the apple stock price is still increasing, and seems still be popular to the public. This may indicate the Apple product is still popular in the market.</li>
-</ul>
-</section>
-</section>
-<section id="mobile_phone_rating-dataset" class="level2">
-<h2 class="anchored" data-anchor-id="mobile_phone_rating-dataset">mobile_phone_rating dataset</h2>
-<section id="data-understanding-2" class="level3">
-<h3 class="anchored" data-anchor-id="data-understanding-2">Data Understanding</h3>
-<ul>
-<li>For this dataset, below are their data type.</li>
-<li><div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="../images/Mobile_phone_datatype.png" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">Mobile Phone data type</figcaption>
-</figure>
-</div></li>
-<li>The launch price, camera, selfie, audio, display, battery ratings are all related to the reank.</li>
-</ul>
-</section>
-<section id="data-visualization-2" class="level3">
-<h3 class="anchored" data-anchor-id="data-visualization-2">Data Visualization</h3>
-<section id="dot-plot" class="level4">
-<h4 class="anchored" data-anchor-id="dot-plot">dot plot</h4>
+<section id="confusion-matrices" class="level4">
+<h4 class="anchored" data-anchor-id="confusion-matrices">confusion matrices</h4>
 <ul>
 <li><div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="../images/mobile_phone_dot.png" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">The relation of Launch Price and Buing Intent</figcaption>
+<p><img src="../images/mobile_phone_confusion_matrix.png" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Confusion Metrics</figcaption>
 </figure>
 </div></li>
-<li>used Seaborn</li>
-<li>It shows that the launch price actually determined whether willing to buy. When the price is around 750-1250 dollars, people are very willing to buy.</li>
+<li>As shown above, the accuracy for predicting labels are very high. Only 2 labels are inaccurately predicted.</li>
 </ul>
 </section>
-<section id="box-plot" class="level4">
-<h4 class="anchored" data-anchor-id="box-plot">box plot</h4>
+</section>
+</section>
+<section id="conclusion" class="level2">
+<h2 class="anchored" data-anchor-id="conclusion">Conclusion</h2>
+<p>The model predict my dataset well. After he variance Thredhold feature selection, the accuracy increased from about 88% to 91.3%. Also, the model did not show overfitting/underfitting because of its traning accuracy and test accuracy are all around 90%. Thus this model can well predict how those scores impact people’s buying willingness.</p>
+</section>
+</section>
+<section id="text-data-iphone-11-review-training" class="level1">
+<h1>Text Data – iphone 11 Review Training</h1>
+<section id="prepare-dataset-1" class="level2">
+<h2 class="anchored" data-anchor-id="prepare-dataset-1">Prepare Dataset</h2>
+<section id="create-labels-1" class="level3">
+<h3 class="anchored" data-anchor-id="create-labels-1">create labels</h3>
+<p>I create labels for the mobile phone by its ratings</p>
+<p>(code in codes/naive_bayes/iphone_11_review_training.ipynb).</p>
+<ul>
+<li>The top 50 ranking phones is Very Willing</li>
+<li>The 51-100 ranking phones is Moderately Willing</li>
+<li>The 101-last ranking ophones is Not Willing</li>
+</ul>
+</section>
+<section id="split-data-1" class="level3">
+<h3 class="anchored" data-anchor-id="split-data-1">Split data</h3>
+<p>(code in codes/naive_bayes/iphone_11_review_training.ipynb).</p>
+<ul>
+<li>I split data into traning set 80%, and test set 20%.</li>
+<li>80% in training will increase the accuracy for the text model learning. Also, 20% of test dataset is enough for giving good results.</li>
+</ul>
+</section>
+</section>
+<section id="feature-selection-1" class="level2">
+<h2 class="anchored" data-anchor-id="feature-selection-1">Feature Selection</h2>
+<p>(code in codes/naive_bayes/iphone_11_review_training.ipynb)</p>
 <ul>
 <li><div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="../images/mobile_phone_box.png" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">The relation between Buying Intent and Camera Rating</figcaption>
+<p><img src="../images/iphone11_review_feature_selection1.png" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">feature selection</figcaption>
 </figure>
 </div></li>
-<li>used Seaborn</li>
-<li>It also shows people willingness to buy are connected to the camera’s quality. the camera score that people very willing to buy is around 130-160 range.</li>
+<li><p>As shown in the graph, when the number of features close to 600-700, the test and training accuracy score did not improve. And after that, the model indicate it’s overfitting because the taining accuracy is high but test accuracy is not that hight. So our opimal feature selection should around 600-700.</p></li>
+<li><div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../images/iphone11_review_feature_selection2.png" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">running time</figcaption>
+</figure>
+</div></li>
+<li><p>As shown in the graph, when the number of features close to 1000 the running time increased a lot</p></li>
 </ul>
+<p>Based on those observation, and also from the accuracy scores of each number of features, I get the optimal number of features are 640. With this feature number, the accuracy and running time are optimal.</p>
 </section>
-<section id="pie-chart" class="level4">
-<h4 class="anchored" data-anchor-id="pie-chart">pie chart</h4>
+<section id="naive-bayes-with-labeled-text-data" class="level2">
+<h2 class="anchored" data-anchor-id="naive-bayes-with-labeled-text-data">Naive Bayes with Labeled Text Data</h2>
+<p>(code in codes/naive_bayes/iphone_11_review_training.ipynb)</p>
 <ul>
 <li><div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="../images/mobile_phone_pie.png" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">Top 50 Ranking Brands</figcaption>
+<p><img src="../images/iphone11_accuracy.png" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Evaluation Metrics</figcaption>
 </figure>
 </div></li>
-<li>used Matplotlib</li>
-<li>As shown in the graph, there are 20% Top 50 ranking phones are apples. Which shows, Apple is still one of the most popular brands in the market.</li>
+<li>As shown above, the accuracy of my model is 90.11% and which is very high, shows it’s a good model.</li>
+<li>Macro Avg: Precision: 65%, Recall: 58%, F1-Score: 61%, those scores are comparedly not perform very well, it is because some low performance for the natural(0) class, this is also make sense, because there are not many data related to that class.</li>
+<li>Weighted Avg: Precision: 89%, Recall: 90% , F1-Score: 89%, shows it’s a good model to fit.</li>
 </ul>
-</section>
-</section>
-<section id="correlation-analysis-1" class="level3">
-<h3 class="anchored" data-anchor-id="correlation-analysis-1">Correlation Analysis</h3>
+<section id="confusion-matrices-1" class="level4">
+<h4 class="anchored" data-anchor-id="confusion-matrices-1">confusion matrices</h4>
 <ul>
 <li><div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="../images/mobile_phone_corr.png" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">The correlation between features</figcaption>
+<p><img src="../images/iphone11_confusion_matrix.png" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Confusion Metrics</figcaption>
 </figure>
 </div></li>
-<li>Used heatmap</li>
-<li>It semmed that camera and launch price are correlated to each other. And the Launch price camera score and audio score are negatively correlated to each other.</li>
-</ul>
-</section>
-<section id="descriptive-statistics-1" class="level3">
-<h3 class="anchored" data-anchor-id="descriptive-statistics-1">Descriptive Statistics</h3>
-<ul>
-<li><div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="../images/Mobile_phone_statistics.png" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">statistics for mobile phone</figcaption>
-</figure>
-</div></li>
-<li>the mean Launch price is around $773.5 and the mean score for selfie is around 130, which is obviously higher than others (this is becuase I used mean to insert missing value)</li>
-</ul>
-</section>
-<section id="hypothesis-generation-2" class="level3">
-<h3 class="anchored" data-anchor-id="hypothesis-generation-2">Hypothesis Generation</h3>
-<ul>
-<li>from the analysis we can analyze what kind of features would be popular around customers. This can be used for analysis whether apple would be best product among choices. It still prove that Apple is popular among customers.</li>
+<li>As shown above, the accuracy for predicting right labels are very high.</li>
+<li>In total, 903 data labels were predicted accurately. The model predited well in the positive and negative classes, but did not perform well in the natural class. This is because there are not so many data of natural.</li>
 </ul>
 </section>
 </section>
-<section id="iphone_11_review_dataset" class="level2">
-<h2 class="anchored" data-anchor-id="iphone_11_review_dataset">iphone_11_review_dataset</h2>
-<section id="data-understanding-3" class="level3">
-<h3 class="anchored" data-anchor-id="data-understanding-3">Data Understanding</h3>
-<ul>
-<li>This is a text record data, and it is a categorical data.</li>
-</ul>
-</section>
-<section id="data-visualization-3" class="level3">
-<h3 class="anchored" data-anchor-id="data-visualization-3">Data Visualization</h3>
-<ul>
-<li>frequency distribution</li>
-<li><div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="../images/iphone_11_rating.png" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">Iphone 11 ratings</figcaption>
-</figure>
-</div></li>
-<li>Used Seabron</li>
-<li>From the graph, we can see most people give 5.0 ratings, which shows that most customers satisfied the apple products</li>
-</ul>
-</section>
-<section id="descriptive-statistics-2" class="level3">
-<h3 class="anchored" data-anchor-id="descriptive-statistics-2">Descriptive Statistics</h3>
-<ul>
-<li><div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="../images/iphone_11_statistics.png" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">statistics for Ipohone11 ratings</figcaption>
-</figure>
-</div></li>
-<li>The mean rating is 4.48 which is very high, shows that everyone like iphone 11</li>
-</ul>
-</section>
-<section id="hypothesis-generation-3" class="level3">
-<h3 class="anchored" data-anchor-id="hypothesis-generation-3">Hypothesis Generation</h3>
-<ul>
-<li>from the analysis we can analyze that most customers satisfied apple’s products, so apple may be still popular in the market.</li>
-</ul>
+<section id="conclusion-1" class="level2">
+<h2 class="anchored" data-anchor-id="conclusion-1">conclusion</h2>
+<p>The model predict my dataset well. After the number of features selection method, the accuracy can reach 90.11%. However, because the insufficient of data related to natural label class, the prediction to this class did not perform so well as expected.</p>
+<p>Also, the model did not show overfitting/underfitting because of its traning accuracy and test accuracy are all around 90%.</p>
+<p>Thus, overall the model performed well, and it can based on the text reviews predict poeple’s attitude towards iphone 11 products.</p>
 
 
-</section>
 </section>
 </section>
 

@@ -97,7 +97,7 @@ ul.task-list li input[type="checkbox"] {
  <span class="menu-text">Data</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="https://github.com/anly501/dsan-5000-project-qinxuesherry/tree/main/codes/01-data-gathering" rel="" target="">
+    <a class="nav-link" href="../data_gathering/data_gathering.html" rel="" target="">
  <span class="menu-text">Data Gathering</span></a>
   </li>  
   <li class="nav-item">
@@ -145,16 +145,50 @@ ul.task-list li input[type="checkbox"] {
 <!-- sidebar -->
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#data-cleanning" id="toc-data-cleanning" class="nav-link active" data-scroll-target="#data-cleanning">Data Cleanning</a>
+  <ul class="collapse">
+  <li><a href="#python" id="toc-python" class="nav-link" data-scroll-target="#python">Python</a></li>
+  <li><a href="#r" id="toc-r" class="nav-link" data-scroll-target="#r">R</a></li>
+  </ul></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 
 
-<p>Datq Cleaning</p>
+<section id="data-cleanning" class="level1">
+<h1>Data Cleanning</h1>
+<section id="python" class="level3">
+<h3 class="anchored" data-anchor-id="python">Python</h3>
+<ol type="1">
+<li>clean the news raw data (gather by Python)</li>
+</ol>
+<ul>
+<li>Explaination: clean the raw data called iphone_content.txt, and cleaned the stop words and used CountVectorizer</li>
+<li><a href="https://github.com/anly501/dsan-5000-project-qinxuesherry/blob/main/codes/01-data-cleaning/news_cleanning.ipynb">newsapi data cleaning code (python)</a></li>
+<li><a href="https://github.com/anly501/dsan-5000-project-qinxuesherry/blob/main/data/01-modified-data/after_clean_iphone_content.txt">cleaned data for newsapi(python)</a></li>
+</ul>
+</section>
+<section id="r" class="level3">
+<h3 class="anchored" data-anchor-id="r">R</h3>
+<ol type="1">
+<li>clean the weibo hot post data (gather by Python)</li>
+</ol>
+<ul>
+<li>Explaination: clean the raw data called 微博清单.csv, and reordered the dataset, dropped unnecessary columns/rows, and cleaned the text part by segmentation and clear stop words, etc.</li>
+<li><a href="https://github.com/anly501/dsan-5000-project-qinxuesherry/blob/main/codes/01-data-cleaning/r-cleaning.Rmd">weibo data cleaning code (R)</a></li>
+<li><a href="https://github.com/anly501/dsan-5000-project-qinxuesherry/blob/main/data/01-modified-data/R_after_clean.csv">cleaned data for weibo(R)</a></li>
+</ul>
 
 
+</section>
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">

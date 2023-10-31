@@ -8,6 +8,10 @@ This is a Quarto website.
 
 To learn more about Quarto websites visit <https://quarto.org/docs/websites>.
 
+# I have changed my topic from "Financial Fraud" to the topic "Is Iphone still popular in the market?" 
+# I will redo this introduction part later
+# Just ignore it for now please. 
+# All my data are about Apple and Iphone.
 
 ## 1. Topics Introduction: Financial Fraud Detection
 * summary: There are many type of financial fraud, credit card fraud, identity theft, account takeover, payment fraud, insurance fraud, money laudering, etc. 

@@ -1,1 +1,15 @@
-Datq Cleaning
+# Data Cleanning
+
+### Python
+
+1. clean the news raw data (gather by Python)
+* Explaination: clean the raw data called iphone_content.txt, and cleaned the stop words and used CountVectorizer
+* <a href="https://github.com/anly501/dsan-5000-project-qinxuesherry/blob/main/codes/01-data-cleaning/news_cleanning.ipynb">newsapi data cleaning code (python)</a>
+* <a href="https://github.com/anly501/dsan-5000-project-qinxuesherry/blob/main/data/01-modified-data/after_clean_iphone_content.txt">cleaned data for newsapi(python)</a>
+
+
+### R
+1. clean the weibo hot post data (gather by Python)
+* Explaination: clean the raw data called 微博清单.csv, and reordered the dataset, dropped unnecessary columns/rows, and cleaned the text part by segmentation and clear stop words, etc.
+* <a href="https://github.com/anly501/dsan-5000-project-qinxuesherry/blob/main/codes/01-data-cleaning/r-cleaning.Rmd">weibo data cleaning code (R)</a>
+* <a href="https://github.com/anly501/dsan-5000-project-qinxuesherry/blob/main/data/01-modified-data/R_after_clean.csv">cleaned data for weibo(R)</a>

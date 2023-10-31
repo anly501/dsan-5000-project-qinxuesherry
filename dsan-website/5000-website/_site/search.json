@@ -2,9 +2,9 @@
   {
     "objectID": "data_cleaning/data_cleaning.html",
     "href": "data_cleaning/data_cleaning.html",
-    "title": "DSAN-5000: Project",
+    "title": "Data Cleanning",
     "section": "",
-    "text": "Datq Cleaning"
+    "text": "Data Cleanning\n\nPython\n\nclean the news raw data (gather by Python)\n\n\nExplaination: clean the raw data called iphone_content.txt, and cleaned the stop words and used CountVectorizer\nnewsapi data cleaning code (python)\ncleaned data for newsapi(python)\n\n\n\nR\n\nclean the weibo hot post data (gather by Python)\n\n\nExplaination: clean the raw data called 微博清单.csv, and reordered the dataset, dropped unnecessary columns/rows, and cleaned the text part by segmentation and clear stop words, etc.\nweibo data cleaning code (R)\ncleaned data for weibo(R)"
   },
   {
     "objectID": "ARM/ARM.html",
@@ -58,16 +58,16 @@
   {
     "objectID": "data_gathering/data_gathering.html",
     "href": "data_gathering/data_gathering.html",
-    "title": "DSAN-5000: Project",
+    "title": "Data Gathering",
     "section": "",
-    "text": "Data Gathering"
+    "text": "Data Gathering\n\nPython\n\nGathering data of hot post from Weibo\n\n\nExplaination: crawl data from Chinese social platform, Weibo, to catch some hot posts about people’s reaction to the new publishion of Apple product\nweibo data gathering code (python)\nraw data for weibo(python)\nsample raw data \n\n\nGathering data of news text\n\n\nExaplaination: crawl data by using NewsAPI and try to extract some key words from the news, and see what’s the attitude of media towards the Iphone.\nNews data gathering code (python)\nraw data for newsAPI(python)\nsample raw data \n\n\n\nR\n\nGathering data of news from website\n\n\nExaplaination: craw text by using Rvest and get content from the news website.\nNews webpage data gathering code (R)\nraw data for news webpage(R)\nsample raw data"
   },
   {
     "objectID": "eda/eda.html",
     "href": "eda/eda.html",
-    "title": "Data Exploration",
+    "title": "Exploratory Data Analysis (EDA)",
     "section": "",
-    "text": "Build out your website tab for exploratory data analysis"
+    "text": "In this part, I will use visualization tools to help the audience know more about my project, which will include text clouds, statistic distribution, correlation heatmap, etc. This will help the audience to understand the general partterns in the data, and analysis the data.\n\n\n\n\n\n\n\nIn this text dataset, the type for this dataset is categorical data.\n\n\n\n\n\ncode in the news_cleanning.ipynb\n\n\n\n\nExplaination: After I cleaned the data with Numpy and Pandas package as I needed, I use the Wordcloud package to output the most frequent appeared words in those articles.\n\n\n\ntext cloud for news articles\n\n\n\n\n\n\n\n\nExplaination: I cleared out all the stopwords as needed, and get the most frequent words out to see the correlation between those key words. We can see that the color of words more close to white is more positive related, and the color more close to black is negative related. I used\n\n\n\ncorrelation heatmap for news articles\n\n\n\n\n\n\n\nfrom the analysis from above, we can see most of the key words from the news are positive or natural, which means, the public has postive attitude towards apple products.\n\n\n\n\n\n\n\n\nFor this dataset, it’s all numerical data. The open/close price are closely relate to each other\ncode in the code/EDA/apple_stock.ipynb file\n\n\n\n\n\n\n\n\nstatistics for apple stock\n\n\nAs shwon in the table, we can the standard deviation for the apple stock is around 19, it show a floating with the apple stock within days.\nhowever the max and min are similar for each open/close price, shows a stable status for the apple stock.\n\n\n\n\n\n\n\nExplaination: I collected the dataset of stock price from Yahoo! finance, and used Matplotlib, plotly and seaborn to plot the stock price in line plot with the open price and the date.\n\n\n\nopen price for apple stock\n\n\nWe can see from this plot that the price is in the increasing trend, which means the apple stock are more popular.\n\n\n\n\n\nExplaination: I collected the dataset of stock price from Yahoo! finance, and used Matplotlib, plotly and seaborn to plot the stock trading volume in each date in line plot\n\n\n\nopen price for apple stock\n\n\nAs shown, we can see the trading volume are decreasing during the time, which may indicate that the apple’s stock are less people buying, and it may related to the price.\n\n\n\n\n\n\n\n\n\nOutliers for apple stock\n\n\nAs shown, there’s no outliers for this stock, so, every points can be inclued in evaluating this data.\n\n\n\n\n\nfrom the analysis from above, we can see the apple stock price is still increasing, and seems still be popular to the public. This may indicate the Apple product is still popular in the market.\n\n\n\n\n\n\n\n\nFor this dataset, below are their data type.\n\n\n\nMobile Phone data type\n\n\nThe launch price, camera, selfie, audio, display, battery ratings are all related to the reank.\n\n\n\n\n\n\n\n\n\n\nThe relation of Launch Price and Buing Intent\n\n\nused Seaborn\nIt shows that the launch price actually determined whether willing to buy. When the price is around 750-1250 dollars, people are very willing to buy.\n\n\n\n\n\n\n\n\nThe relation between Buying Intent and Camera Rating\n\n\nused Seaborn\nIt also shows people willingness to buy are connected to the camera’s quality. the camera score that people very willing to buy is around 130-160 range.\n\n\n\n\n\n\n\n\nTop 50 Ranking Brands\n\n\nused Matplotlib\nAs shown in the graph, there are 20% Top 50 ranking phones are apples. Which shows, Apple is still one of the most popular brands in the market.\n\n\n\n\n\n\n\n\n\nThe correlation between features\n\n\nUsed heatmap\nIt semmed that camera and launch price are correlated to each other. And the Launch price camera score and audio score are negatively correlated to each other.\n\n\n\n\n\n\n\n\nstatistics for mobile phone\n\n\nthe mean Launch price is around $773.5 and the mean score for selfie is around 130, which is obviously higher than others (this is becuase I used mean to insert missing value)\n\n\n\n\n\nfrom the analysis we can analyze what kind of features would be popular around customers. This can be used for analysis whether apple would be best product among choices. It still prove that Apple is popular among customers.\n\n\n\n\n\n\n\n\nThis is a text record data, and it is a categorical data.\n\n\n\n\n\nfrequency distribution\n\n\n\nIphone 11 ratings\n\n\nUsed Seabron\nFrom the graph, we can see most people give 5.0 ratings, which shows that most customers satisfied the apple products\n\n\n\n\n\n\n\n\nstatistics for Ipohone11 ratings\n\n\nThe mean rating is 4.48 which is very high, shows that everyone like iphone 11\n\n\n\n\n\nfrom the analysis we can analyze that most customers satisfied apple’s products, so apple may be still popular in the market."
   },
   {
     "objectID": "eda/eda.html#quick-look-at-the-data",
@@ -103,5 +103,110 @@
     "title": "DSAN-5000: Project",
     "section": "",
     "text": "Conclusion"
+  },
+  {
+    "objectID": "eda/eda.html#introduction-to-eda",
+    "href": "eda/eda.html#introduction-to-eda",
+    "title": "Exploratory Data Analysis (EDA)",
+    "section": "",
+    "text": "In this part, I will use visualization tools to help the audience know more about my project, which will include text clouds, statistic distribution, correlation heatmap, etc. This will help the audience to understand the general partterns in the data, and analysis the data."
+  },
+  {
+    "objectID": "eda/eda.html#news-articles-dataset",
+    "href": "eda/eda.html#news-articles-dataset",
+    "title": "Exploratory Data Analysis (EDA)",
+    "section": "",
+    "text": "In this text dataset, the type for this dataset is categorical data.\n\n\n\n\n\ncode in the news_cleanning.ipynb\n\n\n\n\nExplaination: After I cleaned the data with Numpy and Pandas package as I needed, I use the Wordcloud package to output the most frequent appeared words in those articles.\n\n\n\ntext cloud for news articles\n\n\n\n\n\n\n\n\nExplaination: I cleared out all the stopwords as needed, and get the most frequent words out to see the correlation between those key words. We can see that the color of words more close to white is more positive related, and the color more close to black is negative related. I used\n\n\n\ncorrelation heatmap for news articles\n\n\n\n\n\n\n\nfrom the analysis from above, we can see most of the key words from the news are positive or natural, which means, the public has postive attitude towards apple products."
+  },
+  {
+    "objectID": "eda/eda.html#apple-stock-dataset",
+    "href": "eda/eda.html#apple-stock-dataset",
+    "title": "Exploratory Data Analysis (EDA)",
+    "section": "",
+    "text": "For this dataset, it’s all numerical data. The open/close price are closely relate to each other\ncode in the code/EDA/apple_stock.ipynb file\n\n\n\n\n\n\n\n\nstatistics for apple stock\n\n\nAs shwon in the table, we can the standard deviation for the apple stock is around 19, it show a floating with the apple stock within days.\nhowever the max and min are similar for each open/close price, shows a stable status for the apple stock.\n\n\n\n\n\n\n\nExplaination: I collected the dataset of stock price from Yahoo! finance, and used Matplotlib, plotly and seaborn to plot the stock price in line plot with the open price and the date.\n\n\n\nopen price for apple stock\n\n\nWe can see from this plot that the price is in the increasing trend, which means the apple stock are more popular.\n\n\n\n\n\nExplaination: I collected the dataset of stock price from Yahoo! finance, and used Matplotlib, plotly and seaborn to plot the stock trading volume in each date in line plot\n\n\n\nopen price for apple stock\n\n\nAs shown, we can see the trading volume are decreasing during the time, which may indicate that the apple’s stock are less people buying, and it may related to the price.\n\n\n\n\n\n\n\n\n\nOutliers for apple stock\n\n\nAs shown, there’s no outliers for this stock, so, every points can be inclued in evaluating this data.\n\n\n\n\n\nfrom the analysis from above, we can see the apple stock price is still increasing, and seems still be popular to the public. This may indicate the Apple product is still popular in the market."
+  },
+  {
+    "objectID": "eda/eda.html#iphone_11_review_dataset",
+    "href": "eda/eda.html#iphone_11_review_dataset",
+    "title": "Exploratory Data Analysis (EDA)",
+    "section": "",
+    "text": "This is a text record data, and it is a categorical data.\n\n\n\n\n\nfrequency distribution\n\n\n\nIphone 11 ratings\n\n\nUsed Seabron\nFrom the graph, we can see most people give 5.0 ratings, which shows that most customers satisfied the apple products\n\n\n\n\n\n\n\n\nstatistics for Ipohone11 ratings\n\n\nThe mean rating is 4.48 which is very high, shows that everyone like iphone 11\n\n\n\n\n\nfrom the analysis we can analyze that most customers satisfied apple’s products, so apple may be still popular in the market."
+  },
+  {
+    "objectID": "eda/eda.html#mobile_phone_rating-dataset",
+    "href": "eda/eda.html#mobile_phone_rating-dataset",
+    "title": "Exploratory Data Analysis (EDA)",
+    "section": "",
+    "text": "For this dataset, below are their data type.\n\n\n\nMobile Phone data type\n\n\nThe launch price, camera, selfie, audio, display, battery ratings are all related to the reank.\n\n\n\n\n\n\n\n\n\n\nThe relation of Launch Price and Buing Intent\n\n\nused Seaborn\nIt shows that the launch price actually determined whether willing to buy. When the price is around 750-1250 dollars, people are very willing to buy.\n\n\n\n\n\n\n\n\nThe relation between Buying Intent and Camera Rating\n\n\nused Seaborn\nIt also shows people willingness to buy are connected to the camera’s quality. the camera score that people very willing to buy is around 130-160 range.\n\n\n\n\n\n\n\n\nTop 50 Ranking Brands\n\n\nused Matplotlib\nAs shown in the graph, there are 20% Top 50 ranking phones are apples. Which shows, Apple is still one of the most popular brands in the market.\n\n\n\n\n\n\n\n\n\nThe correlation between features\n\n\nUsed heatmap\nIt semmed that camera and launch price are correlated to each other. And the Launch price camera score and audio score are negatively correlated to each other.\n\n\n\n\n\n\n\n\nstatistics for mobile phone\n\n\nthe mean Launch price is around $773.5 and the mean score for selfie is around 130, which is obviously higher than others (this is becuase I used mean to insert missing value)\n\n\n\n\n\nfrom the analysis we can analyze what kind of features would be popular around customers. This can be used for analysis whether apple would be best product among choices. It still prove that Apple is popular among customers."
+  },
+  {
+    "objectID": "Naive_Bayes/Naive_Bayes.html",
+    "href": "Naive_Bayes/Naive_Bayes.html",
+    "title": "Introduction to Naive Bayes:",
+    "section": "",
+    "text": "The process of training the Naive Bayes algorithm is actually the process of solving each a priori probability P(Ai) and conditional probability P(Bj|Ai), and then in the prediction and classification process, it is only necessary to substitute each probability value obtained during the training process into the Bayesian formula, so as to obtain the relative probability of the results of the classification labels under the current features. The one with higher relative probability is naturally used as the predicted label.\n\n\n\n\n\n\\(P(Y|X) = (P(X|Y) * P(Y))/P(X)\\)\nP(A|B) is called the a posteriori probability, for the target to be found\nP(A) is the a priori probability, which can be statistically derived from a large amount of data, or empirically provided when the amount of data is small.\nP(B|A) is the conditional probability, which can be statistically derived from a large amount of data, and is usually given by great likelihood estimation, and is actually also the a priori probability\n\n\n\n\n\nGaussian Naive Bayes: This variant of Naive Bayes is best suited for datasets where the features are continuous and follow a Gaussian or normal distribution. It assigns a Gaussian distribution to each class and predicts the class of a new data point based on these distributions. Common applications include problems that involve continuous variables, as is often found in real-world datasets.\nMultinomial Naive Bayes: This type excels with discrete data and finds frequent application in text categorization tasks, where text is converted into word frequency vectors. However, it can also work with tf-idf vectors. It computes the conditional probability of a word given a class, making it a good choice for problems involving discrete data.\nBernoulli Naive Bayes: This method is ideal for binary or boolean features and is typically used in text classification tasks where the presence or absence of a word is more important than its frequency. It assumes that all our features are binary-valued and models the input data with a multivariate Bernoulli distribution.\n\n\n\n\nI will use Naive Bayes Algorithmn to train 2 datasets, the objective for using this is for accurately predicting the lebels for my datasets:\n\nMobile phone rating: This is a record dataset. There are features like mobiles camera scores, audio scores, display scores, etc, and those related to the customers’ willingness to buy this phone or not. The main goal for training this dataset is for repeict customer’s willingness to buy a phone or not depends on those feature scores.\nIphone 11 reviews: This is a text dataset. The text are customers reviews. The main goal for this data training is by through the reviews, predict the attitutes of the customers."
+  },
+  {
+    "objectID": "Naive_Bayes/Naive_Bayes.html#introduction-to-naive-bayes",
+    "href": "Naive_Bayes/Naive_Bayes.html#introduction-to-naive-bayes",
+    "title": "DSAN-5000: Project",
+    "section": "",
+    "text": "The process of training the Naive Bayes algorithm is actually the process of solving each a priori probability P(Ai) and conditional probability P(Bj|Ai), and then in the prediction and classification process, it is only necessary to substitute each probability value obtained during the training process into the Bayesian formula, so as to obtain the relative probability of the results of the classification labels under the current features. The one with higher relative probability is naturally used as the predicted label.\n\n\n\n\n\n\\(P(Y|X) = (P(X|Y) * P(Y))/P(X)\\)\nP(A|B) is called the a posteriori probability, for the target to be found\nP(A) is the a priori probability, which can be statistically derived from a large amount of data, or empirically provided when the amount of data is small.\nP(B|A) is the conditional probability, which can be statistically derived from a large amount of data, and is usually given by great likelihood estimation, and is actually also the a priori probability"
+  },
+  {
+    "objectID": "Naive_Bayes/Naive_Bayes.html#prepare-dataset",
+    "href": "Naive_Bayes/Naive_Bayes.html#prepare-dataset",
+    "title": "Introduction to Naive Bayes:",
+    "section": "Prepare Dataset",
+    "text": "Prepare Dataset\n\ncreate labels\nI create labels for the mobile phone by its rankings\n(code in codes/data-cleaning/mobile_phone_rating.ipynb).\n\nThe top 50 ranking phones is Very Willing\nThe 51-100 ranking phones is Moderately Willing\nThe 101-last ranking ophones is Not Willing\n\n\n\nSplit data\n(code in codes/naive_bayes/mobile_phone_rating_training)\n\nI split data into traning set 70%, validation set 15%, and test set 15%.\n70% in training will increase the accuracy for the model learning. And the rest each 15% for better identify the training results."
+  },
+  {
+    "objectID": "Naive_Bayes/Naive_Bayes.html#feature-selection",
+    "href": "Naive_Bayes/Naive_Bayes.html#feature-selection",
+    "title": "Introduction to Naive Bayes:",
+    "section": "Feature Selection",
+    "text": "Feature Selection\n(code in codes/naive_bayes/mobile_phone_rating_training)\nAccording to the number of features, I found out it nearly has no impact on the trainig. - \nThus I chose to use Vairance Thredhold for this data, after the selection, I find out the optimal thredhold. It turns out the optimal thredhold is 26.51, and the accuracy is around 88%."
+  },
+  {
+    "objectID": "Naive_Bayes/Naive_Bayes.html#naive-bayes-with-labeled-record-data",
+    "href": "Naive_Bayes/Naive_Bayes.html#naive-bayes-with-labeled-record-data",
+    "title": "Introduction to Naive Bayes:",
+    "section": "Naive Bayes with Labeled Record Data",
+    "text": "Naive Bayes with Labeled Record Data\n(code in codes/naive_bayes/mobile_phone_rating_training)\n\nHowever, after I tried several times for selecting the vairance thredhold, becuase the feature selection process above elimiating some cornor cases, but there are not that many features in my model, if i eliminating them, it would decrease my model accuracy. So after all, I found the optimal thredhold should be 45, so I choose to use that for my model.\nIn that way, the ‘Selfie’ column will be deducted, which make sense because when I did data cleaning process, there are many nulls and I use the mean to fill null.\n\n\nfinal result\n\nEvaluation Matrices\n\n\n\n\nEvaluation Metrics\n\n\nAs shown above, the accuracy of my model is 91.3% and which is very high, shows it’s a good model.\nPrecision is comparely low for the “not will”, but it’s ok, since the number of that labels are not too many.\nF-1 score and recall performs well.\nMacro Avg: Precision: 86%, Recall: 94%, F1-Score: 89% are all very high schore, shows it’s a good model to fit in.\nWeighted Avg: Precision: 93%, Recall: 91% , F1-Score: 92%, shows it’s a good model to fit in.\nIt did not show any overfitting or underfitting,since the test scores perform well.\n\n\n\nconfusion matrices\n\n\n\n\nConfusion Metrics\n\n\nAs shown above, the accuracy for predicting labels are very high. Only 2 labels are inaccurately predicted."
+  },
+  {
+    "objectID": "Naive_Bayes/Naive_Bayes.html#conclusion",
+    "href": "Naive_Bayes/Naive_Bayes.html#conclusion",
+    "title": "Introduction to Naive Bayes:",
+    "section": "Conclusion",
+    "text": "Conclusion\nThe model predict my dataset well. After he variance Thredhold feature selection, the accuracy increased from about 88% to 91.3%. Also, the model did not show overfitting/underfitting because of its traning accuracy and test accuracy are all around 90%. Thus this model can well predict how those scores impact people’s buying willingness."
+  },
+  {
+    "objectID": "Naive_Bayes/Naive_Bayes.html#prepare-dataset-1",
+    "href": "Naive_Bayes/Naive_Bayes.html#prepare-dataset-1",
+    "title": "Introduction to Naive Bayes:",
+    "section": "Prepare Dataset",
+    "text": "Prepare Dataset\n\ncreate labels\nI create labels for the mobile phone by its ratings\n(code in codes/naive_bayes/iphone_11_review_training.ipynb).\n\nThe top 50 ranking phones is Very Willing\nThe 51-100 ranking phones is Moderately Willing\nThe 101-last ranking ophones is Not Willing\n\n\n\nSplit data\n(code in codes/naive_bayes/iphone_11_review_training.ipynb).\n\nI split data into traning set 80%, and test set 20%.\n80% in training will increase the accuracy for the text model learning. Also, 20% of test dataset is enough for giving good results."
+  },
+  {
+    "objectID": "Naive_Bayes/Naive_Bayes.html#feature-selection-1",
+    "href": "Naive_Bayes/Naive_Bayes.html#feature-selection-1",
+    "title": "Introduction to Naive Bayes:",
+    "section": "Feature Selection",
+    "text": "Feature Selection\n(code in codes/naive_bayes/iphone_11_review_training.ipynb)\n\n\n\n\nfeature selection\n\n\nAs shown in the graph, when the number of features close to 600-700, the test and training accuracy score did not improve. And after that, the model indicate it’s overfitting because the taining accuracy is high but test accuracy is not that hight. So our opimal feature selection should around 600-700.\n\n\n\nrunning time\n\n\nAs shown in the graph, when the number of features close to 1000 the running time increased a lot\n\nBased on those observation, and also from the accuracy scores of each number of features, I get the optimal number of features are 640. With this feature number, the accuracy and running time are optimal."
+  },
+  {
+    "objectID": "Naive_Bayes/Naive_Bayes.html#naive-bayes-with-labeled-text-data",
+    "href": "Naive_Bayes/Naive_Bayes.html#naive-bayes-with-labeled-text-data",
+    "title": "Introduction to Naive Bayes:",
+    "section": "Naive Bayes with Labeled Text Data",
+    "text": "Naive Bayes with Labeled Text Data\n(code in codes/naive_bayes/iphone_11_review_training.ipynb)\n\n\n\n\nEvaluation Metrics\n\n\nAs shown above, the accuracy of my model is 90.11% and which is very high, shows it’s a good model.\nMacro Avg: Precision: 65%, Recall: 58%, F1-Score: 61%, those scores are comparedly not perform very well, it is because some low performance for the natural(0) class, this is also make sense, because there are not many data related to that class.\nWeighted Avg: Precision: 89%, Recall: 90% , F1-Score: 89%, shows it’s a good model to fit.\n\n\nconfusion matrices\n\n\n\n\nConfusion Metrics\n\n\nAs shown above, the accuracy for predicting right labels are very high.\nIn total, 903 data labels were predicted accurately. The model predited well in the positive and negative classes, but did not perform well in the natural class. This is because there are not so many data of natural."
+  },
+  {
+    "objectID": "Naive_Bayes/Naive_Bayes.html#conclusion-1",
+    "href": "Naive_Bayes/Naive_Bayes.html#conclusion-1",
+    "title": "Introduction to Naive Bayes:",
+    "section": "conclusion",
+    "text": "conclusion\nThe model predict my dataset well. After the number of features selection method, the accuracy can reach 90.11%. However, because the insufficient of data related to natural label class, the prediction to this class did not perform so well as expected.\nAlso, the model did not show overfitting/underfitting because of its traning accuracy and test accuracy are all around 90%.\nThus, overall the model performed well, and it can based on the text reviews predict poeple’s attitude towards iphone 11 products."
   }
 ]

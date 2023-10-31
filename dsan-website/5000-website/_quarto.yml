@@ -13,7 +13,7 @@ website:
         text: Code
       - href: https://github.com/anly501/dsan-5000-project-qinxuesherry/tree/main/data
         text: Data
-      - href: https://github.com/anly501/dsan-5000-project-qinxuesherry/tree/main/codes/01-data-gathering
+      - href: data_gathering/data_gathering.qmd
         text: Data Gathering
       - href: data_cleaning/data_cleaning.qmd
         text: Data cleaning
@@ -25,8 +25,10 @@ website:
         menu:
             - text: Classification
             - text: Regression
-      - href: eda/eda.ipynb
+      - href: eda/eda.qmd
         text: Data Exploration
+      - href: Naive_Bayes/Naive_Bayes.qmd
+        text: Naïve Bayes
       - href: ARM/ARM.qmd
         text: ARM
       - href: conclusion/conclusion.qmd

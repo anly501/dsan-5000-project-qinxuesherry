@@ -17,9 +17,16 @@ website:
         text: Data Gathering
       - href: data_cleaning/data_cleaning.qmd
         text: Data cleaning
-      - href: clustering/clustering.qmd
-        text: Clustering
-      - href: dimensionality_reduction/dimensionality_reduction.qmd
+      - text: Clustering
+        menu:
+          - href: clustering/clustering1.qmd
+            text: Introduction
+          - href: clustering/clustering.ipynb
+            text: Methods & Codes
+          - href: clustering/Results.qmd
+            text: Results Analysis & Conclusion
+            
+      - href: dimensionality_reduction/reduction.ipynb
         text: Dimensionaliy Reduction
       - text: Decision Trees
         menu:

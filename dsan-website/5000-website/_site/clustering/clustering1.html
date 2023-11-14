@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>DSAN-5000: Project – data_cleaning</title>
+<title>DSAN-5000: Project - Clustering</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -101,7 +101,7 @@ ul.task-list li input[type="checkbox"] {
  <span class="menu-text">Data Gathering</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link active" href="../data_cleaning/data_cleaning.html" rel="" target="" aria-current="page">
+    <a class="nav-link" href="../data_cleaning/data_cleaning.html" rel="" target="">
  <span class="menu-text">Data cleaning</span></a>
   </li>  
   <li class="nav-item dropdown ">
@@ -110,17 +110,21 @@ ul.task-list li input[type="checkbox"] {
     </a>
     <ul class="dropdown-menu" aria-labelledby="nav-menu-clustering">    
         <li>
-    <a class="dropdown-item" href="../clustering/clustering.ipynb" rel="" target="">
- <span class="dropdown-text">Clustering</span></a>
+    <a class="dropdown-item" href="../clustering/clustering1.html" rel="" target="">
+ <span class="dropdown-text">Introduction</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../clustering/clustering.ipynb" rel="" target="">
- <span class="dropdown-text">Code</span></a>
+    <a class="dropdown-item" href="../clustering/clustering.html" rel="" target="">
+ <span class="dropdown-text">Methods &amp; Codes</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../clustering/Results.html" rel="" target="">
+ <span class="dropdown-text">Results Analysis &amp; Conclusion</span></a>
   </li>  
     </ul>
   </li>
   <li class="nav-item">
-    <a class="nav-link" href="../dimensionality_reduction/dimensionality_reduction.html" rel="" target="">
+    <a class="nav-link" href="../dimensionality_reduction/reduction.html" rel="" target="">
  <span class="menu-text">Dimensionaliy Reduction</span></a>
   </li>  
   <li class="nav-item dropdown ">
@@ -164,48 +168,81 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#data-cleanning" id="toc-data-cleanning" class="nav-link active" data-scroll-target="#data-cleanning">Data Cleanning</a>
-  <ul class="collapse">
-  <li><a href="#python" id="toc-python" class="nav-link" data-scroll-target="#python">Python</a></li>
-  <li><a href="#r" id="toc-r" class="nav-link" data-scroll-target="#r">R</a></li>
-  </ul></li>
+  <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction">Introduction</a></li>
+  <li><a href="#theory" id="toc-theory" class="nav-link" data-scroll-target="#theory">Theory:</a></li>
+  <li><a href="#reference" id="toc-reference" class="nav-link" data-scroll-target="#reference">Reference</a></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Clustering</h1>
+</div>
 
 
-<section id="data-cleanning" class="level1">
-<h1>Data Cleanning</h1>
-<section id="python" class="level3">
-<h3 class="anchored" data-anchor-id="python">Python</h3>
-<ol type="1">
-<li>clean the news raw data (gather by Python)</li>
-</ol>
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+</header>
+
+<section id="introduction" class="level1">
+<h1>Introduction</h1>
 <ul>
-<li>Explaination: clean the raw data called iphone_content.txt, and cleaned the stop words and used CountVectorizer</li>
-<li><a href="https://github.com/anly501/dsan-5000-project-qinxuesherry/blob/main/codes/01-data-cleaning/news_cleanning.ipynb">newsapi data cleaning code (python)</a></li>
-<li><a href="https://github.com/anly501/dsan-5000-project-qinxuesherry/blob/main/data/01-modified-data/after_clean_iphone_content.txt">cleaned data for newsapi(python)</a></li>
+<li>In my Mobile Phone Rating Dataset, the features are including the ratings about the function of the mobile phones. There are 6 features, Launch Price, camera rating, selfie rating, audio rating, display rating, and battery rating.</li>
+<li>The purpose of this clustering analysis is for doing the unsupervised learning to find out the possible clusters of the dataset and what is the optimal cluster number</li>
 </ul>
 </section>
-<section id="r" class="level3">
-<h3 class="anchored" data-anchor-id="r">R</h3>
+<section id="theory" class="level1">
+<h1>Theory:</h1>
 <ol type="1">
-<li>clean the weibo hot post data (gather by Python)</li>
+<li>K means <a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a>:</li>
 </ol>
 <ul>
-<li>Explaination: clean the raw data called 微博清单.csv, and reordered the dataset, dropped unnecessary columns/rows, and cleaned the text part by segmentation and clear stop words, etc.</li>
-<li><a href="https://github.com/anly501/dsan-5000-project-qinxuesherry/blob/main/codes/01-data-cleaning/r-cleaning.Rmd">weibo data cleaning code (R)</a></li>
-<li><a href="https://github.com/anly501/dsan-5000-project-qinxuesherry/blob/main/data/01-modified-data/R_after_clean.csv">cleaned data for weibo(R)</a></li>
+<li>This is a clustering methods that trying to cluster points in k clusters. Simply put, it is to put similar things into a group, unlike Classification, for a classifier, you usually need to tell it “this thing is categorized into so-and-so” for some examples, ideally, a classifier will “learn” from the training set it gets, and thus have the ability to classify unknown data.</li>
+<li>first we need to identify the k value, which means how many clusters/group we want our dataset to be seperate. For each cluster, we can choose a center such that the distance from all points in the cluster to the center is less than the distance to the centers of the other clusters. Then, we need to caculate each points’s distance between those centroid, and seperate those points accordingly with the distance of the centroids.</li>
+<li>Strength: K-means algorithm has simple steps that are easy to understand and implement. It also has relatively low time complexity and is suitable for large-scale datasets.</li>
 </ul>
+<ol start="2" type="1">
+<li>DBSAN <a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a>:</li>
+</ol>
+<ul>
+<li>This is a clustering method that trying to cluster points by the density methods. By looking for high-density regions separated by low-density regions in the dataset, the separated high-density regions are treated as a separate category.</li>
+<li>First, we need to get a point and find the all other points’ distance that less or equall eps. If the number of points are less than min_samples, then, that point would be the noise, otherwise, the point is the core point. Next, we need to visit all points that within the distance of eps, and cluster them. Keep clutering points until all the points are visited.</li>
+<li>Strength: DBSAN algorithmn is insensitivity to outliers in the dataset, and it’s better than other algorithmn that try to seperate dataset into clusters with complex shape.</li>
+</ul>
+<ol start="3" type="1">
+<li>Hierarchical clustering <a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a>:</li>
+</ol>
+<ul>
+<li>This is a clutering method that trying to cluster points by seperating them into different layers like a tree. In this clustering method, the most famous one is Agglomerative hierarchical clustering, which is a bottom-up hierarchical clustering. Each object is a cluster at the very beginning, each time according to certain criteria will be the closest two clusters merge to generate a new cluster. So on and so forth, until eventually all objects belong to a cluster.</li>
+<li>First we make each point a cluster, then merge two closest clusters and calculate the proximity martix, and update the proximity matrix. Reapeting merging clusters and update the proximity matrix until only one cluster exist.</li>
+<li>Strength: Agglomerative hierarchical clustering is insensitivity to outliers in the dataset.</li>
+</ul>
+</section>
+<section id="reference" class="level1">
+<h1>Reference</h1>
 
 
 </section>
-</section>
 
-</main> <!-- /main -->
+
+<div id="quarto-appendix" class="default"><section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes"><h2 class="anchored quarto-appendix-heading">Footnotes</h2>
+
+<ol>
+<li id="fn1"><p>“K-Means Clustering.” Wikipedia, Wikimedia Foundation, 12 Oct.&nbsp;2023, en.wikipedia.org/wiki/K-means_clustering.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn2"><p>“DBSCAN.” Wikipedia, Wikimedia Foundation, 27 Oct.&nbsp;2023, en.wikipedia.org/wiki/DBSCAN.<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn3"><p>“Hierarchical Clustering.” Wikipedia, Wikimedia Foundation, 10 Oct.&nbsp;2023, en.wikipedia.org/wiki/Hierarchical_clustering.<a href="#fnref3" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</ol>
+</section></div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {

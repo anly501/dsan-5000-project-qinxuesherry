@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>DSAN-5000: Project – data_cleaning</title>
+<title>DSAN-5000: Project – results</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -101,7 +101,7 @@ ul.task-list li input[type="checkbox"] {
  <span class="menu-text">Data Gathering</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link active" href="../data_cleaning/data_cleaning.html" rel="" target="" aria-current="page">
+    <a class="nav-link" href="../data_cleaning/data_cleaning.html" rel="" target="">
  <span class="menu-text">Data cleaning</span></a>
   </li>  
   <li class="nav-item dropdown ">
@@ -110,17 +110,21 @@ ul.task-list li input[type="checkbox"] {
     </a>
     <ul class="dropdown-menu" aria-labelledby="nav-menu-clustering">    
         <li>
-    <a class="dropdown-item" href="../clustering/clustering.ipynb" rel="" target="">
- <span class="dropdown-text">Clustering</span></a>
+    <a class="dropdown-item" href="../clustering/clustering1.html" rel="" target="">
+ <span class="dropdown-text">Introduction</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../clustering/clustering.ipynb" rel="" target="">
- <span class="dropdown-text">Code</span></a>
+    <a class="dropdown-item" href="../clustering/clustering.html" rel="" target="">
+ <span class="dropdown-text">Methods &amp; Codes</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../clustering/Results.html" rel="" target="">
+ <span class="dropdown-text">Results Analysis &amp; Conclusion</span></a>
   </li>  
     </ul>
   </li>
   <li class="nav-item">
-    <a class="nav-link" href="../dimensionality_reduction/dimensionality_reduction.html" rel="" target="">
+    <a class="nav-link" href="../dimensionality_reduction/reduction.html" rel="" target="">
  <span class="menu-text">Dimensionaliy Reduction</span></a>
   </li>  
   <li class="nav-item dropdown ">
@@ -164,11 +168,11 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#data-cleanning" id="toc-data-cleanning" class="nav-link active" data-scroll-target="#data-cleanning">Data Cleanning</a>
+  <li><a href="#results-analysis" id="toc-results-analysis" class="nav-link active" data-scroll-target="#results-analysis">Results Analysis</a>
   <ul class="collapse">
-  <li><a href="#python" id="toc-python" class="nav-link" data-scroll-target="#python">Python</a></li>
-  <li><a href="#r" id="toc-r" class="nav-link" data-scroll-target="#r">R</a></li>
+  <li><a href="#different-methods-comparing" id="toc-different-methods-comparing" class="nav-link" data-scroll-target="#different-methods-comparing">different methods comparing</a></li>
   </ul></li>
+  <li><a href="#conclusion" id="toc-conclusion" class="nav-link" data-scroll-target="#conclusion">Conclusion</a></li>
   </ul>
 </nav>
     </div>
@@ -177,32 +181,40 @@ ul.task-list li input[type="checkbox"] {
 
 
 
-<section id="data-cleanning" class="level1">
-<h1>Data Cleanning</h1>
-<section id="python" class="level3">
-<h3 class="anchored" data-anchor-id="python">Python</h3>
+<section id="results-analysis" class="level1">
+<h1>Results Analysis</h1>
+<section id="different-methods-comparing" class="level2">
+<h2 class="anchored" data-anchor-id="different-methods-comparing">different methods comparing</h2>
+<ul>
+<li>Optimal Clusters</li>
+</ul>
 <ol type="1">
-<li>clean the news raw data (gather by Python)</li>
+<li>K-means: 2</li>
+<li>DBSCAN : 4</li>
+<li>Agglomerative Hierarchy: 2</li>
+<li>Meanshift : 4</li>
+<li>Birch : 3</li>
 </ol>
 <ul>
-<li>Explaination: clean the raw data called iphone_content.txt, and cleaned the stop words and used CountVectorizer</li>
-<li><a href="https://github.com/anly501/dsan-5000-project-qinxuesherry/blob/main/codes/01-data-cleaning/news_cleanning.ipynb">newsapi data cleaning code (python)</a></li>
-<li><a href="https://github.com/anly501/dsan-5000-project-qinxuesherry/blob/main/data/01-modified-data/after_clean_iphone_content.txt">cleaned data for newsapi(python)</a></li>
+<li>Analysis I think the better method would be Agglomerative Hierarchy for the following reasons.</li>
 </ul>
-</section>
-<section id="r" class="level3">
-<h3 class="anchored" data-anchor-id="r">R</h3>
 <ol type="1">
-<li>clean the weibo hot post data (gather by Python)</li>
+<li>It’s easier for me to use, because I do not need to identify the k clusters before using it. It would automatically give me the optimal result.</li>
+<li>Since my dataset is not that big, so using agglomerative is more effective to my dataset.</li>
+<li>It can also make me easily see the hierarchy relationships with my dataset.</li>
+<li>The final result of the optimal clusters are 2 is making sense, because in my original dataset, I labeled them into 3 clusters and it turned out that for the “nature” cluster, there’s not that many dataset belongs to this cluster.</li>
+<li>Compared to K-means, as shown in the graphs of K-means, the elbow is not that obvious for me. Compared to DBSCAN and Meansift’s result, I think 4 clusters would make the clusters contained not enough data points.</li>
+<li>After observations, I believe the higher of the price and the other function rating features would be seperated into a cluster. And the lower of the price and the other function rating features would be seperated into another cluster.</li>
 </ol>
-<ul>
-<li>Explaination: clean the raw data called 微博清单.csv, and reordered the dataset, dropped unnecessary columns/rows, and cleaned the text part by segmentation and clear stop words, etc.</li>
-<li><a href="https://github.com/anly501/dsan-5000-project-qinxuesherry/blob/main/codes/01-data-cleaning/r-cleaning.Rmd">weibo data cleaning code (R)</a></li>
-<li><a href="https://github.com/anly501/dsan-5000-project-qinxuesherry/blob/main/data/01-modified-data/R_after_clean.csv">cleaned data for weibo(R)</a></li>
-</ul>
-
-
 </section>
+</section>
+<section id="conclusion" class="level1">
+<h1>Conclusion</h1>
+<p>I belive the agglomerative Hierarchy algorithm is better to predict the clusters for my dataset and the optimal clusters would be 2.</p>
+<p>Thus, for my dataset, it should be seperate into to clusters about people’s willingness of buying a mobile phone is not willing or willing depend on the functions of the mobile phones.</p>
+<p>In conclusion, the mobile phones’ functionalities and prices impacted people’s buying intent, thus pople are more interested in the phone with good function ratings and high prices. Also, people are less willing to buy a phoen with bad function ratings and low prices.</p>
+
+
 </section>
 
 </main> <!-- /main -->

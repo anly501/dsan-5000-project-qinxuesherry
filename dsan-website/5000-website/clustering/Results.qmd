@@ -1,0 +1,28 @@
+# Results Analysis
+
+## different methods comparing
+- Optimal Clusters
+1. K-means: 2
+2. DBSCAN : 4
+3. Agglomerative Hierarchy: 2
+4. Meanshift : 4
+5. Birch : 3
+
+- Analysis
+I think the better method would be Agglomerative Hierarchy for the following reasons.
+1. It's easier for me to use, because I do not need to identify the k clusters before using it. It would automatically give me the optimal result.
+2. Since my dataset is not that big, so using agglomerative is more effective to my dataset.
+3. It can also make me easily see the hierarchy relationships with my dataset.
+4. The final result of the optimal clusters are 2 is making sense, because in my original dataset, I labeled them into 3 clusters and it turned out that for the "nature" cluster, there's not that many dataset belongs to this cluster.
+5. Compared to K-means, as shown in the graphs of K-means, the elbow is not that obvious for me. Compared to DBSCAN and Meansift's result, I think 4 clusters would make the clusters contained not enough data points. 
+6. After observations, I believe the higher of the price and the other function rating features would be seperated into a cluster. And the lower of the price and the other function rating features would be seperated into another cluster. 
+
+# Conclusion
+I belive the agglomerative Hierarchy algorithm is better to predict the clusters for my dataset and the optimal clusters would be 2.
+
+Thus, for my dataset, it should be seperate into to clusters about people's willingness of buying a mobile phone is not willing or willing depend on the functions of the mobile phones. 
+
+In conclusion, the mobile phones' functionalities and prices impacted people's buying intent, thus pople are more interested in the phone with good function ratings and high prices. Also, people are less willing to buy a phoen with bad function ratings and low prices.
+
+
+

@@ -97,19 +97,34 @@ ul.task-list li input[type="checkbox"] {
  <span class="menu-text">Data</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="https://github.com/anly501/dsan-5000-project-qinxuesherry/tree/main/codes/01-data-gathering" rel="" target="">
+    <a class="nav-link" href="../data_gathering/data_gathering.html" rel="" target="">
  <span class="menu-text">Data Gathering</span></a>
   </li>  
   <li class="nav-item">
     <a class="nav-link" href="../data_cleaning/data_cleaning.html" rel="" target="">
  <span class="menu-text">Data cleaning</span></a>
   </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="../clustering/clustering.html" rel="" target="">
- <span class="menu-text">Clustering</span></a>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-clustering" role="button" data-bs-toggle="dropdown" aria-expanded="false" rel="" target="">
+ <span class="menu-text">Clustering</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-clustering">    
+        <li>
+    <a class="dropdown-item" href="../clustering/clustering1.html" rel="" target="">
+ <span class="dropdown-text">Introduction</span></a>
   </li>  
+        <li>
+    <a class="dropdown-item" href="../clustering/clustering.html" rel="" target="">
+ <span class="dropdown-text">Methods &amp; Codes</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../clustering/Results.html" rel="" target="">
+ <span class="dropdown-text">Results Analysis &amp; Conclusion</span></a>
+  </li>  
+    </ul>
+  </li>
   <li class="nav-item">
-    <a class="nav-link" href="../dimensionality_reduction/dimensionality_reduction.html" rel="" target="">
+    <a class="nav-link" href="../dimensionality_reduction/reduction.html" rel="" target="">
  <span class="menu-text">Dimensionaliy Reduction</span></a>
   </li>  
   <li class="nav-item dropdown ">
@@ -117,13 +132,23 @@ ul.task-list li input[type="checkbox"] {
  <span class="menu-text">Decision Trees</span>
     </a>
     <ul class="dropdown-menu" aria-labelledby="nav-menu-decision-trees">    
-        <li class="dropdown-header">Classification</li>
-        <li class="dropdown-header">Regression</li>
+        <li>
+    <a class="dropdown-item" href="../decision_trees/tree.html" rel="" target="">
+ <span class="dropdown-text">Codes</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../decision_trees/decision_trees.html" rel="" target="">
+ <span class="dropdown-text">Analysis</span></a>
+  </li>  
     </ul>
   </li>
   <li class="nav-item">
     <a class="nav-link" href="../eda/eda.html" rel="" target="">
  <span class="menu-text">Data Exploration</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../Naive_Bayes/Naive_Bayes.html" rel="" target="">
+ <span class="menu-text">Naïve Bayes</span></a>
   </li>  
   <li class="nav-item">
     <a class="nav-link" href="../ARM/ARM.html" rel="" target="">
@@ -145,7 +170,13 @@ ul.task-list li input[type="checkbox"] {
 <!-- sidebar -->
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction">Introduction</a></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -153,8 +184,12 @@ ul.task-list li input[type="checkbox"] {
 
 
 <p>Decision Trees</p>
+<section id="introduction" class="level1">
+<h1>Introduction</h1>
+<p>A tree structure that describes instance classification is called a classification decision tree model. The nodes and directed edges create a decision tree. Inner nodes and leaf nodes are the two distinct types of nodes. Leaf nodes indicate a class, while internal nodes represent as a feature or attribute. A decision tree, additionally referred to as a binary or multinomial tree, is a predictive analytical model displayed as a tree structure.</p>
 
 
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">

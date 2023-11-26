@@ -28,10 +28,8 @@ website:
             
       - href: dimensionality_reduction/reduction.ipynb
         text: Dimensionaliy Reduction
-      - text: Decision Trees
-        menu:
-            - text: Classification
-            - text: Regression
+      - href: decision_trees/tree.ipynb
+        text: Decision Trees
       - href: eda/eda.qmd
         text: Data Exploration
       - href: Naive_Bayes/Naive_Bayes.qmd

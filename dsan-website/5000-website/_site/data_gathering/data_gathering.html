@@ -125,23 +125,12 @@ ul.task-list li input[type="checkbox"] {
   </li>
   <li class="nav-item">
     <a class="nav-link" href="../dimensionality_reduction/reduction.html" rel="" target="">
- <span class="menu-text">Dimensionaliy Reduction</span></a>
+ <span class="menu-text">Dimensionality Reduction</span></a>
   </li>  
-  <li class="nav-item dropdown ">
-    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-decision-trees" role="button" data-bs-toggle="dropdown" aria-expanded="false" rel="" target="">
- <span class="menu-text">Decision Trees</span>
-    </a>
-    <ul class="dropdown-menu" aria-labelledby="nav-menu-decision-trees">    
-        <li>
-    <a class="dropdown-item" href="../decision_trees/tree.html" rel="" target="">
- <span class="dropdown-text">Codes</span></a>
+  <li class="nav-item">
+    <a class="nav-link" href="../decision_trees/tree.html" rel="" target="">
+ <span class="menu-text">Decision Trees</span></a>
   </li>  
-        <li>
-    <a class="dropdown-item" href="../decision_trees/decision_trees.html" rel="" target="">
- <span class="dropdown-text">Analysis</span></a>
-  </li>  
-    </ul>
-  </li>
   <li class="nav-item">
     <a class="nav-link" href="../eda/eda.html" rel="" target="">
  <span class="menu-text">Data Exploration</span></a>
@@ -176,8 +165,18 @@ ul.task-list li input[type="checkbox"] {
   <ul>
   <li><a href="#data-gathering" id="toc-data-gathering" class="nav-link active" data-scroll-target="#data-gathering">Data Gathering</a>
   <ul class="collapse">
-  <li><a href="#python" id="toc-python" class="nav-link" data-scroll-target="#python">Python</a></li>
-  <li><a href="#r" id="toc-r" class="nav-link" data-scroll-target="#r">R</a></li>
+  <li><a href="#main-goal" id="toc-main-goal" class="nav-link" data-scroll-target="#main-goal">Main Goal</a></li>
+  <li><a href="#dataset-finding" id="toc-dataset-finding" class="nav-link" data-scroll-target="#dataset-finding">Dataset finding</a></li>
+  <li><a href="#tools-using" id="toc-tools-using" class="nav-link" data-scroll-target="#tools-using">Tools using</a></li>
+  <li><a href="#data-gathering-1" id="toc-data-gathering-1" class="nav-link" data-scroll-target="#data-gathering-1">Data Gathering</a>
+  <ul class="collapse">
+  <li><a href="#gathering-data-of-hot-posts-from-weibo" id="toc-gathering-data-of-hot-posts-from-weibo" class="nav-link" data-scroll-target="#gathering-data-of-hot-posts-from-weibo">Gathering data of hot posts from Weibo</a></li>
+  <li><a href="#gathering-data-of-news-text" id="toc-gathering-data-of-news-text" class="nav-link" data-scroll-target="#gathering-data-of-news-text">Gathering data of news text</a></li>
+  <li><a href="#gathering-data-of-news-from-website" id="toc-gathering-data-of-news-from-website" class="nav-link" data-scroll-target="#gathering-data-of-news-from-website">Gathering data of news from website</a></li>
+  <li><a href="#stock-data-from-yahoo-finance" id="toc-stock-data-from-yahoo-finance" class="nav-link" data-scroll-target="#stock-data-from-yahoo-finance">Stock data from Yahoo! Finance</a></li>
+  <li><a href="#mobile-phones-function-rating" id="toc-mobile-phones-function-rating" class="nav-link" data-scroll-target="#mobile-phones-function-rating">Mobile phones function rating</a></li>
+  <li><a href="#conclusion-and-next-step" id="toc-conclusion-and-next-step" class="nav-link" data-scroll-target="#conclusion-and-next-step">Conclusion and Next Step</a></li>
+  </ul></li>
   </ul></li>
   </ul>
 </nav>
@@ -189,40 +188,91 @@ ul.task-list li input[type="checkbox"] {
 
 <section id="data-gathering" class="level1">
 <h1>Data Gathering</h1>
-<section id="python" class="level3">
-<h3 class="anchored" data-anchor-id="python">Python</h3>
-<ol type="1">
-<li>Gathering data of hot post from Weibo</li>
-</ol>
+<section id="main-goal" class="level2">
+<h2 class="anchored" data-anchor-id="main-goal">Main Goal</h2>
+<p>For this project, the main point is finding people’s attitude towards Apple Products and evaluate what kind of mobile products would attract the public to purchase. Thus I need to find both text data to reflect people’s attitude towards Apple Products and record data to evaluate the products’ popularity and people’s buying willingness. Thus, I need search online to find either people’s comments towards Apple Products or the news’ reports related to Apple products. Also, I need to find some dataset to evaluate what kinds of mobile products that would be popular in the market, so when the new generation of Apple Products come out we can predict the new products’ popularity.</p>
+</section>
+<section id="dataset-finding" class="level2">
+<h2 class="anchored" data-anchor-id="dataset-finding">Dataset finding</h2>
 <ul>
-<li>Explaination: crawl data from Chinese social platform, Weibo, to catch some hot posts about people’s reaction to the new publishion of Apple product</li>
+<li>News API: Gathering news’ reports to reflect the public attitudes towards Apple products.</li>
+<li>News Webpage: Collect more news reports to reflect the public attitudes</li>
+<li>Weibo: Crawl comments from the social media to see the users’ reaction to the new Apple Products</li>
+<li>Yahoo! Finance: collect Apple’s recent stock performance and this also can reflect the apple products’ popularity.</li>
+<li>Mobile phone ratings: trying to find a dataset that have ratings related to all different functions of the mobile phones and what their popularity with the mobile phones.</li>
+</ul>
+</section>
+<section id="tools-using" class="level2">
+<h2 class="anchored" data-anchor-id="tools-using">Tools using</h2>
+<ul>
+<li>Python</li>
+<li>R</li>
+<li>News API</li>
+<li>Downloading Dataset</li>
+</ul>
+</section>
+<section id="data-gathering-1" class="level2">
+<h2 class="anchored" data-anchor-id="data-gathering-1">Data Gathering</h2>
+<section id="gathering-data-of-hot-posts-from-weibo" class="level3">
+<h3 class="anchored" data-anchor-id="gathering-data-of-hot-posts-from-weibo">Gathering data of hot posts from Weibo</h3>
+<ul>
+<li>Python, Web crawl</li>
+<li>Dataset Collecrion: Weibo is a Chinese social platform that Chinese public sharing thoughts and post articles. There are 52 illion daily active users via that social media.I crawled data from Weibo to catch some hot posts about people’s reaction to the new publishion of Apple products. Most of the articles relected strong sentiments towards the products</li>
 <li><a href="https://github.com/anly501/dsan-5000-project-qinxuesherry/blob/main/codes/01-data-gathering/wb_python_gathering.py">weibo data gathering code (python)</a></li>
 <li><a href="https://github.com/anly501/dsan-5000-project-qinxuesherry/blob/main/data/00-raw-data/%E5%BE%AE%E5%8D%9A%E6%B8%85%E5%8D%95.csv">raw data for weibo(python)</a></li>
 <li>sample raw data <img src="../images/weibo_raw.png" class="img-fluid" alt="weibo raw data Python"></li>
+<li>Dataset Exaplaination: From the view of dataset, this is a text dataset and we can see the users’ ID and the publish dates and also the contents and commens(in Chinese).</li>
 </ul>
-<ol start="2" type="1">
-<li>Gathering data of news text</li>
-</ol>
+</section>
+<section id="gathering-data-of-news-text" class="level3">
+<h3 class="anchored" data-anchor-id="gathering-data-of-news-text">Gathering data of news text</h3>
 <ul>
-<li>Exaplaination: crawl data by using NewsAPI and try to extract some key words from the news, and see what’s the attitude of media towards the Iphone.</li>
+<li>Python, News API</li>
+<li>Dataset Collection: crawl data by using NewsAPI with Python and try to extract some key words from the news. The news API can help me to find the most updated articles related to the topics I am trying to search and based on the contens, I can analyze those text to see what’s the attitude of media towards the iPhone.</li>
 <li><a href="https://github.com/anly501/dsan-5000-project-qinxuesherry/blob/main/codes/01-data-gathering/news_python_gathering.py">News data gathering code (python)</a></li>
 <li><a href="https://github.com/anly501/dsan-5000-project-qinxuesherry/blob/main/data/00-raw-data/iphone_content.txt">raw data for newsAPI(python)</a></li>
 <li>sample raw data <img src="../images/news_raw.png" class="img-fluid" alt="news raw data Python"></li>
+<li>Dataset Exaplaination: As shown above, this is a text dataset and we can read all the articles that News API collected.</li>
 </ul>
 </section>
-<section id="r" class="level3">
-<h3 class="anchored" data-anchor-id="r">R</h3>
-<ol type="1">
-<li>Gathering data of news from website</li>
-</ol>
+<section id="gathering-data-of-news-from-website" class="level3">
+<h3 class="anchored" data-anchor-id="gathering-data-of-news-from-website">Gathering data of news from website</h3>
 <ul>
-<li>Exaplaination: craw text by using Rvest and get content from the news website.</li>
+<li>R, Rvest</li>
+<li>Dataset Collection: Revest is also an useful tool to help up to crawl conetent from the website we want. I used Rvest to craw text with R and get content from the news website I selected.</li>
 <li><a href="https://github.com/anly501/dsan-5000-project-qinxuesherry/blob/main/codes/01-data-gathering/r_gathering.Rmd">News webpage data gathering code (R)</a></li>
 <li><a href="https://github.com/anly501/dsan-5000-project-qinxuesherry/blob/main/data/00-raw-data/R_raw_data.csv">raw data for news webpage(R)</a></li>
 <li>sample raw data <img src="../images/newsweb_raw_R.png" class="img-fluid" alt="news webpage raw data R"></li>
+<li>Dataset Exaplaination: as shown in above, as shown above, this is also a text dataset and we can read all the articles that Rvest collected.</li>
 </ul>
+</section>
+<section id="stock-data-from-yahoo-finance" class="level3">
+<h3 class="anchored" data-anchor-id="stock-data-from-yahoo-finance">Stock data from Yahoo! Finance</h3>
+<ul>
+<li>Downloading from Yahoo! Finance</li>
+<li>Dataset Collection: Stock price and trend also can reflect the company’s popularity and how the public’s attitude towards the company. Thus I downloaded the Apple stock’s recent stock price and trying to analyze its stock trend.</li>
+<li><a href="https://finance.yahoo.com/quote/AAPL?p=AAPL&amp;.tsrc=fin-srch">Dataset source: Apple Stock in Yahoo! Finance</a></li>
+<li>sample raw data <img src="../images/apple_stock_dataset.png" class="img-fluid" alt="Apple Stock Dataset"></li>
+<li>Dataset Explaination: As shown in the dataset, this is a record dataset. We can see there’s the date, Openprice, highest price, lowest Price, close price, and trading volume. Based on this dataset, for nect next step we can analyze its stock prices changes.</li>
+</ul>
+</section>
+<section id="mobile-phones-function-rating" class="level3">
+<h3 class="anchored" data-anchor-id="mobile-phones-function-rating">Mobile phones function rating</h3>
+<ul>
+<li>Collecting from Dxomark</li>
+<li>Dataset collection: The dataset that evaluate the functions for a mobile phone can help me to identify the public’s buying willingness to the product. Thus I collected the dataset from the DXOMARK website that reflect the device’s performance and the quality of the user experience.</li>
+<li><a href="https://www.dxomark.com/smartphones/">Dataset source: DXOMARK smartphone reviews</a></li>
+<li>sample raw data <img src="../images/mobile_rating_dataset.png" class="img-fluid" alt="Mobile Phone Ratings"></li>
+<li>Dataset Explaination: As shown in the dataset, this is a record dataset. The dataset has its ranking and devices’ name, its Launch price, Launche date, camera rating, selfie rating, audio rating, display rating and battery ratings. All those ratings are important factors that impact the customers’ buying inetent. Thus this dataset will help me to predict wether a smartphone product will be popular based on the ratings.</li>
+</ul>
+</section>
+<section id="conclusion-and-next-step" class="level3">
+<h3 class="anchored" data-anchor-id="conclusion-and-next-step">Conclusion and Next Step</h3>
+<p>In this part, I collected 5 different datasets that related to my research topic, Apple Products’ Popularity. The datasets are including text data and record data. The methods I used to collect data are using news API, crawling data with Python, Rvest with R, and downloading related data directly from the website.</p>
+<p>Next step I will clean and modified the data as need for preparing for the future model training.</p>
 
 
+</section>
 </section>
 </section>
 

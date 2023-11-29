@@ -1,28 +1,63 @@
 # Data Gathering
 
-### Python
+## Main Goal
+For this project, the main point is finding people's attitude towards Apple Products and evaluate what kind of mobile products would attract the public to purchase. Thus I need to find both text data to reflect people's attitude towards Apple Products and record data to evaluate the products' popularity and people's buying willingness. Thus, I need search online to find either people's comments towards Apple Products or the news' reports related to Apple products. Also, I need to find some dataset to evaluate what kinds of mobile products that would be popular in the market, so when the new generation of Apple Products come out we can predict the new products' popularity.
 
-1. Gathering data of hot post from Weibo
-* Explaination: crawl data from Chinese social platform, Weibo, to catch some hot posts about people's reaction to the new publishion of Apple product
+## Dataset finding
+* News API: Gathering news' reports to reflect the public attitudes towards Apple products.
+* News Webpage: Collect more news reports to reflect the public attitudes
+* Weibo: Crawl comments from the social media to see the users' reaction to the new Apple Products
+* Yahoo! Finance: collect Apple's recent stock performance and this also can reflect the apple products' popularity.
+* Mobile phone ratings: trying to find a dataset that have ratings related to all different functions of the mobile phones and what their popularity with the mobile phones.
+
+## Tools using
+* Python
+* R
+* News API
+* Downloading Dataset
+
+## Data Gathering
+### Gathering data of hot posts from Weibo
+* Python, Web crawl
+* Dataset Collecrion: Weibo is a Chinese social platform that Chinese public sharing thoughts and post articles. There are 52 illion daily active users via that social media.I crawled data from Weibo to catch some hot posts about people's reaction to the new publishion of Apple products. Most of the articles relected strong sentiments towards the products
 * <a href="https://github.com/anly501/dsan-5000-project-qinxuesherry/blob/main/codes/01-data-gathering/wb_python_gathering.py">weibo data gathering code (python)</a>
 * <a href="https://github.com/anly501/dsan-5000-project-qinxuesherry/blob/main/data/00-raw-data/%E5%BE%AE%E5%8D%9A%E6%B8%85%E5%8D%95.csv">raw data for weibo(python)</a>
 * sample raw data ![weibo raw data Python](/images/weibo_raw.png)
+* Dataset Exaplaination: From the view of dataset, this is a text dataset and we can see the users' ID and the publish dates and also the contents and commens(in Chinese).
 
 
-
-2. Gathering data of news text
-* Exaplaination: crawl data by using NewsAPI and try to extract some key words from the news, and see what's the attitude of media towards the Iphone.
+### Gathering data of news text
+* Python, News API
+* Dataset Collection: crawl data by using NewsAPI with Python and try to extract some key words from the news. The news API can help me to find the most updated articles related to the topics I am trying to search and based on the contens, I can analyze those text to see what's the attitude of media towards the iPhone.
 * <a href="https://github.com/anly501/dsan-5000-project-qinxuesherry/blob/main/codes/01-data-gathering/news_python_gathering.py">News data gathering code (python)</a>
 * <a href="https://github.com/anly501/dsan-5000-project-qinxuesherry/blob/main/data/00-raw-data/iphone_content.txt">raw data for newsAPI(python)</a>
 * sample raw data ![news raw data Python](/images/news_raw.png)
+* Dataset Exaplaination: As shown above, this is a text dataset and we can read all the articles that News API collected.
 
 
-
-### R
-
-1. Gathering data of news from website
-* Exaplaination: craw text by using Rvest and get content from the news website.
+### Gathering data of news from website
+* R, Rvest
+* Dataset Collection: Revest is also an useful tool to help up to crawl conetent from the website we want. I used Rvest to craw text with R and get content from the news website I selected.
 * <a href="https://github.com/anly501/dsan-5000-project-qinxuesherry/blob/main/codes/01-data-gathering/r_gathering.Rmd">News webpage data gathering code (R)</a>
 * <a href="https://github.com/anly501/dsan-5000-project-qinxuesherry/blob/main/data/00-raw-data/R_raw_data.csv">raw data for news webpage(R)</a>
 * sample raw data ![news webpage raw data R](/images/newsweb_raw_R.png)
+* Dataset Exaplaination: as shown in above, as shown above, this is also a text dataset and we can read all the articles that Rvest collected.
 
+### Stock data from Yahoo! Finance
+* Downloading from Yahoo! Finance
+* Dataset Collection: Stock price and trend also can reflect the company's popularity and how the public's attitude towards the company. Thus I downloaded the Apple stock's recent stock price and trying to analyze its stock trend. 
+* <a href="https://finance.yahoo.com/quote/AAPL?p=AAPL&.tsrc=fin-srch">Dataset source: Apple Stock in Yahoo! Finance</a>
+* sample raw data ![Apple Stock Dataset](/images/apple_stock_dataset.png)
+* Dataset Explaination: As shown in the dataset, this is a record dataset. We can see there's the date, Openprice, highest price, lowest Price, close price, and trading volume. Based on this dataset, for nect next step we can analyze its stock prices changes.
+
+### Mobile phones function rating
+* Collecting from Dxomark
+* Dataset collection: The dataset that evaluate the functions for a mobile phone can help me to identify the public's buying willingness to the product. Thus I collected the dataset from the DXOMARK website that reflect the device’s performance and the quality of the user experience.
+* <a href="https://www.dxomark.com/smartphones/">Dataset source: DXOMARK smartphone reviews</a>
+* sample raw data ![Mobile Phone Ratings](/images/mobile_rating_dataset.png)
+* Dataset Explaination: As shown in the dataset, this is a record dataset. The dataset has its ranking and devices' name, its Launch price, Launche date, camera rating, selfie rating, audio rating, display rating and battery ratings. All those ratings are important factors that impact the customers' buying inetent. Thus this dataset will help me to predict wether a smartphone product will be popular based on the ratings.
+
+### Conclusion and Next Step
+In this part, I collected 5 different datasets that related to my research topic, Apple Products' Popularity. The datasets are including text data and record data. The methods I used to collect data are using news API, crawling data with Python, Rvest with R, and downloading related data directly from the website.
+
+Next step I will clean and modified the data as need for preparing for the future model training.

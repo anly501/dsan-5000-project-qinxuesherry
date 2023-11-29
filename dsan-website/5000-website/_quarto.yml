@@ -27,7 +27,7 @@ website:
             text: Results Analysis & Conclusion
             
       - href: dimensionality_reduction/reduction.ipynb
-        text: Dimensionaliy Reduction
+        text: Dimensionality Reduction
       - href: decision_trees/tree.ipynb
         text: Decision Trees
       - href: eda/eda.qmd
@@ -40,7 +40,7 @@ website:
         text: Conclusion
 format:
   html:
-    theme: flatly
+    theme: journal
     toc: true
 
 

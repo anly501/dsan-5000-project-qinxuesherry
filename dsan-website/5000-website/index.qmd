@@ -4,22 +4,32 @@ title: "DSAN-5000: Introduction"
 
 See the following link for more information about the author: [about me](../../index.html)
 
-This is a Quarto website.
+# iPhone's Popularity In the Market
 
-To learn more about Quarto websites visit <https://quarto.org/docs/websites>.
+## Topics Introduction
+* `summary`
+  
+   Over the decades, Apple's products are always the most popular products in the markets. However, with more and more new products introduced to the market. Is Apple products, especially iphone, are still popular in the market?
+* `Importance`
+  
+   The iPhone has significantly influenced technology and culture since its introduction in 2007. It has influenced and impacted a genration, thus everyone curious about how apple performed in the recent years. Its role in shaping consumer behaviors, communication norms, and mobile technology makes it a rich subject for study.
+* `Why the reader should continue`
 
-
-## 1. Topics Introduction: iPhone's popularity in the markey
-* summary: Over the decades, Apple's products are always the most popular products in the markets. However, with more and more new products introduced to the market. Is Apple products, especially iphone, are still popular in the market?
-* Importance: The iPhone has significantly influenced technology and culture since its introduction in 2007. It has influenced and impacted a genration, thus everyone curious about how apple performed in the recent years. Its role in shaping consumer behaviors, communication norms, and mobile technology makes it a rich subject for study.
-* Why the reader should continue: The choices and preferences of iPhone users can reflect broader trends in consumer behavior. Consumers can pick better products through this research topic and see how consumers react to Apple's products.
-* what work had done: The researchers had done many data collection, data preprocessing, and set up machine learning models to do the logistic regression, decision trees and random forest, etc. They also had done so many behavioral analysis to analyze the popularity trend for electronic products.
-* what are the “different points of views”/interpretations in the literature: Some literature emphasizes Apple's commitment to innovation and high-quality products as a key factor in its popularity. This view holds that the company's focus on design, user experience, and robust performance drives consumer preference. Some authors also discuss Apple's cultural impact, suggesting that its products have become more than just technology but a part of modern culture. 
-* what exploring: 
+   The choices and preferences of iPhone users can reflect broader trends in consumer behavior. Consumers can pick better products through this research topic and see how consumers react to Apple's products.
+* `what work had done`
+  
+   The researchers had done many data collection, data preprocessing, and set up machine learning models to do the logistic regression, decision trees and random forest, etc. They also had done so many behavioral analysis to analyze the popularity trend for electronic products.
+* `what are the “different points of views”/interpretations in the literature`
+  
+  Some literature emphasizes Apple's commitment to innovation and high-quality products as a key factor in its popularity. This view holds that the company's focus on design, user experience, and robust performance drives consumer preference. Some authors also discuss Apple's cultural impact, suggesting that its products have become more than just technology but a part of modern culture. 
+* `what exploring`: 
+  
   1. We can explore how people evaluate an electronic products as a good products.
   2. We can explore the stock market for the Apple Products and how it stock prices changes
   3. We can collect customers' review/news on Apple products, to see how everyone like apple's products.
-* goals and hypothesis: clean the data I collect and find some factors that impact the financial fraud and make a fraud detetction model.
+* `goals and hypothesis`
+  
+   clean the data I collect and find some factors that impact the financial fraud and make a fraud detetction model.
 
 ## 2. 10 questions to address
 * Can customer reviews and sentiment analysis on social media predict the market success of a new Apple product release?
@@ -41,8 +51,7 @@ To learn more about Quarto websites visit <https://quarto.org/docs/websites>.
 
 `Abstract`
 
-* 
-The purpose of the paper is to understand if the online consumer reviews differ across the review platforms over the internet. We aim to find the features of the reviews from various platforms and ultimately create a typology of the reviews for those platforms. We apply mixed methods including both quantitative and qualitative techniques to arrive at the conclusion. We find consumers share their views on the highest number of topics in the ecommerce website. Consumers share in-depth views, but on a limited number of topics in other dedicated review platforms. Social media falls somewhere in the middle among these two platforms. While looking into the contents, we could generate themes and meta-themes from these reviews. Based on these facts, we create a typology/ontology for reviews from these platforms and map the motives of reviewers from each platform into the meta-themes identified. Managers can use our findings to boost their online review strategy according to the platform of their interest.
+* The purpose of the paper is to understand if the online consumer reviews differ across the review platforms over the internet. We aim to find the features of the reviews from various platforms and ultimately create a typology of the reviews for those platforms. We apply mixed methods including both quantitative and qualitative techniques to arrive at the conclusion. We find consumers share their views on the highest number of topics in the ecommerce website. Consumers share in-depth views, but on a limited number of topics in other dedicated review platforms. Social media falls somewhere in the middle among these two platforms. While looking into the contents, we could generate themes and meta-themes from these reviews. Based on these facts, we create a typology/ontology for reviews from these platforms and map the motives of reviewers from each platform into the meta-themes identified. Managers can use our findings to boost their online review strategy according to the platform of their interest.
 
 ### The influence of brand popularity, perceived quality, price, and need on purchase intention iPhone products in Purwokerto[^2]
 [^2]: Rizaldi, Herna. " The influence of brand popularity, perceived quality, price, and need on purchase intention iPhone products in Purwokerto." Jurnal Akuntansi, Manajemen dan Ekonomi [Online], 24.2 (2022): 14-22. Web. 7 Nov. 2023
@@ -51,36 +60,7 @@ The purpose of the paper is to understand if the online consumer reviews differ 
 
 * This study is a survey research that aims to determine and analyze the effect of brand popularity, perceived quality, price, and need on purchase intentions on iPhone products at Purwokerto city. The sample size in this study amounted to 120 using purposive sampling technique. Based on the results of data processing, it is known that brand popularity has no significant and negative effect on purchase intention. Price has a significant and negative effect on purchase intention. Perceived quality and need have a significant and positive effect on purchase intention. The findings in this study are that popularity is not always a consumer factor in generating purchase intentions, while the factor that has the greatest influence on purchase intentions is need.
 
-`HIGHLY RECOMMENDED` 
+## Next Steps:
+To complete this research topic, I need to find datasets and related information related to people's reviews that reflect people's actual reaction related to Apple brands and iPhone Products. Also, I need to find some datasets that can help me to research what kind of quality of functions that would attract a customer to purchase. Whether Apple products perform well in those functions area?
 
-* It is `highly recommended` that you build your website using `.ipynb` files and NOT `.qmd`files
-* Functionally the two formats are basically identical, i.e. they are just `Markdown` + `Code` 
-* However there is `ONE MAJOR DIFFERENCE`, i.e. `.ipynb` stores the code outputs in the meta-data of the file
-  * This means you `ONLY HAVE TO RUN THE CODE ONCE` with `.ipynb`
-  * `.qmd` will run the code every time you build the website, which can be very slow
-    * There are `caching` options for `.qmd`, however, they are "messier" that just using `.ipynb`
-  * **Note**: `.qmd` is fine if there is no code, in which case it is basically just a `Markdown` file
-* Converting between the two
-  * You can switch between the two formats using 
-  * `quarto convert clustering.qmd` this will output a `.ipynb` version called `clustering.ipynb`
-  * `quarto convert eda.ipynb` this will output a `.qmd` version called `eda.qmd`
-* YOU CAN RUN `R CODE` IN VSC WITH `.ipynb`, see the following link 
-  * [https://saturncloud.io/blog/how-to-use-jupyter-r-kernel-with-visual-studio-code/](https://saturncloud.io/blog/how-to-use-jupyter-r-kernel-with-visual-studio-code/)
-* It is possible, but `NOT RECOMMENDED`, to mix Python and R code in the same file
-
-
-`IMPORTANT ASIDE`
-
-*  A `.ipynb` file is simply a `JSON` file with a specialized structural format
-*  You can see this by running `more eda/eda.ipynb` from the command line
-* Which will output the following;    
-    ![](images/2023-08-23-09-39-14.png){width=500}
-
-`TIP FOR MAC USERS`
-
-* `command+control+shift+4` is very useful on a mac. 
-  * It takes a screenshot and saves it to the clip-board 
-* The following VSC extension allows you to paste images from the clip-board with `alt+command+v`.    
-    ![](images/2023-08-23-09-35-05.png){width=300}
-* `tab` is your best friend when using the command line, since it does `auto-completion` 
-* `open ./path_to_file` will open any file or directory from the command line 
+After I collected the datasets, I need to clean them as needed and prepare for the future model use and data analysis process.

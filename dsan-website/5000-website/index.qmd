@@ -29,7 +29,7 @@ See the following link for more information about the author: [about me](../../i
   3. We can collect customers' review/news on Apple products, to see how everyone like apple's products.
 * `goals and hypothesis`
   
-   clean the data I collect and find some factors that impact the financial fraud and make a fraud detetction model.
+   The purpose of this study is to determine whether Apple products are still in demand and to ascertain how the general public feels about the company's latest offerings. In addition, I'd like to know what specifications a mobile phone should have in order to draw in customers. So that when the next generation of iPhones came out, I could use this model to predict its popularity, I should train some models that can predict a product's popularity based on its functions.
 
 ## 2. 10 questions to address
 * Can customer reviews and sentiment analysis on social media predict the market success of a new Apple product release?

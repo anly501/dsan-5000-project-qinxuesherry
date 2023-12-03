@@ -119,7 +119,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
  <span class="menu-text">Introduction</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../../../index.html" rel="" target="">
+    <a class="nav-link" href="../about_me/about.html" rel="" target="">
  <span class="menu-text">About Me</span></a>
   </li>  
   <li class="nav-item">
@@ -244,7 +244,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h2 class="anchored" data-anchor-id="dimensionality-introduction">Dimensionality introduction</h2>
 <p>In the field of machine learning, the dimensionality reduction refers to the use of some kind of projection method to project the data points in the original high-dimensional space to a lower dimensional space. By dimensionality reduction, we can reduce the error caused by redundant information and imporve the accuracy of recognition. Now, dimensionality has become part of data preparation process for future model training. Following are some main methods of dimensionality reduction.</p>
 <p><code>Principle Component Analysis (PCA)</code></p>
-<p>Principle Component Analysis are commonly used linear dimensionality reduction method. One of ts goal is to use less data dimension that most can repensent the original dataset’s characteristics by using some linear projection from high-dimension data into low-dimension data, in the mean while maximize the variance of the data being projected. Here’s a simple example expalining this concept. For example, if you want to organize some photos of people, and the two characteristics you really care about is the race and gender. When trying to reorganize the photos, your shoud find what matters to you most, and reorganize the photos by the order of characteristics you focus more on, and then creating the new display of those photos. So this is how PCA works. Following are some main process we doing PCA:</p>
+<p>Principle Component Analysis is a commonly used linear dimensionality reduction method. One of its goals is to use fewer data dimensions so that most can represent the original dataset’s characteristics by using some linear projection from high-dimension data into low-dimension data in the mean while maximizing the variance of the data being projected. Here’s a simple example explaining this concept. For example, if you want to organize some photos of people, the two characteristics you really care about are race and gender. When trying to reorganize the photos, you should find what matters to you most, reorganize the photos by the order of characteristics you focus more on, and then create a new display of those photos. So, this is how PCA works. Following are some main processes we doing PCA:</p>
 <ol type="1">
 <li>Standardization</li>
 <li>Covariance Matrix Computation</li>
@@ -253,7 +253,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li>Transforming Data</li>
 </ol>
 <p><code>t-SNE</code></p>
-<p>t-Distributed Stochastic Neighbor Embedding is a non-linear dimensionality reduction method that used to form high-dimensional data in a low-dimensional environment. Our goal is to reduce the amount of complicated, multi-dimensional data regarding neighboring points (the “neighborhood”) to a more manageable format, akin to what a distribution would use to express it. Method: Using these data points, we’ll model a random walk. Moving toward a nearby site during this process is more likely than to occur at a distant one. Lastly, we locate points in a space that is smaller in dimension. The neighborhood pattern around these locations ought to be very similar to the initial high-dimensional neighborhood distribution. <a href="DSAN 5000 week-10 https://jfh.georgetown.domains/dsan5000/slides-and-labs/_site/content/slides/dimensionality-reduction/notes.html#t-distributed-stochastic-neighbor-embedding.">1</a></p>
+<p>T-distributed stochastic Neighbor Embedding is a non-linear dimensionality reduction method that is used to form high-dimensional data in a low-dimensional environment. We aim to reduce the amount of complicated, multi-dimensional data regarding neighboring points (the “neighborhood”) to a more manageable format akin to what a distribution would use to express it. Method: Using these data points, we’ll model a random walk. Moving toward a nearby site during this process is more likely than to occur at a distant one. Lastly, we locate points in a space that is smaller in dimension. The neighborhood pattern around these locations ought to be very similar to the initial high-dimensional neighborhood distribution. <a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a></p>
 </section>
 <section id="tools" class="level2">
 <h2 class="anchored" data-anchor-id="tools">Tools</h2>
@@ -362,7 +362,9 @@ PCA
 </section>
 <section id="obersvation" class="level3">
 <h3 class="anchored" data-anchor-id="obersvation">Obersvation</h3>
-<p>The curve represents the cumulative explained variance as a proportion of the total variance by the number of components. The y-axis is Cumulative explained variance, and the x-aixs is number of compemonts. As shown, the cure is upward shift along with the increase of the number of components. The first component explains about more than 60% of the variance and the second component adds approximately 10% more to the explained variance, bringing the total to around 80%. However, the the added contribution decreased when the number of components increased. We want to find out the number of components that make 95% cummulative explained variance. Thus I made a red line when cummulative exmplained variance=0.95, and as shown in the graph, the red line intersect the blue line at number of comonents around = 4. So, when the number of compnents is larger than 4, we can make 95% variance expliained. This means the number of components that can make 95% cummulative explained variance is 5.</p>
+<p>As shown, the cure is an upward shift along with the increase in the number of components. The first component explains more than 60% of the variance and the second component adds approximately 10% more to the explained variance, bringing the total to around 80%. However, the added contribution decreased when the number of components increased.</p>
+<p>We want to determine the number of components that make 95% cumulative explained variance. Thus, I made a red line when cumulative explained variance=0.95, and as shown in the graph, the red line intersects the blue line at the number of components around = 4. So, when the number of components is larger than 4, we can make variance 95 % explained.</p>
+<p>This means the number of components that can make 95% cumulative explained variance is 5.</p>
 </section>
 <section id="dimensionality-reduction-with-t-sne" class="level3">
 <h3 class="anchored" data-anchor-id="dimensionality-reduction-with-t-sne">Dimensionality Reduction with t-SNE</h3>
@@ -455,21 +457,27 @@ PCA
 <ol type="1">
 <li><p>When we are trying to reducing the dimension, the distance between points in low dimension are actually not match with the actual distance of the high dimension</p></li>
 <li><p>In the high dimension, if the distance between points are large, but when we convert to low dimension, the distance may be smaller.</p></li>
-<li><p>It is computationally intensive and may not scale well to extremely large datasets <a href="DSAN 5000 week-10 https://jfh.georgetown.domains/dsan5000/slides-and-labs/_site/content/slides/dimensionality-reduction/notes.html#t-distributed-stochastic-neighbor-embedding.">1</a></p></li>
+<li><p>It is computationally intensive and may not scale well to extremely large datasets [1]</p></li>
 </ol>
 </section>
 <section id="conclusion" class="level3">
 <h3 class="anchored" data-anchor-id="conclusion">Conclusion</h3>
-<p>If the dataset is more linear and dataset size is small, using PCA would be better.</p>
+<p>If the dataset is more linear and the dataset size is small, using PCA would be better.</p>
 <p>If the dataset is not linear and the dataset size is large, using t-SNE would be better.</p>
-<p>I think PCA is better to use in this dataset because from the plot of t-SNE, it’s really hard to recognize the pattern, but from the result of PCA, we can easity find out how many components we want to keep. So, this dataset may be more in linear relationship. Also, my dataset is not large, so it’s better to use PCA over t-SNE.</p>
-<p>In conclusion, when we doing the dimensionality recution process, it’s important to choose which method we’d like to use to avoid valuable information missing.</p>
+<p>I think PCA is better to use in this dataset because from the plot of t-SNE, it’s really hard to recognize the pattern, but from the result of PCA, we can easily find out how many components we want to keep. So, this dataset may be more in a linear relationship. Also, my dataset is not large, so it’s better to use PCA over t-SNE.</p>
+<p>In conclusion, when we are doing the dimensionality reduction process, it’s important to choose which method we’d like to use to avoid valuable information missing.</p>
 
 
 </section>
 </section>
 
-</main> <!-- /main -->
+
+<div id="quarto-appendix" class="default"><section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes"><h2 class="anchored quarto-appendix-heading">Footnotes</h2>
+
+<ol>
+<li id="fn1"><p>DSAN 5000 week-10 https://jfh.georgetown.domains/dsan5000/slides-and-labs/_site/content/slides/dimensionality-reduction/notes.html#t-distributed-stochastic-neighbor-embedding.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</ol>
+</section></div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {

@@ -2,46 +2,55 @@
 title: "DSAN-5000: Introduction"
 ---
 
-See the following link for more information about the author: [about me](../../index.html)
+See the following link for more information about me: [about me](../../index.html)
 
 # iPhone's Popularity In the Market
 
+![ Apple](images/Apple-logo.png)
+https://theprint.in/economy/apple-makes-progress-in-india-as-iphone-sales-jump-34-to-2-3-million-units-in-q4/820597/ 
+
 ## Topics Introduction
-* `summary`
+* `Summary`
   
-   Over the decades, Apple's products are always the most popular products in the markets. However, with more and more new products introduced to the market. Is Apple products, especially iphone, are still popular in the market?
+   Over the decades, Apple's products are always the most popular products in the markets. However, with more and more new products introduced to the market. Are Apple products, especially iphone, are still popular in the market? How people's reaction to this brand? Postive or negative? How does Apple perform compared with its competitors? How can we predict the popularity of Apple's new product? In this project, we can dig into those problems, with the full data science cycle, we can use data to answer those questions.
+
 * `Importance`
   
-   The iPhone has significantly influenced technology and culture since its introduction in 2007. It has influenced and impacted a genration, thus everyone curious about how apple performed in the recent years. Its role in shaping consumer behaviors, communication norms, and mobile technology makes it a rich subject for study.
-* `Why the reader should continue`
+   Why should we focus on Apple? 
+   Since its launch in 2007, the iPhone has had a huge impact on both technology and culture. Since it has affected and influenced a generation, everyone is interested in learning about Apple's recent performance. It is a valuable subject for study because of its influence on mobile technology, communication norms, and consumer behavior.
+* `Why the reader should read this project`
 
-   The choices and preferences of iPhone users can reflect broader trends in consumer behavior. Consumers can pick better products through this research topic and see how consumers react to Apple's products.
+   Users of iPhones may exhibit decisions and preferences that are indicative of larger patterns in consumer behavior. Through this research subject, users can select better items and observe how other consumers respond to Apple's offerings.
+
 * `what work had done`
   
    The researchers had done many data collection, data preprocessing, and set up machine learning models to do the logistic regression, decision trees and random forest, etc. They also had done so many behavioral analysis to analyze the popularity trend for electronic products.
 * `what are the “different points of views”/interpretations in the literature`
   
-  Some literature emphasizes Apple's commitment to innovation and high-quality products as a key factor in its popularity. This view holds that the company's focus on design, user experience, and robust performance drives consumer preference. Some authors also discuss Apple's cultural impact, suggesting that its products have become more than just technology but a part of modern culture. 
-* `what exploring`: 
+  Some literature emphasizes Apple's commitment to innovation and high-quality products as a key factor in its popularity. This view holds that the company's focus on design, user experience, and robust performance drives consumer preference. Some authors also discuss Apple's cultural impact, suggesting that its products have become more than just technology but a part of modern culture.[^1] 
+
+* `What need to be explored in this topic`: 
   
   1. We can explore how people evaluate an electronic products as a good products.
   2. We can explore the stock market for the Apple Products and how it stock prices changes
   3. We can collect customers' review/news on Apple products, to see how everyone like apple's products.
-* `goals and hypothesis`
+
+* `Goals and Hypothesis`
   
    The purpose of this study is to determine whether Apple products are still in demand and to ascertain how the general public feels about the company's latest offerings. In addition, I'd like to know what specifications a mobile phone should have in order to draw in customers. So that when the next generation of iPhones came out, I could use this model to predict its popularity, I should train some models that can predict a product's popularity based on its functions.
 
 ## 2. 10 questions to address
-* Can customer reviews and sentiment analysis on social media predict the market success of a new Apple product release?
-* How can we predict whether Apple's products would be popular in the future?
+* Can customer reviews and sentiment analysis on social media reflect the public's reaction to the products?
 * How does Apple's stock performed?
+* What are the trends in iPhone stocks sale volume over the last decade? 
 * What kind of electronic products can be seem as a good product to buy?
-* What kind of models we can used to predict people's attitude with reviews?
-* Can we use machine learning to identify key factors that predict an Apple product's popularity based on historical data?
 * How does the pricing of Apple products compare with competitors over time, and what is the impact on market share and consumer choice?
-* What are the trends in iPhone sales over the last decade, and how do they correlate with product release cycles and feature enhancements?
-* Can decision tree analysis help in identifying the most significant factors that lead to a successful Apple Store location?
-* How can we eliminate the unnecessary feature for predicting the Apple's products
+* How can we predict whether Apple's products would be popular in the future?
+* Can we use machine learning to identify key factors that predict an Apple product's popularity based on historical data?
+* What kind of models we can used to predict people's attitude with reviews?
+* Can decision tree analysis help in identifying whether a product is a successful mobile phone product?
+* How can we eliminate the unnecessary feature for predicting the Apple's products?
+
 
 
 
@@ -51,16 +60,25 @@ See the following link for more information about the author: [about me](../../i
 
 `Abstract`
 
-* The purpose of the paper is to understand if the online consumer reviews differ across the review platforms over the internet. We aim to find the features of the reviews from various platforms and ultimately create a typology of the reviews for those platforms. We apply mixed methods including both quantitative and qualitative techniques to arrive at the conclusion. We find consumers share their views on the highest number of topics in the ecommerce website. Consumers share in-depth views, but on a limited number of topics in other dedicated review platforms. Social media falls somewhere in the middle among these two platforms. While looking into the contents, we could generate themes and meta-themes from these reviews. Based on these facts, we create a typology/ontology for reviews from these platforms and map the motives of reviewers from each platform into the meta-themes identified. Managers can use our findings to boost their online review strategy according to the platform of their interest.
+* The goal of this study is to create a classification system for online customer reviews by examining the differences in these evaluations across various internet platforms and identifying their distinctive features. It uses a combination of qualitative and quantitative research techniques. The study discovers that reviews of e-commerce websites cover a greater variety of subjects. Specialized review sites, on the other hand, offer reviews that are more in-depth but cover fewer subjects. Social media reviews find a middle ground between these two extremes. The examination reveals recurring motifs and broad meta-themes in these assessments. A system of classification for the reviews is devised on the basis of these insights, linking the reasons for the reviews from every platform to the recognized meta-themes. This study provides business managers with useful information to enhance their online review tactics.
 
 ### The influence of brand popularity, perceived quality, price, and need on purchase intention iPhone products in Purwokerto[^2]
 [^2]: Rizaldi, Herna. " The influence of brand popularity, perceived quality, price, and need on purchase intention iPhone products in Purwokerto." Jurnal Akuntansi, Manajemen dan Ekonomi [Online], 24.2 (2022): 14-22. Web. 7 Nov. 2023
 
 `Abstract`
 
-* This study is a survey research that aims to determine and analyze the effect of brand popularity, perceived quality, price, and need on purchase intentions on iPhone products at Purwokerto city. The sample size in this study amounted to 120 using purposive sampling technique. Based on the results of data processing, it is known that brand popularity has no significant and negative effect on purchase intention. Price has a significant and negative effect on purchase intention. Perceived quality and need have a significant and positive effect on purchase intention. The findings in this study are that popularity is not always a consumer factor in generating purchase intentions, while the factor that has the greatest influence on purchase intentions is need.
+* This study, which is survey-based, aims to investigate how consumer needs, perceived quality, price, and brand popularity affect the decision of Purwokerto City residents to buy iPhone products. Purposive sampling was used to choose a sample of 120 people for the study. Data analysis showed that brand popularity may potentially have a negative effect on purchase intentions, not a major one. Price, on the other hand, has a negative impact on buying intentions. However, the intention to purchase is positively influenced by both perceived quality and consumer necessity. One important finding from this study is that purchase intentions are not always influenced by brand popularity. Rather, the most significant element influencing purchase intentions is shown to be consumer need.
 
 ## Next Steps:
-To complete this research topic, I need to find datasets and related information related to people's reviews that reflect people's actual reaction related to Apple brands and iPhone Products. Also, I need to find some datasets that can help me to research what kind of quality of functions that would attract a customer to purchase. Whether Apple products perform well in those functions area?
+To complete this research topic, I need to find datasets and related information related to people's reviews that reflect people's actual reaction related to Apple brands and iPhone Products. Also, I need to find some datasets that can help me to research what kind of quality of functions that would attract a customer to purchase. Whether Apple products perform well in those functions area? After I collected the datasets, I need to clean them as needed and prepare for the future model use and data analysis process.
 
-After I collected the datasets, I need to clean them as needed and prepare for the future model use and data analysis process.
+All the code can be found in the code tab and data can be found in the data tab. The followings are some process that I will do in this process, and each topic can be found in each tab. 
+
+* Data gathering
+* Data cleaning
+* Data Exploration
+* Clustering
+* Dimensionality Reduction
+* Decision Tree
+* Naive Bayes
+* ARM

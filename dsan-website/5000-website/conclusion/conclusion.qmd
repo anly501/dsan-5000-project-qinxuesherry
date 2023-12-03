@@ -133,4 +133,4 @@ From this project, we can know more about the public's review and reaction on ap
 
 Thus, apple products are still very popular and worthy to buy based on its functionality ratings. We can also use those ratings based on machine learning models to predict the popularity of future products.
 
-Thanks for going over this project!
+### Thanks for going over this project!

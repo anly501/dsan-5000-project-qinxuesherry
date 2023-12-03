@@ -7,7 +7,7 @@ website:
     left:
       - href: index.qmd
         text: Introduction
-      - href: ../../index.html
+      - href: about_me/about.qmd
         text: About Me
       - href: https://github.com/anly501/dsan-5000-project-qinxuesherry/tree/main/codes
         text: Code
@@ -34,7 +34,7 @@ website:
         text: Data Exploration
       - href: Naive_Bayes/Naive_Bayes.qmd
         text: Naïve Bayes
-      - href: ARM/ARM.qmd
+      - href: ARM/ARM.ipynb
         text: ARM
       - href: conclusion/conclusion.qmd
         text: Conclusion

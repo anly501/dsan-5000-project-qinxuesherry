@@ -1,17 +1,17 @@
 # Data Cleanning
 
 ## Main Goal
-The purpose of data cleansing is to remove data noise points by eliminating erroneous, duplicate parts of the data. In this part, I will do a statictal analysis first to identify the dataset's mean, variance, frenquency, etc. From this step, we can find the datasets' noise points and clean them as needed.
-For the record data, most data cleaning process will dealing with the abnormal values, fill null values and remove missing values, etc.
-For the text data, most data cleaning process will dealing with cleaning the stop words, removing white spaces, etc.
+The purpose of data cleansing is to remove data noise points by eliminating erroneous, duplicate parts of the data. In this part, I will first do a statistical analysis to identify the dataset's mean, variance, frequency, etc. This step lets us find the datasets' noise points and clean them as needed.
+For the record data, most data cleaning processes will deal with the abnormal values, fill null values, remove missing values, etc.
+For the text data, most data cleaning processes will involve cleaning the stop words, removing white spaces, etc.
 
 ## Main Methods For Data Cleaning
 `Record Data`
 
-* fill null values: There are always missing values in the reocrd dataset, thus we need to decide whether we should remove the null values or fill the null values. Most times, we can use the mean/median to fill the null value based on the dataset itself.
-* remove duplicates: Usually the dataset may have same entries and that will affect our future data analysis, thus we should remove them as needed in case impact the results.
-* handling outliers: Some data point are obviously different than others, thus we need to think whether that was recorded by mistake and unuseful to the data analysis, and considering remove them.
-* convert data types: when same data type did not match as it should to be, we can convert them to the data types we need to use for future data analysis. eg: string -> int
+* fill null values: There are always missing values in the record dataset. Thus, we need to decide whether we should remove the null values or fill the null values. We can often use the mean/median to fill the null value based on the dataset itself.
+* remove duplicates: Usually, the dataset may have the same entries, and that will affect our future data analysis. Thus, we should remove them as needed in case they impact the results.
+* handling outliers: Some data points are obviously different than others thus, we need to think about whether that was recorded by mistake and unuseful to the data analysis and consider removing them.
+* convert data types: when the same data type does not match as it should be, we can convert them to the data types we need for future data analysis. Eg: string -> int
   
 `Text Data`
 

@@ -1,7 +1,7 @@
 # Data Gathering
 
 ## Main Goal
-For this project, the main point is finding people's attitude towards Apple Products and evaluate what kind of mobile products would attract the public to purchase. Thus I need to find both text data to reflect people's attitude towards Apple Products and record data to evaluate the products' popularity and people's buying willingness. Thus, I need search online to find either people's comments towards Apple Products or the news' reports related to Apple products. Also, I need to find some dataset to evaluate what kinds of mobile products that would be popular in the market, so when the new generation of Apple Products come out we can predict the new products' popularity.
+For this project, the main point is to find people's attitudes towards Apple Products and evaluate what kind of mobile products would attract the public to purchase. Thus, I need to see both text data to reflect people's attitudes toward Apple Products and record data to evaluate the products' popularity and people's willingness to buy. Thus, I need to search online to find either people's comments about Apple Products or the news reports related to Apple products. Also, I need to find some datasets to evaluate what kinds of mobile products would be popular in the market so that when the new generation of Apple Products comes out, we can predict the popularity of the new products.
 
 ## Dataset finding
 * News API: Gathering news' reports to reflect the public attitudes towards Apple products.
@@ -57,7 +57,14 @@ For this project, the main point is finding people's attitude towards Apple Prod
 * sample raw data ![Mobile Phone Ratings](/images/mobile_rating_dataset.png)
 * Dataset Explaination: As shown in the dataset, this is a record dataset. The dataset has its ranking and devices' name, its Launch price, Launche date, camera rating, selfie rating, audio rating, display rating and battery ratings. All those ratings are important factors that impact the customers' buying inetent. Thus this dataset will help me to predict wether a smartphone product will be popular based on the ratings.
 
+### iphone_11_review_dataset
+* Kaggle dataset
+* Dataset collection: This dataset is both record and text data. I download it from the kaggle website. This dataset can help me better understand people's reaction and reviews towards apple products.
+* <a href="https://www.kaggle.com/datasets/thedevastator/apple-iphone-11-reviews-from-amazon-com/data">Dataset source: Kaggles</a>
+* sample raw data ![Mobile Phone Ratings](/images/iphone11_review_dataset.png)
+* Dataset Explaination: the dataset includs the customers' reviews and ratings from Amazon for iphone 11. The text contained people's reviews and comments. The record data are related to people's ratings, helpful counts, review country, etc. For this dataset, I will simply use for the data explortion process for better understand this topic.
+
 ### Conclusion and Next Step
-In this part, I collected 5 different datasets that related to my research topic, Apple Products' Popularity. The datasets are including text data and record data. The methods I used to collect data are using news API, crawling data with Python, Rvest with R, and downloading related data directly from the website.
+In this part, I collected 6 different datasets that related to my research topic, Apple Products' Popularity. The datasets are including text data and record data. The methods I used to collect data are using news API, crawling data with Python, Rvest with R, and downloading related data directly from the website.
 
 Next step I will clean and modified the data as need for preparing for the future model training.

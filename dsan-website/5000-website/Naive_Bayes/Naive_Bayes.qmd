@@ -127,11 +127,11 @@ Based on those observation, and also from the accuracy scores of each number of 
 - In total, 903 data labels were predicted accurately. The model predited well in the positive and negative classes, but did not perform well in the natural class. This is because there are not so many data of natural.
 
 ## conclusion
-The model predict my dataset well. After the number of features selection method, the accuracy can reach 90.11%. However, because the insufficient of data related to natural label class, the prediction to this class did not perform so well as expected.
+The model predicts my dataset well. After the number of feature selection methods, the accuracy can reach 90.11%. However, because of the insufficient data related to the natural label class, the prediction for this class did not perform as well as expected.
 
-Also, the model did not show overfitting/underfitting because of its traning accuracy and test accuracy are all around 90%.
+Also, the model did not show overfitting/underfitting because its training accuracy and test accuracy are all around 90%.
 
-Thus, overall the model performed well, and it can based on the text reviews predict poeple's attitude towards iphone 11 products.
+Thus, overall, the model performed well, and it can, based on the text reviews, predict people's attitudes towards iPhone 11 products.
 
 
 

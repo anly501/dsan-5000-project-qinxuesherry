@@ -168,8 +168,8 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#introduction-to-naive-bayes" id="toc-introduction-to-naive-bayes" class="nav-link active" data-scroll-target="#introduction-to-naive-bayes">Introduction to Naive Bayes:</a>
   <ul class="collapse">
   <li><a href="#overview" id="toc-overview" class="nav-link" data-scroll-target="#overview">Overview</a></li>
-  <li><a href="#statistics-foundation" id="toc-statistics-foundation" class="nav-link" data-scroll-target="#statistics-foundation">Statistics Foundation</a></li>
-  <li><a href="#different-variants" id="toc-different-variants" class="nav-link" data-scroll-target="#different-variants">different variants</a></li>
+  <li><a href="#statistics-foundation-1" id="toc-statistics-foundation-1" class="nav-link" data-scroll-target="#statistics-foundation-1">Statistics Foundation </a></li>
+  <li><a href="#different-variants" id="toc-different-variants" class="nav-link" data-scroll-target="#different-variants">Different Variants</a></li>
   <li><a href="#how-to-apply-to-my-project" id="toc-how-to-apply-to-my-project" class="nav-link" data-scroll-target="#how-to-apply-to-my-project">How to apply to my Project</a></li>
   </ul></li>
   <li><a href="#record-data-mobile-phone-rating-training" id="toc-record-data-mobile-phone-rating-training" class="nav-link" data-scroll-target="#record-data-mobile-phone-rating-training">Record Data – Mobile Phone Rating Training</a>
@@ -195,7 +195,7 @@ ul.task-list li input[type="checkbox"] {
   </ul></li>
   <li><a href="#feature-selection-1" id="toc-feature-selection-1" class="nav-link" data-scroll-target="#feature-selection-1">Feature Selection</a></li>
   <li><a href="#naive-bayes-with-labeled-text-data" id="toc-naive-bayes-with-labeled-text-data" class="nav-link" data-scroll-target="#naive-bayes-with-labeled-text-data">Naive Bayes with Labeled Text Data</a></li>
-  <li><a href="#conclusion-1" id="toc-conclusion-1" class="nav-link" data-scroll-target="#conclusion-1">conclusion</a></li>
+  <li><a href="#conclusion-1" id="toc-conclusion-1" class="nav-link" data-scroll-target="#conclusion-1">Conclusion</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -213,8 +213,8 @@ ul.task-list li input[type="checkbox"] {
 <li>The process of training the Naive Bayes algorithm is actually the process of solving each a priori probability P(Ai) and conditional probability P(Bj|Ai), and then in the prediction and classification process, it is only necessary to substitute each probability value obtained during the training process into the Bayesian formula, so as to obtain the relative probability of the results of the classification labels under the current features. The one with higher relative probability is naturally used as the predicted label.</li>
 </ul>
 </section>
-<section id="statistics-foundation" class="level3">
-<h3 class="anchored" data-anchor-id="statistics-foundation">Statistics Foundation</h3>
+<section id="statistics-foundation-1" class="level3">
+<h3 class="anchored" data-anchor-id="statistics-foundation-1">Statistics Foundation <a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a></h3>
 <ul>
 <li><span class="math inline">\(P(Y|X) = (P(X|Y) * P(Y))/P(X)\)</span></li>
 <li>P(A|B) is called the a posteriori probability, for the target to be found</li>
@@ -223,7 +223,7 @@ ul.task-list li input[type="checkbox"] {
 </ul>
 </section>
 <section id="different-variants" class="level3">
-<h3 class="anchored" data-anchor-id="different-variants">different variants</h3>
+<h3 class="anchored" data-anchor-id="different-variants">Different Variants</h3>
 <ul>
 <li><p>Gaussian Naive Bayes: This variant of Naive Bayes is best suited for datasets where the features are continuous and follow a Gaussian or normal distribution. It assigns a Gaussian distribution to each class and predicts the class of a new data point based on these distributions. Common applications include problems that involve continuous variables, as is often found in real-world datasets.</p></li>
 <li><p>Multinomial Naive Bayes: This type excels with discrete data and finds frequent application in text categorization tasks, where text is converted into word frequency vectors. However, it can also work with tf-idf vectors. It computes the conditional probability of a word given a class, making it a good choice for problems involving discrete data.</p></li>
@@ -372,7 +372,7 @@ ul.task-list li input[type="checkbox"] {
 <li>Weighted Avg: Precision: 89%, Recall: 90% , F1-Score: 89%, shows it’s a good model to fit.</li>
 </ul>
 <section id="confusion-matrices-1" class="level4">
-<h4 class="anchored" data-anchor-id="confusion-matrices-1">confusion matrices</h4>
+<h4 class="anchored" data-anchor-id="confusion-matrices-1">Confusion Matrices</h4>
 <ul>
 <li><div class="quarto-figure quarto-figure-center">
 <figure class="figure">
@@ -386,7 +386,7 @@ ul.task-list li input[type="checkbox"] {
 </section>
 </section>
 <section id="conclusion-1" class="level2">
-<h2 class="anchored" data-anchor-id="conclusion-1">conclusion</h2>
+<h2 class="anchored" data-anchor-id="conclusion-1">Conclusion</h2>
 <p>The model predicts my dataset well. After the number of feature selection methods, the accuracy can reach 90.11%. However, because of the insufficient data related to the natural label class, the prediction for this class did not perform as well as expected.</p>
 <p>Also, the model did not show overfitting/underfitting because its training accuracy and test accuracy are all around 90%.</p>
 <p>Thus, overall, the model performed well, and it can, based on the text reviews, predict people’s attitudes towards iPhone 11 products.</p>
@@ -395,7 +395,13 @@ ul.task-list li input[type="checkbox"] {
 </section>
 </section>
 
-</main> <!-- /main -->
+
+<div id="quarto-appendix" class="default"><section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes"><h2 class="anchored quarto-appendix-heading">Footnotes</h2>
+
+<ol>
+<li id="fn1"><p>Wikimedia Foundation. (2023b, November 20). Naive Bayes classifier. Wikipedia. https://en.wikipedia.org/wiki/Naive_Bayes_classifier<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</ol>
+</section></div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {

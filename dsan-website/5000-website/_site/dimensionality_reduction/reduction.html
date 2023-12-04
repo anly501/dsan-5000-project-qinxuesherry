@@ -243,7 +243,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="dimensionality-introduction" class="level2">
 <h2 class="anchored" data-anchor-id="dimensionality-introduction">Dimensionality introduction</h2>
 <p>In the field of machine learning, the dimensionality reduction refers to the use of some kind of projection method to project the data points in the original high-dimensional space to a lower dimensional space. By dimensionality reduction, we can reduce the error caused by redundant information and imporve the accuracy of recognition. Now, dimensionality has become part of data preparation process for future model training. Following are some main methods of dimensionality reduction.</p>
-<p><code>Principle Component Analysis (PCA)</code></p>
+<p><code>Principle Component Analysis (PCA)</code> <a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a></p>
 <p>Principle Component Analysis is a commonly used linear dimensionality reduction method. One of its goals is to use fewer data dimensions so that most can represent the original dataset’s characteristics by using some linear projection from high-dimension data into low-dimension data in the mean while maximizing the variance of the data being projected. Here’s a simple example explaining this concept. For example, if you want to organize some photos of people, the two characteristics you really care about are race and gender. When trying to reorganize the photos, you should find what matters to you most, reorganize the photos by the order of characteristics you focus more on, and then create a new display of those photos. So, this is how PCA works. Following are some main processes we doing PCA:</p>
 <ol type="1">
 <li>Standardization</li>
@@ -253,7 +253,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li>Transforming Data</li>
 </ol>
 <p><code>t-SNE</code></p>
-<p>T-distributed stochastic Neighbor Embedding is a non-linear dimensionality reduction method that is used to form high-dimensional data in a low-dimensional environment. We aim to reduce the amount of complicated, multi-dimensional data regarding neighboring points (the “neighborhood”) to a more manageable format akin to what a distribution would use to express it. Method: Using these data points, we’ll model a random walk. Moving toward a nearby site during this process is more likely than to occur at a distant one. Lastly, we locate points in a space that is smaller in dimension. The neighborhood pattern around these locations ought to be very similar to the initial high-dimensional neighborhood distribution. <a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a></p>
+<p>T-distributed stochastic Neighbor Embedding is a non-linear dimensionality reduction method that is used to form high-dimensional data in a low-dimensional environment. We aim to reduce the amount of complicated, multi-dimensional data regarding neighboring points (the “neighborhood”) to a more manageable format akin to what a distribution would use to express it. Method: Using these data points, we’ll model a random walk. Moving toward a nearby site during this process is more likely than to occur at a distant one. Lastly, we locate points in a space that is smaller in dimension. The neighborhood pattern around these locations ought to be very similar to the initial high-dimensional neighborhood distribution. <a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a></p>
 </section>
 <section id="tools" class="level2">
 <h2 class="anchored" data-anchor-id="tools">Tools</h2>
@@ -457,7 +457,7 @@ PCA
 <ol type="1">
 <li><p>When we are trying to reducing the dimension, the distance between points in low dimension are actually not match with the actual distance of the high dimension</p></li>
 <li><p>In the high dimension, if the distance between points are large, but when we convert to low dimension, the distance may be smaller.</p></li>
-<li><p>It is computationally intensive and may not scale well to extremely large datasets [1]</p></li>
+<li><p>It is computationally intensive and may not scale well to extremely large datasets <a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a></p></li>
 </ol>
 </section>
 <section id="conclusion" class="level3">
@@ -476,6 +476,8 @@ PCA
 
 <ol>
 <li id="fn1"><p>DSAN 5000 week-10 https://jfh.georgetown.domains/dsan5000/slides-and-labs/_site/content/slides/dimensionality-reduction/notes.html#t-distributed-stochastic-neighbor-embedding.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn2"><p>DSAN 5000 week-10 https://jfh.georgetown.domains/dsan5000/slides-and-labs/_site/content/slides/dimensionality-reduction/notes.html#t-distributed-stochastic-neighbor-embedding.<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn3"><p>DSAN 5000 week-10 https://jfh.georgetown.domains/dsan5000/slides-and-labs/_site/content/slides/dimensionality-reduction/notes.html#t-distributed-stochastic-neighbor-embedding.<a href="#fnref3" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 </ol>
 </section></div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">

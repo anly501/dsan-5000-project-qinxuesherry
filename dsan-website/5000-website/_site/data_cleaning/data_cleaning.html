@@ -1,0 +1,612 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.3.450">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>DSAN-5000: Project – data_cleaning</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<script src="../site_libs/quarto-html/quarto.js"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+
+</head>
+
+<body class="nav-fixed">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-dark ">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container">
+    <a class="navbar-brand" href="../index.html">
+    <span class="navbar-title">DSAN-5000: Project</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../index.html" rel="" target="">
+ <span class="menu-text">Introduction</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../about_me/about.html" rel="" target="">
+ <span class="menu-text">About Me</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="https://github.com/anly501/dsan-5000-project-qinxuesherry/tree/main/codes" rel="" target="">
+ <span class="menu-text">Code</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="https://github.com/anly501/dsan-5000-project-qinxuesherry/tree/main/data" rel="" target="">
+ <span class="menu-text">Data</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../data_gathering/data_gathering.html" rel="" target="">
+ <span class="menu-text">Data Gathering</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link active" href="../data_cleaning/data_cleaning.html" rel="" target="" aria-current="page">
+ <span class="menu-text">Data cleaning</span></a>
+  </li>  
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-clustering" role="button" data-bs-toggle="dropdown" aria-expanded="false" rel="" target="">
+ <span class="menu-text">Clustering</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-clustering">    
+        <li>
+    <a class="dropdown-item" href="../clustering/clustering1.html" rel="" target="">
+ <span class="dropdown-text">Introduction</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../clustering/clustering.html" rel="" target="">
+ <span class="dropdown-text">Methods &amp; Codes</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../clustering/Results.html" rel="" target="">
+ <span class="dropdown-text">Results Analysis &amp; Conclusion</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="../dimensionality_reduction/reduction.html" rel="" target="">
+ <span class="menu-text">Dimensionality Reduction</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../decision_trees/tree.html" rel="" target="">
+ <span class="menu-text">Decision Trees</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../eda/eda.html" rel="" target="">
+ <span class="menu-text">Data Exploration</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../Naive_Bayes/Naive_Bayes.html" rel="" target="">
+ <span class="menu-text">Naïve Bayes</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../ARM/ARM.html" rel="" target="">
+ <span class="menu-text">ARM</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../conclusion/conclusion.html" rel="" target="">
+ <span class="menu-text">Conclusion</span></a>
+  </li>  
+</ul>
+            <div class="quarto-navbar-tools ms-auto">
+</div>
+          </div> <!-- /navcollapse -->
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#main-goal" id="toc-main-goal" class="nav-link active" data-scroll-target="#main-goal">Main Goal</a></li>
+  <li><a href="#main-methods-for-data-cleaning" id="toc-main-methods-for-data-cleaning" class="nav-link" data-scroll-target="#main-methods-for-data-cleaning">Main Methods For Data Cleaning</a></li>
+  <li><a href="#data-cleaning" id="toc-data-cleaning" class="nav-link" data-scroll-target="#data-cleaning">Data Cleaning</a>
+  <ul class="collapse">
+  <li><a href="#clean-the-newsapi-raw-data-gather-by-python" id="toc-clean-the-newsapi-raw-data-gather-by-python" class="nav-link" data-scroll-target="#clean-the-newsapi-raw-data-gather-by-python">Clean the NewsAPI Raw Data (gather by Python)</a></li>
+  <li><a href="#clean-the-weibo-hot-post-data-gather-by-python" id="toc-clean-the-weibo-hot-post-data-gather-by-python" class="nav-link" data-scroll-target="#clean-the-weibo-hot-post-data-gather-by-python">clean the weibo hot post data (gather by Python)</a></li>
+  <li><a href="#clean-the-mobile-phone-rating-dataset" id="toc-clean-the-mobile-phone-rating-dataset" class="nav-link" data-scroll-target="#clean-the-mobile-phone-rating-dataset">Clean the Mobile Phone Rating Dataset</a></li>
+  <li><a href="#apple-stock-dataset" id="toc-apple-stock-dataset" class="nav-link" data-scroll-target="#apple-stock-dataset">Apple Stock Dataset</a></li>
+  </ul></li>
+  <li><a href="#next-step" id="toc-next-step" class="nav-link" data-scroll-target="#next-step">Next step</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Data Cleanning</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+</header>
+
+<section id="main-goal" class="level2">
+<h2 class="anchored" data-anchor-id="main-goal">Main Goal</h2>
+<p>The purpose of data cleansing is to remove data noise points by eliminating erroneous, duplicate parts of the data. In this part, I will first do a statistical analysis to identify the dataset’s mean, variance, frequency, etc. This step lets us find the datasets’ noise points and clean them as needed. For the record data, most data cleaning processes will deal with the abnormal values, fill null values, remove missing values, etc. For the text data, most data cleaning processes will involve cleaning the stop words, removing white spaces, etc.</p>
+</section>
+<section id="main-methods-for-data-cleaning" class="level2">
+<h2 class="anchored" data-anchor-id="main-methods-for-data-cleaning">Main Methods For Data Cleaning</h2>
+<p><code>Record Data</code></p>
+<ul>
+<li>fill null values: There are always missing values in the record dataset. Thus, we need to decide whether we should remove the null values or fill the null values. We can often use the mean/median to fill the null value based on the dataset itself.</li>
+<li>remove duplicates: Usually, the dataset may have the same entries, and that will affect our future data analysis. Thus, we should remove them as needed in case they impact the results.</li>
+<li>handling outliers: Some data points are obviously different than others thus, we need to think about whether that was recorded by mistake and unuseful to the data analysis and consider removing them.</li>
+<li>convert data types: when the same data type does not match as it should be, we can convert them to the data types we need for future data analysis. Eg: string -&gt; int</li>
+</ul>
+<p><code>Text Data</code></p>
+<ul>
+<li>Remove stop words: the stop words like “the, and, an” are not useful for the text analysis, so we need to remove them as needed.</li>
+<li>Remove special characters and punctuation: the special characters like “$ @ %” are not useful for the text analysis, so we need to remove them as needed.</li>
+<li>Tokenization: we can split text data into sentences or words for better analyzation.</li>
+<li>Stemming and Lemmatization: in English, the verbs or nouns usually have different forms but actually has the same means, so we need to do this step for better analyze the text data.</li>
+<li>Remove white spaces: Sometimes the white spaces or new lines will hinder the analysis process, so we should clean it</li>
+</ul>
+</section>
+<section id="data-cleaning" class="level2">
+<h2 class="anchored" data-anchor-id="data-cleaning">Data Cleaning</h2>
+<section id="clean-the-newsapi-raw-data-gather-by-python" class="level3">
+<h3 class="anchored" data-anchor-id="clean-the-newsapi-raw-data-gather-by-python">Clean the NewsAPI Raw Data (gather by Python)</h3>
+<ul>
+<li>Python</li>
+<li>Explaination: the iphone_content.txt is a text data, so I will clean the raw data with the motheods dealing with text data.</li>
+<li>raw data before cleaning <img src="../images/news_raw.png" class="img-fluid" alt="news raw data Python"></li>
+<li><a href="https://github.com/anly501/dsan-5000-project-qinxuesherry/blob/main/codes/01-data-cleaning/news_cleanning.ipynb">newsapi data cleaning code (python)</a></li>
+</ul>
+<p><code>Cleaning Process</code></p>
+<ul>
+<li>import needed packages: will use sklearn, json, re, pandas, etc</li>
+</ul>
+<ol type="1">
+<li>Remove the special characters, lower cases, and remove white spaces: In this part, it will remove unnecessary punctations, spaces and also lower the capitalized cases.</li>
+</ol>
+<div class="cell" data-execution_count="1">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> string_cleaner(input_string):</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">try</span>: </span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>        <span class="co">'''</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="co">        out=re.sub(r"""</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="co">                    [,;@#&amp;$-]+  # Accept one or more copies of punctuation</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="co">                    \ *           # plus zero or more copies of a space,</span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="co">                    """,</span></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="co">                    " ",          # and replace it with a single space</span></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="co">                    input_string, flags=re.VERBOSE)</span></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="co">        '''</span></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>        <span class="co">#REPLACE SELECT CHARACTERS WITH NOTHING</span></span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>        out <span class="op">=</span> re.sub(<span class="st">'[’]+'</span>, <span class="st">''</span>, input_string)</span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>        <span class="co">#ELIMINATE DUPLICATE WHITESPACES USING WILDCARDS</span></span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>        out <span class="op">=</span> re.sub(<span class="vs">r'\s+'</span>, <span class="st">' '</span>, out)</span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a>        <span class="co">#CONVERT TO LOWER CASE</span></span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a>        out<span class="op">=</span>out.lower()</span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a>    <span class="cf">except</span>:</span>
+<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="st">"ERROR"</span>)</span>
+<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a>        out<span class="op">=</span><span class="st">''</span></span>
+<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> out</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+<ol type="1">
+<li>Lemitization: In this part, lemitization will reduce a word to its base or root form, which will help me analyze this dataset.</li>
+<li>stemming: in this part, stemming will remove affixes from words, which will help me analyze this dataset.</li>
+<li>word tokenize: in this part, tokenize will split the sentences to words, which will help me analyze this dataset.</li>
+<li>remove stopwords: in this part, removing stopwords will keep more valueble words for analysis.</li>
+<li>Countvectorizer: in this part, countvectorizer will help me to count how many times each word appears in the library, which will help in analyze the word frequency.</li>
+</ol>
+<p>After cleaning process, below is the after cleaning dataset</p>
+<ul>
+<li><p><a href="https://github.com/anly501/dsan-5000-project-qinxuesherry/blob/main/data/01-modified-data/after_clean_iphone_content.txt">cleaned data for newsapi(python)</a></p></li>
+<li><p>output cleaning data <img src="../images/after_clean_iphone_content_dataset.png" class="img-fluid" alt="news data after cleaning"></p></li>
+</ul>
+</section>
+<section id="clean-the-weibo-hot-post-data-gather-by-python" class="level3">
+<h3 class="anchored" data-anchor-id="clean-the-weibo-hot-post-data-gather-by-python">clean the weibo hot post data (gather by Python)</h3>
+<ul>
+<li>R</li>
+<li>Explaination: 微博清单.csv is a text data, I will clean this raw data with R, and reordered the dataset, dropped unnecessary columns/rows, and cleaned the text part by segmentation and clear stop words, etc.</li>
+<li>raw data before cleaning <img src="../images/weibo_raw.png" class="img-fluid" alt="weibo raw data Python"></li>
+<li><a href="https://github.com/anly501/dsan-5000-project-qinxuesherry/blob/main/codes/01-data-cleaning/r-cleaning.Rmd">weibo data cleaning code (R)</a></li>
+</ul>
+<p><code>Cleaning Process</code></p>
+<ol type="1">
+<li>change the column orders: in this step, reorganize the column will help me easier find more useful information</li>
+<li>check duplicated and drop duplicated rows: checked the duplicated rows but there isn’t any.</li>
+<li>reordered the dataframe by the descending order of the like numbers column: the like numbers reflect whether this comment is hot or not, so when the numbers are larger, the more influencial this comment will be.</li>
+<li>drop unnecessary columns: the ‘id’ column is not useful for the data analysis, so I droped this column.</li>
+<li>drop unnecessary rows: I deleted the posts’ likes numbers &lt;3, and keep popular post with post’s like number &gt;3, because they are more useful content</li>
+<li>segment the content: segment the sentences into words</li>
+<li>cleaned stop words in the post content: removing stopwords will keep more valueble words for analysis.</li>
+</ol>
+<p>After cleaning process, below is the after cleaning dataset</p>
+<ul>
+<li><p><a href="https://github.com/anly501/dsan-5000-project-qinxuesherry/blob/main/data/01-modified-data/R_after_clean.csv">cleaned data for weibo(R)</a></p></li>
+<li><p>output cleaning data <img src="../images/after_clean_weibo_dataset.png" class="img-fluid" alt="weibo data after cleaning"></p></li>
+</ul>
+</section>
+<section id="clean-the-mobile-phone-rating-dataset" class="level3">
+<h3 class="anchored" data-anchor-id="clean-the-mobile-phone-rating-dataset">Clean the Mobile Phone Rating Dataset</h3>
+<ul>
+<li>Python</li>
+<li>Explaination: mobile_phone_rating.csv is a record dataset, so I will clean the raw data with the motheods dealing with record data.</li>
+<li>raw data before cleaning <img src="../images/mobile_rating_dataset.png" class="img-fluid" alt="Mobile Phone Ratings"></li>
+<li><a href="https://github.com/anly501/dsan-5000-project-qinxuesherry/blob/main/codes/01-data-cleaning/mobile_phone_rating.ipynb">mobile phone cleaning code (R)</a></li>
+</ul>
+<p><code>Cleaning Process</code></p>
+<ol type="1">
+<li>replace ‘-’ and null to ‘0’: the raw dataset are all string type, and ‘-’ represents null values, change to 0 will be easier for future change column type</li>
+<li>change the column’s type: change most columns that with numbers to int type and ‘Launch date’ column to date type.</li>
+<li>fill missing values: in this step, I choose to fill null values with each column’s average value</li>
+<li>check nulls: check if there’s still exist null values</li>
+<li>create label: create label based on the ‘Rank’ column for future machine learning training</li>
+<li>drop unnecessray column: drop the ‘Rank’ column because it’s unnecessary for now</li>
+<li>shuffle the dataset: because the dataset was ordered by the rank, and I want the dataset not in a specific order for future model training</li>
+</ol>
+<p>After cleaning process, below is the after cleaning dataset * <a href="https://github.com/anly501/dsan-5000-project-qinxuesherry/blob/main/data/01-modified-data/after_clean_mobile_phone_rating.csv">cleaned data for mobile phone rating</a></p>
+<ul>
+<li>output cleaning data <img src="../images/after_clean_mobile_dataset.png" class="img-fluid" alt="Mobile phone cleaning"></li>
+</ul>
+</section>
+<section id="apple-stock-dataset" class="level3">
+<h3 class="anchored" data-anchor-id="apple-stock-dataset">Apple Stock Dataset</h3>
+<ul>
+<li>This dataset is clean and organized as needed, so skipped the cleaning process</li>
+</ul>
+</section>
+</section>
+<section id="next-step" class="level2">
+<h2 class="anchored" data-anchor-id="next-step">Next step</h2>
+<p>For this part, I cleaned both record data and text data with necessary methods. All the datasets are cleaned as needed and ready for the exploratory data analysis and model training. Next step, I will do some EDA to familiar with our dataset and functions of them and this will help me to visualize the data as well.</p>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+</body></html>

@@ -1,0 +1,123 @@
+# Data Cleanning
+
+## Main Goal
+The purpose of data cleansing is to remove data noise points by eliminating erroneous, duplicate parts of the data. In this part, I will first do a statistical analysis to identify the dataset's mean, variance, frequency, etc. This step lets us find the datasets' noise points and clean them as needed.
+For the record data, most data cleaning processes will deal with the abnormal values, fill null values, remove missing values, etc.
+For the text data, most data cleaning processes will involve cleaning the stop words, removing white spaces, etc.
+
+## Main Methods For Data Cleaning
+`Record Data`
+
+* fill null values: There are always missing values in the record dataset. Thus, we need to decide whether we should remove the null values or fill the null values. We can often use the mean/median to fill the null value based on the dataset itself.
+* remove duplicates: Usually, the dataset may have the same entries, and that will affect our future data analysis. Thus, we should remove them as needed in case they impact the results.
+* handling outliers: Some data points are obviously different than others thus, we need to think about whether that was recorded by mistake and unuseful to the data analysis and consider removing them.
+* convert data types: when the same data type does not match as it should be, we can convert them to the data types we need for future data analysis. Eg: string -> int
+  
+`Text Data`
+
+* Remove stop words: the stop words like "the, and, an" are not useful for the text analysis, so we need to remove them as needed.
+* Remove special characters and punctuation: the special characters like "$ @ %" are not useful for the text analysis, so we need to remove them as needed.
+* Tokenization: we can split text data into sentences or words for better analyzation.
+* Stemming and Lemmatization: in English, the verbs or nouns usually have different forms but actually has the same means, so we need to do this step for better analyze the text data.
+* Remove white spaces: Sometimes the white spaces or new lines will hinder the analysis process, so we should clean it
+
+
+## Data Cleaning
+### Clean the NewsAPI Raw Data (gather by Python)
+* Python
+* Explaination: the iphone_content.txt is a text data, so I will clean the raw data with the motheods dealing with text data.
+* raw data before cleaning ![news raw data Python](/images/news_raw.png)
+* <a href="https://github.com/anly501/dsan-5000-project-qinxuesherry/blob/main/codes/01-data-cleaning/news_cleanning.ipynb">newsapi data cleaning code (python)</a>
+
+`Cleaning Process`
+
+* import needed packages: will use sklearn, json, re, pandas, etc 
+
+1. Remove the special characters, lower cases, and remove white spaces: In this part, it will remove unnecessary punctations, spaces and also lower the capitalized cases.
+```{python}
+#| code-fold: true
+def string_cleaner(input_string):
+    try: 
+        '''
+        out=re.sub(r"""
+                    [,;@#&$-]+  # Accept one or more copies of punctuation
+                    \ *           # plus zero or more copies of a space,
+                    """,
+                    " ",          # and replace it with a single space
+                    input_string, flags=re.VERBOSE)
+        '''
+
+        #REPLACE SELECT CHARACTERS WITH NOTHING
+        out = re.sub('[’]+', '', input_string)
+
+        #ELIMINATE DUPLICATE WHITESPACES USING WILDCARDS
+        out = re.sub(r'\s+', ' ', out)
+
+        #CONVERT TO LOWER CASE
+        out=out.lower()
+    except:
+        print("ERROR")
+        out=''
+    return out
+```
+
+1. Lemitization: In this part, lemitization will reduce a word to its base or root form, which will help me analyze this dataset.
+2. stemming: in this part, stemming will remove affixes from words, which will help me analyze this dataset.
+3. word tokenize: in this part, tokenize will split the sentences to words, which will help me analyze this dataset.
+4. remove stopwords: in this part, removing stopwords will keep more valueble words for analysis.
+5. Countvectorizer: in this part, countvectorizer will help me to count how many times each word appears in the library, which will help in analyze the word frequency.
+
+After cleaning process, below is the after cleaning dataset
+
+* <a href="https://github.com/anly501/dsan-5000-project-qinxuesherry/blob/main/data/01-modified-data/after_clean_iphone_content.txt">cleaned data for newsapi(python)</a>
+
+* output cleaning data ![ news data after cleaning](/images/after_clean_iphone_content_dataset.png)
+
+### clean the weibo hot post data (gather by Python)
+* R
+* Explaination: 微博清单.csv is a text data, I will clean this raw data with R, and reordered the dataset, dropped unnecessary columns/rows, and cleaned the text part by segmentation and clear stop words, etc.
+* raw data before cleaning ![weibo raw data Python](/images/weibo_raw.png)
+* <a href="https://github.com/anly501/dsan-5000-project-qinxuesherry/blob/main/codes/01-data-cleaning/r-cleaning.Rmd">weibo data cleaning code (R)</a>
+
+`Cleaning Process`
+
+1. change the column orders: in this step, reorganize the column will help me easier find more useful information
+2. check duplicated and drop duplicated rows: checked the duplicated rows but there isn't any.
+3. reordered the dataframe by the descending order of the like numbers column: the like numbers reflect whether this comment is hot or not, so when the numbers are larger, the more influencial this comment will be.
+4. drop unnecessary columns: the 'id' column is not useful for the data analysis, so I droped this column.
+5. drop unnecessary rows: I deleted the posts' likes numbers <3, and keep popular post with post's like number >3, because they are more useful content
+6. segment the content: segment the sentences into words
+7. cleaned stop words in the post content: removing stopwords will keep more valueble words for analysis.
+   
+After cleaning process, below is the after cleaning dataset
+
+* <a href="https://github.com/anly501/dsan-5000-project-qinxuesherry/blob/main/data/01-modified-data/R_after_clean.csv">cleaned data for weibo(R)</a>
+
+* output cleaning data ![weibo data after cleaning](/images/after_clean_weibo_dataset.png)
+  
+### Clean the Mobile Phone Rating Dataset
+* Python
+* Explaination: mobile_phone_rating.csv is a record dataset, so I will clean the raw data with the motheods dealing with record data.
+* raw data before cleaning ![Mobile Phone Ratings](/images/mobile_rating_dataset.png)
+* <a href="https://github.com/anly501/dsan-5000-project-qinxuesherry/blob/main/codes/01-data-cleaning/mobile_phone_rating.ipynb">mobile phone cleaning code (R)</a> 
+
+`Cleaning Process`
+
+1. replace '-' and null to '0': the raw dataset are all string type, and '-' represents null values, change to 0 will be easier for future change column type
+2. change the column's type: change most columns that with numbers to int type and 'Launch date' column to date type.
+3. fill missing values: in this step, I choose to fill null values with each column's average value
+4. check nulls: check if there's still exist null values
+5. create label: create label based on the 'Rank' column for future machine learning training
+6. drop unnecessray column: drop the 'Rank' column because it's unnecessary for now
+7. shuffle the dataset: because the dataset was ordered by the rank, and I want the dataset not in a specific order for future model training
+
+After cleaning process, below is the after cleaning dataset
+* <a href="https://github.com/anly501/dsan-5000-project-qinxuesherry/blob/main/data/01-modified-data/after_clean_mobile_phone_rating.csv">cleaned data for mobile phone rating</a>
+  
+* output cleaning data ![Mobile phone cleaning](/images/after_clean_mobile_dataset.png)
+
+### Apple Stock Dataset
+* This dataset is clean and organized as needed, so skipped the cleaning process
+  
+## Next step
+For this part, I cleaned both record data and text data with necessary methods. All the datasets are cleaned as needed and ready for the exploratory data analysis and model training. Next step, I will do some EDA to familiar with our dataset and functions of them and this will help me to visualize the data as well.

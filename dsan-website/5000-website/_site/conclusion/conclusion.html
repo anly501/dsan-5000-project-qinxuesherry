@@ -1,0 +1,570 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.3.450">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>DSAN-5000: Project – conclusion</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<script src="../site_libs/quarto-html/quarto.js"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+
+</head>
+
+<body class="nav-fixed">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-dark ">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container">
+    <a class="navbar-brand" href="../index.html">
+    <span class="navbar-title">DSAN-5000: Project</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../index.html" rel="" target="">
+ <span class="menu-text">Introduction</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../about_me/about.html" rel="" target="">
+ <span class="menu-text">About Me</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="https://github.com/anly501/dsan-5000-project-qinxuesherry/tree/main/codes" rel="" target="">
+ <span class="menu-text">Code</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="https://github.com/anly501/dsan-5000-project-qinxuesherry/tree/main/data" rel="" target="">
+ <span class="menu-text">Data</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../data_gathering/data_gathering.html" rel="" target="">
+ <span class="menu-text">Data Gathering</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../data_cleaning/data_cleaning.html" rel="" target="">
+ <span class="menu-text">Data cleaning</span></a>
+  </li>  
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-clustering" role="button" data-bs-toggle="dropdown" aria-expanded="false" rel="" target="">
+ <span class="menu-text">Clustering</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-clustering">    
+        <li>
+    <a class="dropdown-item" href="../clustering/clustering1.html" rel="" target="">
+ <span class="dropdown-text">Introduction</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../clustering/clustering.html" rel="" target="">
+ <span class="dropdown-text">Methods &amp; Codes</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../clustering/Results.html" rel="" target="">
+ <span class="dropdown-text">Results Analysis &amp; Conclusion</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="../dimensionality_reduction/reduction.html" rel="" target="">
+ <span class="menu-text">Dimensionality Reduction</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../decision_trees/tree.html" rel="" target="">
+ <span class="menu-text">Decision Trees</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../eda/eda.html" rel="" target="">
+ <span class="menu-text">Data Exploration</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../Naive_Bayes/Naive_Bayes.html" rel="" target="">
+ <span class="menu-text">Naïve Bayes</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../ARM/ARM.html" rel="" target="">
+ <span class="menu-text">ARM</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link active" href="../conclusion/conclusion.html" rel="" target="" aria-current="page">
+ <span class="menu-text">Conclusion</span></a>
+  </li>  
+</ul>
+            <div class="quarto-navbar-tools ms-auto">
+</div>
+          </div> <!-- /navcollapse -->
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#conclusion" id="toc-conclusion" class="nav-link active" data-scroll-target="#conclusion">Conclusion</a>
+  <ul class="collapse">
+  <li><a href="#project-goal" id="toc-project-goal" class="nav-link" data-scroll-target="#project-goal">Project Goal</a></li>
+  <li><a href="#data-analysis-result" id="toc-data-analysis-result" class="nav-link" data-scroll-target="#data-analysis-result">Data Analysis Result</a>
+  <ul class="collapse">
+  <li><a href="#data-collection" id="toc-data-collection" class="nav-link" data-scroll-target="#data-collection">Data Collection</a></li>
+  <li><a href="#data-clean" id="toc-data-clean" class="nav-link" data-scroll-target="#data-clean">Data clean</a></li>
+  <li><a href="#eda" id="toc-eda" class="nav-link" data-scroll-target="#eda">EDA</a></li>
+  <li><a href="#clustering" id="toc-clustering" class="nav-link" data-scroll-target="#clustering">Clustering</a></li>
+  <li><a href="#dimensionality-reduction" id="toc-dimensionality-reduction" class="nav-link" data-scroll-target="#dimensionality-reduction">Dimensionality Reduction</a></li>
+  </ul></li>
+  <li><a href="#model-training" id="toc-model-training" class="nav-link" data-scroll-target="#model-training">Model Training</a>
+  <ul class="collapse">
+  <li><a href="#decision-tree-random-forest" id="toc-decision-tree-random-forest" class="nav-link" data-scroll-target="#decision-tree-random-forest">Decision Tree &amp; Random Forest</a></li>
+  <li><a href="#naive-bayes" id="toc-naive-bayes" class="nav-link" data-scroll-target="#naive-bayes">Naive Bayes</a></li>
+  </ul></li>
+  <li><a href="#questions-answers" id="toc-questions-answers" class="nav-link" data-scroll-target="#questions-answers">Questions &amp; Answers</a></li>
+  <li><a href="#conclusion-1" id="toc-conclusion-1" class="nav-link" data-scroll-target="#conclusion-1">Conclusion</a>
+  <ul class="collapse">
+  <li><a href="#thanks-for-going-over-this-project" id="toc-thanks-for-going-over-this-project" class="nav-link" data-scroll-target="#thanks-for-going-over-this-project">Thanks for going over this project!</a></li>
+  </ul></li>
+  </ul></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+
+
+<section id="conclusion" class="level1">
+<h1>Conclusion</h1>
+<section id="project-goal" class="level2">
+<h2 class="anchored" data-anchor-id="project-goal">Project Goal</h2>
+<p>The goal for this project is identify whether Apple products are still popular in the market, and find out public’s reaction to Apples’ new products. Also, I want to find out what kind of of quality of a mobile phone should have that will attract the public to buy. Thus, I should train some models that can predict a product’s populariy based on its functions, so when iPhone’s new generation came out, I can use thid model to predict its popularity.</p>
+</section>
+<section id="data-analysis-result" class="level2">
+<h2 class="anchored" data-anchor-id="data-analysis-result">Data Analysis Result</h2>
+<section id="data-collection" class="level3">
+<h3 class="anchored" data-anchor-id="data-collection">Data Collection</h3>
+<p>In this part, I collected 3 text datasets and 2 record datasets by using API, Web Crawling, downloading methods by using Python and R. Most text datasets are related to the public’s reviews and comments towards Apple products,and one of the record datasets are related to Apple stock, and another is related to the mobile phones’ function rating. All the datasets can help me to dig into this research topic.</p>
+<p>Here’s some sample raw datasets:</p>
+<p>raw text data <img src="../images/news_raw.png" class="img-fluid" alt="news raw data Python"></p>
+<p>raw record data <img src="../images/mobile_rating_dataset.png" class="img-fluid" alt="Mobile Phone Ratings"></p>
+</section>
+<section id="data-clean" class="level3">
+<h3 class="anchored" data-anchor-id="data-clean">Data clean</h3>
+<p>In this part, I did data cleanning process for the datasets that I needed for preparing for future data analysis and model training. For the record data, I did fill null values, remove duplicates, handling outliers, convert data types, etc cleaning process. For the text data, I did remove stop words, remove special characters and punctuation, tokenization, stemming and lemmatization, remove white spaces, etc cleaning process.</p>
+<p>Here’s some sample cleaned datasets:</p>
+<p>cleaned text data <img src="../images/after_clean_iphone_content_dataset.png" class="img-fluid" alt="news data after cleaning"></p>
+<p>cleaned record data <img src="../images/after_clean_mobile_dataset.png" class="img-fluid" alt="Mobile phone cleaning"></p>
+</section>
+<section id="eda" class="level3">
+<h3 class="anchored" data-anchor-id="eda">EDA</h3>
+<p>In this part, I did some exploratory data analysis for the cleaned datasets for better knowing the datasets. I used visualization tools to help the audience know more about my project, which will include text clouds, statistic distribution, correlation heatmap, etc.</p>
+<p>Here are some examples: <img src="../images/text_cloud_newsapi.png" class="img-fluid" alt="text cloud for news articles"></p>
+<p>Here’s some key words that appeared most frequently in the news dataset that I collected. As we can see, most words are natural and positive towards apple products.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../images/stock_openprice.png" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">open price for apple stock</figcaption>
+</figure>
+</div>
+<p>From the Apple stock’s plot we can see from the past year, the stock price is in the increasing trend, which means more poeple are willing to buy Apple’s stock, which means Apple is still popular in the market.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../images/mobile_phone_pie.png" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Top 50 Ranking Brands</figcaption>
+</figure>
+</div>
+<p>As shown in the pie chart, in the Top 50 ranking phones, 20% are apples. Which means there are 10 iphones are ranked in top50. This also shows Apple is still one of the most popular brands in the market.</p>
+</section>
+<section id="clustering" class="level3">
+<h3 class="anchored" data-anchor-id="clustering">Clustering</h3>
+<p>In this part, I used K-means, DBSAN, Hierarchical clustering methods to clustered the mobile phone ratings dataset. Based on the hyperparameter turning, here’s the optimal clusters results: K-means: 2 DBSCAN : 4 Agglomerative Hierarchy: 2 Meanshift : 4 Birch : 3</p>
+<p>Based on the analysis process, I think Agglomerative Hierarchy would the best method for this dataset, and the optimal clustering would be 2.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../images/agg_clustering.png" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Agglomerative Hierarchy Clustering</figcaption>
+</figure>
+</div>
+</section>
+<section id="dimensionality-reduction" class="level3">
+<h3 class="anchored" data-anchor-id="dimensionality-reduction">Dimensionality Reduction</h3>
+<p>In this part, I used PCA and t-SNE method to reduce the dimension for better analyzing the mobile phone ratings dataset. Based on the visualization result, I believe PCA would be a better method for this dataset.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../images/pca.png" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">PCA</figcaption>
+</figure>
+</div>
+<p>As shown in the graph, the red line intersect the blue line at number of comonents around = 4. So, when the number of compnents is larger than 4 which is 5, we can make 95% variance expliained. There for we should reduce the number of components to 5.</p>
+</section>
+</section>
+<section id="model-training" class="level2">
+<h2 class="anchored" data-anchor-id="model-training">Model Training</h2>
+<section id="decision-tree-random-forest" class="level3">
+<h3 class="anchored" data-anchor-id="decision-tree-random-forest">Decision Tree &amp; Random Forest</h3>
+<p>In this part, I used decision tree and random forest to do the classification. I training the model based on the mobile phone prices, the function ratings of the mobile phones to predict the public’s the buying intent to the products. - Decision Tree The optimal levels are 3</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../images/tree.png" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Decision tree</figcaption>
+</figure>
+</div>
+<p>And the final test showed the model performed well: ACCURACY: 0.967741935483871 NEGATIVE RECALL (Y=0): 1.0 NEGATIVE PRECISION (Y=0): 0.9375 POSITIVE RECALL (Y=1): 0.9375 POSITIVE PRECISION (Y=1): 1.0 <img src="../images/tree_matrix.png" class="img-fluid" alt="Decision tree"></p>
+<ul>
+<li>Random Forest The result for the random forst is similar to the decision tree, and I believe the decision tree is better predict the model. More content related to random forest can be found in the Decision Tree Tab.</li>
+</ul>
+</section>
+<section id="naive-bayes" class="level3">
+<h3 class="anchored" data-anchor-id="naive-bayes">Naive Bayes</h3>
+<p>In this part, I used Naive Bayes algorithmn predict the lebels for the mobile phone ratings dataset and also the news text dataset. I used feature selection of variance thredhold method with hyperparameter tuning for better training the model.</p>
+<p>Final result showed the naive bayes predicted my record dataset well. <img src="../images/mobile_phone_accuracy.png" class="img-fluid" alt="Evaluation Metrics"></p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../images/mobile_phone_confusion_matrix.png" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Confusion Metrics</figcaption>
+</figure>
+</div>
+<p>Final result also showed the naive bayes predicted my text dataset well.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../images/iphone11_accuracy.png" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Evaluation Metrics</figcaption>
+</figure>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../images/iphone11_confusion_matrix.png" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Confusion Metrics</figcaption>
+</figure>
+</div>
+<p>More analysis can find in the Naive Bayes tab.</p>
+</section>
+</section>
+<section id="questions-answers" class="level2">
+<h2 class="anchored" data-anchor-id="questions-answers">Questions &amp; Answers</h2>
+<p>Based on the research above, I belive I can explain all the questions listed in the introduction well:</p>
+<ul>
+<li><p>Can customer reviews and sentiment analysis on social media reflect the public’s reaction to the products?</p>
+<p>Yes, based on the sentiment analysis and key words extraction, we can see the public’s reaction easily.</p></li>
+<li><p>How does Apple’s stock performed? Apple stock performed well in the past year.</p></li>
+<li><p>What are the trends in iPhone stocks sale volume over the last decade? the sale volumn are not increasing that much which may be a good signal for the current shareholder.</p></li>
+<li><p>What kind of electronic products can be seem as a good product to buy? higher in price, higher in the selfie, audio, etc functions ratings.</p></li>
+<li><p>How does the pricing of Apple products compare with competitors over time, and what is the impact on market share and consumer choice? Apple’s product are kind of higher than the other competitors’ products</p></li>
+<li><p>How can we predict whether Apple’s products would be popular in the future? From its function ratings, we can predict whether the public willing to buy or not.</p></li>
+<li><p>Can we use machine learning to identify key factors that predict an Apple product’s popularity based on historical data? Yes, based on the correlation map, we can see the price and selfie function are highly corelated and impacted the products’ popularity</p></li>
+<li><p>What kind of models we can used to predict people’s attitude with reviews? we can use the naive bayes or decision tree model to predict</p></li>
+<li><p>Can decision tree analysis help in identifying whether a product is a successful mobile phone product? Yes, we can use decision tree actually is the best method to predict the label.</p></li>
+<li><p>How can we eliminate the unnecessary feature for predicting the Apple’s products? We can use some feature selection methods, like variance thredhold to eliminate some features.</p></li>
+</ul>
+</section>
+<section id="conclusion-1" class="level2">
+<h2 class="anchored" data-anchor-id="conclusion-1">Conclusion</h2>
+<p>From this project, we can know more about the public’s review and reaction on apple products and how to predict a new generation iphone’s popularity. From all the research above, I can conclude that Apple products are still popular in the market, and people’s reviews are more in postive way. The Apple stock price also reflect the popularity of Apple brand. Also the ratings of apple products are still very high compare to other brands.</p>
+<p>Thus, apple products are still very popular and worthy to buy based on its functionality ratings. We can also use those ratings based on machine learning models to predict the popularity of future products.</p>
+<section id="thanks-for-going-over-this-project" class="level3">
+<h3 class="anchored" data-anchor-id="thanks-for-going-over-this-project">Thanks for going over this project!</h3>
+
+
+</section>
+</section>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+</body></html>

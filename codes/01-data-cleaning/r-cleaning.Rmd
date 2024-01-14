@@ -1,0 +1,89 @@
+---
+title: "R-cleaning"
+output: html_notebook
+---
+
+
+```{r}
+library(dplyr)
+```
+
+```{r}
+wb <- read.csv('../../data/00-raw-data/微博清单.csv')
+wb
+```
+```{r}
+#shift the like number, comment number, and share number to begining for better reference
+new_order <-c("页码","微博id","微博bid","微博作者","发布时间","点赞数","评论数","转发数","微博内容")
+wb <- wb[, order(match(names(wb), new_order))]
+print(wb)
+```
+
+```{r}
+# check duplicated and drop duplicated rows
+wb_unique <- wb[!duplicated(wb$微博id), ]
+print(wb_unique)
+```
+
+
+```{r}
+# reordered the dataframe by the descending order of the like numbers column
+ordered_wb <- wb_unique %>% arrange(desc(点赞数))
+ordered_wb
+```
+
+```{r}
+#drop unnecessary columns
+dropped_wb <- ordered_wb[, !names(ordered_wb) %in% c("微博bid")]
+dropped_wb
+```
+```{r}
+# get popular post with post's like number >3
+popular_post <- subset(dropped_wb, 点赞数 > 3)
+popular_post
+```
+```{r}
+library(pacman)
+p_load(jiebaR)
+```
+```{r}
+#segment the content
+worker() ->wk
+segment_words <- function(text) {
+  segment(text,wk)
+}
+popular_post$微博内容 <- sapply(popular_post$微博内容, segment_words)
+popular_post
+```
+```{r}
+head(popular_post$微博内容)
+```
+
+```{r}
+#cleaned stop words in the post content
+stopwords_file <- readLines("cn_stopwords.txt")
+# Custom function to clean words
+clean_words <- function(text) {
+  # Split the text into words
+  words <- unlist(strsplit(as.character(text), "\\s+"))
+  
+  # Remove stopwords
+  cleaned_words <- words[!words %in% stopwords_file]
+  
+  # Combine the cleaned words into a sentence
+  cleaned_text <- paste(cleaned_words, collapse = " ")
+  
+  return(cleaned_text)
+}
+# Apply the custom function to the "Text" column in the dataframe
+popular_post$微博内容 <- sapply(popular_post$微博内容, clean_words)
+
+# Display the dataframe with cleaned words
+print(popular_post)
+
+```
+
+```{r}
+write.csv(popular_post, file = "R_after_clean.csv", row.names = FALSE)
+```
+

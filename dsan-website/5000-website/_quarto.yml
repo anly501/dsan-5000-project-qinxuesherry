@@ -6,14 +6,41 @@ website:
   navbar:
     left:
       - href: index.qmd
-        text: Home
-      - href: clustering/clustering.qmd
-        text: Clustering
-      - href: eda/eda.ipynb
+        text: Introduction
+      - href: about_me/about.qmd
+        text: About Me
+      - href: https://github.com/anly501/dsan-5000-project-qinxuesherry/tree/main/codes
+        text: Code
+      - href: https://github.com/anly501/dsan-5000-project-qinxuesherry/tree/main/data
+        text: Data
+      - href: data_gathering/data_gathering.qmd
+        text: Data Gathering
+      - href: data_cleaning/data_cleaning.qmd
+        text: Data cleaning
+      - text: Clustering
+        menu:
+          - href: clustering/clustering1.qmd
+            text: Introduction
+          - href: clustering/clustering.ipynb
+            text: Methods & Codes
+          - href: clustering/Results.qmd
+            text: Results Analysis & Conclusion
+            
+      - href: dimensionality_reduction/reduction.ipynb
+        text: Dimensionality Reduction
+      - href: decision_trees/tree.ipynb
+        text: Decision Trees
+      - href: eda/eda.qmd
         text: Data Exploration
+      - href: Naive_Bayes/Naive_Bayes.qmd
+        text: Naïve Bayes
+      - href: ARM/ARM.ipynb
+        text: ARM
+      - href: conclusion/conclusion.qmd
+        text: Conclusion
 format:
   html:
-    theme: cosmo
+    theme: journal
     toc: true
 
 

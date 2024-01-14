@@ -1,0 +1,1227 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.3.450">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>DSAN-5000: Project - ARM</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<script src="../site_libs/quarto-html/quarto.js"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js" integrity="sha512-c3Nl8+7g4LMSTdrm621y7kf9v3SDPnhxLNhcjFJbKECVnmZHTdo+IRO05sNLTH/D3vA6u1X32ehoLC7WFVdheg==" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script>
+<script type="application/javascript">define('jquery', [],function() {return window.jQuery;})</script>
+
+
+</head>
+
+<body class="nav-fixed">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-dark ">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container">
+    <a class="navbar-brand" href="../index.html">
+    <span class="navbar-title">DSAN-5000: Project</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../index.html" rel="" target="">
+ <span class="menu-text">Introduction</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../about_me/about.html" rel="" target="">
+ <span class="menu-text">About Me</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="https://github.com/anly501/dsan-5000-project-qinxuesherry/tree/main/codes" rel="" target="">
+ <span class="menu-text">Code</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="https://github.com/anly501/dsan-5000-project-qinxuesherry/tree/main/data" rel="" target="">
+ <span class="menu-text">Data</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../data_gathering/data_gathering.html" rel="" target="">
+ <span class="menu-text">Data Gathering</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../data_cleaning/data_cleaning.html" rel="" target="">
+ <span class="menu-text">Data cleaning</span></a>
+  </li>  
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-clustering" role="button" data-bs-toggle="dropdown" aria-expanded="false" rel="" target="">
+ <span class="menu-text">Clustering</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-clustering">    
+        <li>
+    <a class="dropdown-item" href="../clustering/clustering1.html" rel="" target="">
+ <span class="dropdown-text">Introduction</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../clustering/clustering.html" rel="" target="">
+ <span class="dropdown-text">Methods &amp; Codes</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../clustering/Results.html" rel="" target="">
+ <span class="dropdown-text">Results Analysis &amp; Conclusion</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="../dimensionality_reduction/reduction.html" rel="" target="">
+ <span class="menu-text">Dimensionality Reduction</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../decision_trees/tree.html" rel="" target="">
+ <span class="menu-text">Decision Trees</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../eda/eda.html" rel="" target="">
+ <span class="menu-text">Data Exploration</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../Naive_Bayes/Naive_Bayes.html" rel="" target="">
+ <span class="menu-text">Naïve Bayes</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link active" href="../ARM/ARM.html" rel="" target="" aria-current="page">
+ <span class="menu-text">ARM</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../conclusion/conclusion.html" rel="" target="">
+ <span class="menu-text">Conclusion</span></a>
+  </li>  
+</ul>
+            <div class="quarto-navbar-tools ms-auto">
+</div>
+          </div> <!-- /navcollapse -->
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction">Introduction</a></li>
+  <li><a href="#theory1" id="toc-theory1" class="nav-link" data-scroll-target="#theory1">Theory</a></li>
+  <li><a href="#main-goal" id="toc-main-goal" class="nav-link" data-scroll-target="#main-goal">Main Goal</a></li>
+  <li><a href="#codes" id="toc-codes" class="nav-link" data-scroll-target="#codes">Codes</a>
+  <ul class="collapse">
+  <li><a href="#separate-the-text-data" id="toc-separate-the-text-data" class="nav-link" data-scroll-target="#separate-the-text-data">Separate the text data</a></li>
+  <li><a href="#read-and-clean-text-data" id="toc-read-and-clean-text-data" class="nav-link" data-scroll-target="#read-and-clean-text-data">Read and clean text data</a></li>
+  <li><a href="#visualize-sentiment" id="toc-visualize-sentiment" class="nav-link" data-scroll-target="#visualize-sentiment">Visualize Sentiment</a></li>
+  <li><a href="#re-format-output" id="toc-re-format-output" class="nav-link" data-scroll-target="#re-format-output">Re-format output</a></li>
+  <li><a href="#train-arm-model" id="toc-train-arm-model" class="nav-link" data-scroll-target="#train-arm-model">Train ARM model</a></li>
+  <li><a href="#visualize-the-results" id="toc-visualize-the-results" class="nav-link" data-scroll-target="#visualize-the-results">Visualize the results</a></li>
+  </ul></li>
+  <li><a href="#conclusion" id="toc-conclusion" class="nav-link" data-scroll-target="#conclusion">Conclusion</a></li>
+  <li><a href="#imporvement" id="toc-imporvement" class="nav-link" data-scroll-target="#imporvement">Imporvement</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">ARM</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+</header>
+
+<section id="introduction" class="level2">
+<h2 class="anchored" data-anchor-id="introduction">Introduction</h2>
+<p>Association rule mining (ARM) can be used in market analysis to determine what products, given their previous purchases, consumers will also buy. In order to examine consumer purchasing patterns For example, the ARM test can be run on an e-commerce dataset containing electronic transactions of various products by customers. i.e., people are more likely to buy a particular product later on if they purchase it first.</p>
+<p>The antecedents are the feature data X. X is the description of the product that the customer purchased in this collection. Finding consequents (Y) is the first step in determining how likely it is that a consumer will buy product X and then purchase product Y based on their confidence and lift.</p>
+</section>
+<section id="theory1" class="level2">
+<h2 class="anchored" data-anchor-id="theory1">Theory<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a></h2>
+<p>An unsupervised rule-based machine learning technique called association rule mining (ARM) is used to find relationships between variables in big databases. The aim of ARM is to identify rules that will forecast the occurrence of an item based on the occurrences of other items in the training data, given a collection of transactions (training data).</p>
+<p>An antecedent (if) and a consequent (then) comprise an association rule. Something that can be found in data is called an antecedent, and something that can be found in connection with the antecedent is called a consequent. Take A and B as itemsets, for instance. An association rule would be A =&gt; B.</p>
+<p>3 important metrics in ARM:</p>
+<ol type="1">
+<li><p>Support : (supp(X,Y)) As an indicator of how frequently the itemsets X and Y occur together in relation to all other transactions. For example, P(X∩Y)=(total number of transactions) / (number of transactions including X and Y).The minimum (support) criterion is used to eliminate samples that do not have sufficient support to be considered significant.</p></li>
+<li><p>Confidence : (Conf(X , Y)) Confidence measures the frequency with which items in X and Y occur together in relation to X-containing transactions. conf(X =&gt; Y) = P(Y|X) = supp(X ∩ Y) / supp(X) = (number of transactions containing X and Y) / (number of transactions contain X), for example. X is the antecedent and Y is the consequent in this scenario. One of the best ways to highlight the relationship between specific elements in the dataset is to use confidence in association rule mining.</p></li>
+<li><p>Lift Lifte is the ratio of the actual support to what would be predicted if X and Y were independent is known as the lift. Lift = 1: no relationship between X and Y Lift &gt; 1: positive relationship between X and Y Lift &lt; 1: negative relationship between X and Y</p></li>
+</ol>
+<p>Packages use:</p>
+<ul>
+<li>Apriori</li>
+<li>Eclat</li>
+<li>FP-Growth</li>
+</ul>
+</section>
+<section id="main-goal" class="level2">
+<h2 class="anchored" data-anchor-id="main-goal">Main Goal</h2>
+<p>I want to use the Assiciation rule mining to explore the intresting annd frequent patterns and relationships in my text dataset. This can help me to see the keywords’ relationship between each other.</p>
+</section>
+<section id="codes" class="level2">
+<h2 class="anchored" data-anchor-id="codes">Codes</h2>
+<div class="cell" data-execution_count="7">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> nltk</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> string</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> nltk.stem <span class="im">import</span> WordNetLemmatizer</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> nltk.stem <span class="im">import</span> PorterStemmer</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> nltk.corpus <span class="im">import</span> stopwords</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> nltk.tokenize <span class="im">import</span> word_tokenize</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> nltk.sentiment <span class="im">import</span> SentimentIntensityAnalyzer</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> os</span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> apyori <span class="im">import</span> apriori</span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> networkx <span class="im">as</span> nx </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell" data-execution_count="8">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>nltk.download(<span class="st">'vader_lexicon'</span>)</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>nltk.download(<span class="st">'stopwords'</span>)</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>nltk.download(<span class="st">'wordnet'</span>)</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>nltk.download(<span class="st">'punkt'</span>)</span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>nltk.download(<span class="st">'omw-1.4'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>[nltk_data] Downloading package vader_lexicon to
+[nltk_data]     /Users/sherryqin/nltk_data...
+[nltk_data]   Package vader_lexicon is already up-to-date!
+[nltk_data] Downloading package stopwords to
+[nltk_data]     /Users/sherryqin/nltk_data...
+[nltk_data]   Package stopwords is already up-to-date!
+[nltk_data] Downloading package wordnet to
+[nltk_data]     /Users/sherryqin/nltk_data...
+[nltk_data]   Package wordnet is already up-to-date!
+[nltk_data] Downloading package punkt to /Users/sherryqin/nltk_data...
+[nltk_data]   Package punkt is already up-to-date!
+[nltk_data] Downloading package omw-1.4 to
+[nltk_data]     /Users/sherryqin/nltk_data...
+[nltk_data]   Package omw-1.4 is already up-to-date!</code></pre>
+</div>
+<div class="cell-output cell-output-display" data-execution_count="8">
+<pre><code>True</code></pre>
+</div>
+</div>
+<section id="separate-the-text-data" class="level3">
+<h3 class="anchored" data-anchor-id="separate-the-text-data">Separate the text data</h3>
+<div class="cell" data-execution_count="1">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell" data-execution_count="3">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>df<span class="op">=</span>pd.read_csv(<span class="st">'../../../data/00-raw-data/apple_iphone_11_reviews.csv'</span>)</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>df</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="3">
+<div>
+
+
+<table class="dataframe table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">index</th>
+<th data-quarto-table-cell-role="th">product</th>
+<th data-quarto-table-cell-role="th">helpful_count</th>
+<th data-quarto-table-cell-role="th">total_comments</th>
+<th data-quarto-table-cell-role="th">url</th>
+<th data-quarto-table-cell-role="th">review_country</th>
+<th data-quarto-table-cell-role="th">reviewed_at</th>
+<th data-quarto-table-cell-role="th">review_text</th>
+<th data-quarto-table-cell-role="th">review_rating</th>
+<th data-quarto-table-cell-role="th">product_company</th>
+<th data-quarto-table-cell-role="th">profile_name</th>
+<th data-quarto-table-cell-role="th">review_title</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">0</td>
+<td>0</td>
+<td>Apple iPhone XR (64GB) - Black</td>
+<td>5,087 people found this helpful</td>
+<td>24</td>
+<td>https://www.amazon.in/Apple-iPhone-XR-64GB-Bla...</td>
+<td>India</td>
+<td>2018-12-12</td>
+<td>NOTE:</td>
+<td>3.0 out of 5 stars</td>
+<td>Apple</td>
+<td>Sameer Patil</td>
+<td>Which iPhone you should Purchase ? iPhone 8, X...</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">1</td>
+<td>1</td>
+<td>Apple iPhone XR (64GB) - Black</td>
+<td>2,822 people found this helpful</td>
+<td>6</td>
+<td>https://www.amazon.in/Apple-iPhone-XR-64GB-Bla...</td>
+<td>India</td>
+<td>2018-11-17</td>
+<td>Very bad experience with this iPhone xr phone....</td>
+<td>1.0 out of 5 stars</td>
+<td>Apple</td>
+<td>Amazon Customer</td>
+<td>Don't buy iPhone xr from Amazon.</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">2</td>
+<td>2</td>
+<td>Apple iPhone XR (64GB) - Black</td>
+<td>1,798 people found this helpful</td>
+<td>0</td>
+<td>https://www.amazon.in/Apple-iPhone-XR-64GB-Bla...</td>
+<td>India</td>
+<td>2019-01-27</td>
+<td>Amazing phone with amazing camera coming from ...</td>
+<td>5.0 out of 5 stars</td>
+<td>Apple</td>
+<td>A</td>
+<td>Happy with the purchase</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">3</td>
+<td>3</td>
+<td>Apple iPhone XR (64GB) - Black</td>
+<td>1,366 people found this helpful</td>
+<td>14</td>
+<td>https://www.amazon.in/Apple-iPhone-XR-64GB-Bla...</td>
+<td>India</td>
+<td>2019-05-02</td>
+<td>So I got the iPhone XR just today. The product...</td>
+<td>1.0 out of 5 stars</td>
+<td>Apple</td>
+<td>Shubham Dutta</td>
+<td>Amazon is not an apple authorised reseller. Pl...</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">4</td>
+<td>4</td>
+<td>Apple iPhone XR (64GB) - Black</td>
+<td>536 people found this helpful</td>
+<td>5</td>
+<td>https://www.amazon.in/Apple-iPhone-XR-64GB-Bla...</td>
+<td>India</td>
+<td>2019-05-24</td>
+<td>I've been an android user all my life until I ...</td>
+<td>5.0 out of 5 stars</td>
+<td>Apple</td>
+<td>Nepuni Lokho</td>
+<td>Excellent Battery life and buttery smooth UI</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">5005</td>
+<td>5005</td>
+<td>Apple iPhone XR (64GB) - Black</td>
+<td>0</td>
+<td>0</td>
+<td>https://www.amazon.in/Apple-iPhone-XR-64GB-Bla...</td>
+<td>India</td>
+<td>2019-11-13</td>
+<td>Dhamaka</td>
+<td>4.0 out of 5 stars</td>
+<td>Apple</td>
+<td>Shreya</td>
+<td>Dhamaka phone</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">5006</td>
+<td>5006</td>
+<td>Apple iPhone XR (64GB) - Black</td>
+<td>0</td>
+<td>0</td>
+<td>https://www.amazon.in/Apple-iPhone-XR-64GB-Bla...</td>
+<td>India</td>
+<td>2019-11-15</td>
+<td>Goodbye</td>
+<td>4.0 out of 5 stars</td>
+<td>Apple</td>
+<td>murali hv</td>
+<td>Good</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">5007</td>
+<td>5007</td>
+<td>Apple iPhone XR (64GB) - Black</td>
+<td>0</td>
+<td>0</td>
+<td>https://www.amazon.in/Apple-iPhone-XR-64GB-Bla...</td>
+<td>India</td>
+<td>2019-12-29</td>
+<td>Nothing</td>
+<td>5.0 out of 5 stars</td>
+<td>Apple</td>
+<td>Manish</td>
+<td>Fantabulous phone. Easy to use.</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">5008</td>
+<td>5008</td>
+<td>Apple iPhone XR (64GB) - Black</td>
+<td>0</td>
+<td>0</td>
+<td>https://www.amazon.in/Apple-iPhone-XR-64GB-Bla...</td>
+<td>India</td>
+<td>2019-11-10</td>
+<td>Superbb</td>
+<td>5.0 out of 5 stars</td>
+<td>Apple</td>
+<td>basil john p</td>
+<td>Fantastic</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">5009</td>
+<td>5009</td>
+<td>Apple iPhone XR (64GB) - Black</td>
+<td>0</td>
+<td>0</td>
+<td>https://www.amazon.in/Apple-iPhone-XR-64GB-Bla...</td>
+<td>India</td>
+<td>2019-11-05</td>
+<td>Nothing</td>
+<td>5.0 out of 5 stars</td>
+<td>Apple</td>
+<td>Amazon Customer</td>
+<td>Best purchase</td>
+</tr>
+</tbody>
+</table>
+
+<p>5010 rows × 12 columns</p>
+</div>
+</div>
+</div>
+<div class="cell" data-execution_count="4">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>review_col <span class="op">=</span> df[<span class="st">'review_text'</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell" data-execution_count="6">
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="cf">with</span> <span class="bu">open</span>(<span class="st">'../../../data/00-raw-data/review.txt'</span>, <span class="st">'w'</span>) <span class="im">as</span> <span class="bu">file</span>:</span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> item <span class="kw">in</span> review_col:</span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>        <span class="bu">file</span>.write(<span class="st">"</span><span class="sc">%s</span><span class="ch">\n</span><span class="st">"</span> <span class="op">%</span> item)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="read-and-clean-text-data" class="level3">
+<h3 class="anchored" data-anchor-id="read-and-clean-text-data">Read and clean text data</h3>
+<div class="cell" data-execution_count="9">
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co">#USER PARAM</span></span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>input_path          <span class="op">=</span>   <span class="st">'../../../data/00-raw-data/review.txt'</span></span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>compute_sentiment   <span class="op">=</span>   <span class="va">True</span>        </span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>sentiment           <span class="op">=</span>   []          <span class="co">#average sentiment of each chunck of text </span></span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>ave_window_size     <span class="op">=</span>   <span class="dv">250</span>         <span class="co">#size of scanning window for moving average</span></span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a>                    </span>
+<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a><span class="co">#OUTPUT FILE</span></span>
+<span id="cb9-9"><a href="#cb9-9" aria-hidden="true" tabindex="-1"></a>output<span class="op">=</span><span class="st">'transactions.txt'</span></span>
+<span id="cb9-10"><a href="#cb9-10" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> os.path.exists(output): os.remove(output)</span>
+<span id="cb9-11"><a href="#cb9-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-12"><a href="#cb9-12" aria-hidden="true" tabindex="-1"></a><span class="co">#INITIALIZE</span></span>
+<span id="cb9-13"><a href="#cb9-13" aria-hidden="true" tabindex="-1"></a>lemmatizer  <span class="op">=</span>   WordNetLemmatizer()</span>
+<span id="cb9-14"><a href="#cb9-14" aria-hidden="true" tabindex="-1"></a>ps          <span class="op">=</span>   PorterStemmer()</span>
+<span id="cb9-15"><a href="#cb9-15" aria-hidden="true" tabindex="-1"></a>sia         <span class="op">=</span>   SentimentIntensityAnalyzer()</span>
+<span id="cb9-16"><a href="#cb9-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-17"><a href="#cb9-17" aria-hidden="true" tabindex="-1"></a><span class="co">#ADD MORE</span></span>
+<span id="cb9-18"><a href="#cb9-18" aria-hidden="true" tabindex="-1"></a>stopwords   <span class="op">=</span>   stopwords.words(<span class="st">'english'</span>)</span>
+<span id="cb9-19"><a href="#cb9-19" aria-hidden="true" tabindex="-1"></a>add<span class="op">=</span>[<span class="st">'mr'</span>,<span class="st">'mrs'</span>,<span class="st">'wa'</span>,<span class="st">'dr'</span>,<span class="st">'said'</span>,<span class="st">'back'</span>,<span class="st">'could'</span>,<span class="st">'one'</span>,<span class="st">'looked'</span>,<span class="st">'like'</span>,<span class="st">'know'</span>,<span class="st">'around'</span>,<span class="st">'dont'</span>]</span>
+<span id="cb9-20"><a href="#cb9-20" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> sp <span class="kw">in</span> add: stopwords.append(sp)</span>
+<span id="cb9-21"><a href="#cb9-21" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-22"><a href="#cb9-22" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> read_and_clean(path,START<span class="op">=</span><span class="dv">0</span>,STOP<span class="op">=-</span><span class="dv">1</span>):</span>
+<span id="cb9-23"><a href="#cb9-23" aria-hidden="true" tabindex="-1"></a>    <span class="kw">global</span> sentiment </span>
+<span id="cb9-24"><a href="#cb9-24" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-25"><a href="#cb9-25" aria-hidden="true" tabindex="-1"></a>    <span class="co">#-----------------------</span></span>
+<span id="cb9-26"><a href="#cb9-26" aria-hidden="true" tabindex="-1"></a>    <span class="co">#INSERT CODE TO READ IN AS ONE BIG STING</span></span>
+<span id="cb9-27"><a href="#cb9-27" aria-hidden="true" tabindex="-1"></a>    <span class="co">#-----------------------</span></span>
+<span id="cb9-28"><a href="#cb9-28" aria-hidden="true" tabindex="-1"></a>    <span class="bu">file</span><span class="op">=</span> <span class="bu">open</span>(path,<span class="st">'rt'</span>,encoding<span class="op">=</span><span class="st">'utf-8'</span>)</span>
+<span id="cb9-29"><a href="#cb9-29" aria-hidden="true" tabindex="-1"></a>    text<span class="op">=</span> <span class="bu">file</span>.read().lower() <span class="co"># convert to lower case</span></span>
+<span id="cb9-30"><a href="#cb9-30" aria-hidden="true" tabindex="-1"></a>    <span class="bu">file</span>.close()</span>
+<span id="cb9-31"><a href="#cb9-31" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-32"><a href="#cb9-32" aria-hidden="true" tabindex="-1"></a>    <span class="co">#REMOVE HEADER, AND NEW LINES</span></span>
+<span id="cb9-33"><a href="#cb9-33" aria-hidden="true" tabindex="-1"></a>    text<span class="op">=</span>text.replace(<span class="st">"'"</span>,<span class="st">''</span>) <span class="co">#wasn't --&gt; wasnt</span></span>
+<span id="cb9-34"><a href="#cb9-34" aria-hidden="true" tabindex="-1"></a>    <span class="co">#lines = text.splitlines(); text=''; </span></span>
+<span id="cb9-35"><a href="#cb9-35" aria-hidden="true" tabindex="-1"></a>    <span class="co">#lines=lines[START:STOP]    # mystring.replace('\n', ' ')</span></span>
+<span id="cb9-36"><a href="#cb9-36" aria-hidden="true" tabindex="-1"></a>    <span class="co">#for line in lines: text=text+' '+line</span></span>
+<span id="cb9-37"><a href="#cb9-37" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-38"><a href="#cb9-38" aria-hidden="true" tabindex="-1"></a>    <span class="co">#-----------------------</span></span>
+<span id="cb9-39"><a href="#cb9-39" aria-hidden="true" tabindex="-1"></a>    <span class="co">#INSERT CODE TO ONLY KEEP CHAR IN string.printable</span></span>
+<span id="cb9-40"><a href="#cb9-40" aria-hidden="true" tabindex="-1"></a>    <span class="co">#-----------------------</span></span>
+<span id="cb9-41"><a href="#cb9-41" aria-hidden="true" tabindex="-1"></a>    tmp<span class="op">=</span><span class="st">''</span></span>
+<span id="cb9-42"><a href="#cb9-42" aria-hidden="true" tabindex="-1"></a>    printable<span class="op">=</span><span class="bu">set</span>(string.printable)</span>
+<span id="cb9-43"><a href="#cb9-43" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> char <span class="kw">in</span> text:</span>
+<span id="cb9-44"><a href="#cb9-44" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> char <span class="kw">in</span> printable:</span>
+<span id="cb9-45"><a href="#cb9-45" aria-hidden="true" tabindex="-1"></a>            tmp<span class="op">+=</span> char</span>
+<span id="cb9-46"><a href="#cb9-46" aria-hidden="true" tabindex="-1"></a>    text<span class="op">=</span> tmp</span>
+<span id="cb9-47"><a href="#cb9-47" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-48"><a href="#cb9-48" aria-hidden="true" tabindex="-1"></a>    <span class="co">#BREAK INTO CHUNKS (SENTANCES OR OTHERWISE)</span></span>
+<span id="cb9-49"><a href="#cb9-49" aria-hidden="true" tabindex="-1"></a>    sentences<span class="op">=</span>nltk.tokenize.sent_tokenize(text)  <span class="co">#SENTENCES</span></span>
+<span id="cb9-50"><a href="#cb9-50" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-51"><a href="#cb9-51" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"NUMBER OF SENTENCES FOUND:"</span>,<span class="bu">len</span>(sentences))<span class="op">;</span> <span class="co">#print(sentences)</span></span>
+<span id="cb9-52"><a href="#cb9-52" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-53"><a href="#cb9-53" aria-hidden="true" tabindex="-1"></a>    <span class="co">#CLEAN AND LEMMATIZE</span></span>
+<span id="cb9-54"><a href="#cb9-54" aria-hidden="true" tabindex="-1"></a>    keep<span class="op">=</span><span class="st">'0123456789abcdefghijklmnopqrstuvwxy'</span><span class="op">;</span></span>
+<span id="cb9-55"><a href="#cb9-55" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-56"><a href="#cb9-56" aria-hidden="true" tabindex="-1"></a>    new_sentences<span class="op">=</span>[]<span class="op">;</span> vocabulary<span class="op">=</span>[]</span>
+<span id="cb9-57"><a href="#cb9-57" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> sentence <span class="kw">in</span> sentences:</span>
+<span id="cb9-58"><a href="#cb9-58" aria-hidden="true" tabindex="-1"></a>        new_sentence<span class="op">=</span><span class="st">''</span></span>
+<span id="cb9-59"><a href="#cb9-59" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-60"><a href="#cb9-60" aria-hidden="true" tabindex="-1"></a>        <span class="co"># REBUILD LEMITIZED SENTENCE</span></span>
+<span id="cb9-61"><a href="#cb9-61" aria-hidden="true" tabindex="-1"></a>        <span class="cf">for</span> word <span class="kw">in</span> sentence.split():</span>
+<span id="cb9-62"><a href="#cb9-62" aria-hidden="true" tabindex="-1"></a>            </span>
+<span id="cb9-63"><a href="#cb9-63" aria-hidden="true" tabindex="-1"></a>            <span class="co">#ONLY KEEP CHAR IN "keep"</span></span>
+<span id="cb9-64"><a href="#cb9-64" aria-hidden="true" tabindex="-1"></a>            tmp2<span class="op">=</span><span class="st">''</span></span>
+<span id="cb9-65"><a href="#cb9-65" aria-hidden="true" tabindex="-1"></a>            <span class="cf">for</span> char <span class="kw">in</span> word: </span>
+<span id="cb9-66"><a href="#cb9-66" aria-hidden="true" tabindex="-1"></a>                <span class="cf">if</span>(char <span class="kw">in</span> keep): </span>
+<span id="cb9-67"><a href="#cb9-67" aria-hidden="true" tabindex="-1"></a>                    tmp2<span class="op">=</span>tmp2<span class="op">+</span>char</span>
+<span id="cb9-68"><a href="#cb9-68" aria-hidden="true" tabindex="-1"></a>                <span class="cf">else</span>:</span>
+<span id="cb9-69"><a href="#cb9-69" aria-hidden="true" tabindex="-1"></a>                    tmp2<span class="op">=</span>tmp2<span class="op">+</span><span class="st">' '</span></span>
+<span id="cb9-70"><a href="#cb9-70" aria-hidden="true" tabindex="-1"></a>            word<span class="op">=</span>tmp2</span>
+<span id="cb9-71"><a href="#cb9-71" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-72"><a href="#cb9-72" aria-hidden="true" tabindex="-1"></a>            <span class="co">#-----------------------</span></span>
+<span id="cb9-73"><a href="#cb9-73" aria-hidden="true" tabindex="-1"></a>            <span class="co"># INSERT CODE TO LEMMATIZE THE WORDS</span></span>
+<span id="cb9-74"><a href="#cb9-74" aria-hidden="true" tabindex="-1"></a>            <span class="co">#-----------------------</span></span>
+<span id="cb9-75"><a href="#cb9-75" aria-hidden="true" tabindex="-1"></a>            word<span class="op">=</span>tmp2</span>
+<span id="cb9-76"><a href="#cb9-76" aria-hidden="true" tabindex="-1"></a>            new_word<span class="op">=</span>lemmatizer.lemmatize(word)</span>
+<span id="cb9-77"><a href="#cb9-77" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-78"><a href="#cb9-78" aria-hidden="true" tabindex="-1"></a>            <span class="co">#REMOVE WHITE SPACES</span></span>
+<span id="cb9-79"><a href="#cb9-79" aria-hidden="true" tabindex="-1"></a>            new_word<span class="op">=</span>new_word.replace(<span class="st">' '</span>, <span class="st">''</span>)</span>
+<span id="cb9-80"><a href="#cb9-80" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-81"><a href="#cb9-81" aria-hidden="true" tabindex="-1"></a>            <span class="co">#BUILD NEW SENTANCE BACK UP</span></span>
+<span id="cb9-82"><a href="#cb9-82" aria-hidden="true" tabindex="-1"></a>            <span class="cf">if</span>( new_word <span class="kw">not</span> <span class="kw">in</span> stopwords):</span>
+<span id="cb9-83"><a href="#cb9-83" aria-hidden="true" tabindex="-1"></a>                <span class="cf">if</span>(new_sentence<span class="op">==</span><span class="st">''</span>):</span>
+<span id="cb9-84"><a href="#cb9-84" aria-hidden="true" tabindex="-1"></a>                    new_sentence<span class="op">=</span>new_word</span>
+<span id="cb9-85"><a href="#cb9-85" aria-hidden="true" tabindex="-1"></a>                <span class="cf">else</span>:</span>
+<span id="cb9-86"><a href="#cb9-86" aria-hidden="true" tabindex="-1"></a>                    new_sentence<span class="op">=</span>new_sentence<span class="op">+</span><span class="st">','</span><span class="op">+</span>new_word</span>
+<span id="cb9-87"><a href="#cb9-87" aria-hidden="true" tabindex="-1"></a>                <span class="cf">if</span>(new_word <span class="kw">not</span> <span class="kw">in</span> vocabulary): vocabulary.append(new_word)</span>
+<span id="cb9-88"><a href="#cb9-88" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-89"><a href="#cb9-89" aria-hidden="true" tabindex="-1"></a>        <span class="co">#SAVE (LIST OF LISTS)       </span></span>
+<span id="cb9-90"><a href="#cb9-90" aria-hidden="true" tabindex="-1"></a>        new_sentences.append(new_sentence.split(<span class="st">","</span>))</span>
+<span id="cb9-91"><a href="#cb9-91" aria-hidden="true" tabindex="-1"></a>        </span>
+<span id="cb9-92"><a href="#cb9-92" aria-hidden="true" tabindex="-1"></a>        <span class="co">#SIA</span></span>
+<span id="cb9-93"><a href="#cb9-93" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span>(compute_sentiment):</span>
+<span id="cb9-94"><a href="#cb9-94" aria-hidden="true" tabindex="-1"></a>            <span class="co">#-----------------------</span></span>
+<span id="cb9-95"><a href="#cb9-95" aria-hidden="true" tabindex="-1"></a>            <span class="co"># INSERT CODE TO USE NLTK TO DO SENTIMENT ANALYSIS </span></span>
+<span id="cb9-96"><a href="#cb9-96" aria-hidden="true" tabindex="-1"></a>            <span class="co">#-----------------------</span></span>
+<span id="cb9-97"><a href="#cb9-97" aria-hidden="true" tabindex="-1"></a>            text1<span class="op">=</span>new_sentence.replace(<span class="st">','</span>,<span class="st">' '</span>)</span>
+<span id="cb9-98"><a href="#cb9-98" aria-hidden="true" tabindex="-1"></a>            score<span class="op">=</span>sia.polarity_scores(text1)</span>
+<span id="cb9-99"><a href="#cb9-99" aria-hidden="true" tabindex="-1"></a>            sentiment.append([score[<span class="st">'neg'</span>],score[<span class="st">'neu'</span>],score[<span class="st">'pos'</span>],score[<span class="st">'compound'</span>]])</span>
+<span id="cb9-100"><a href="#cb9-100" aria-hidden="true" tabindex="-1"></a>            </span>
+<span id="cb9-101"><a href="#cb9-101" aria-hidden="true" tabindex="-1"></a>        <span class="co">#SAVE SENTANCE TO OUTPUT FILE</span></span>
+<span id="cb9-102"><a href="#cb9-102" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span>(<span class="bu">len</span>(new_sentence.split(<span class="st">','</span>))<span class="op">&gt;</span><span class="dv">2</span>):</span>
+<span id="cb9-103"><a href="#cb9-103" aria-hidden="true" tabindex="-1"></a>            f <span class="op">=</span> <span class="bu">open</span>(output, <span class="st">"a"</span>)</span>
+<span id="cb9-104"><a href="#cb9-104" aria-hidden="true" tabindex="-1"></a>            f.write(new_sentence<span class="op">+</span><span class="st">"</span><span class="ch">\n</span><span class="st">"</span>)</span>
+<span id="cb9-105"><a href="#cb9-105" aria-hidden="true" tabindex="-1"></a>            f.close()</span>
+<span id="cb9-106"><a href="#cb9-106" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-107"><a href="#cb9-107" aria-hidden="true" tabindex="-1"></a>    sentiment<span class="op">=</span>np.array(sentiment)</span>
+<span id="cb9-108"><a href="#cb9-108" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"TOTAL AVERAGE SENTEMENT:"</span>,np.mean(sentiment,axis<span class="op">=</span><span class="dv">0</span>))</span>
+<span id="cb9-109"><a href="#cb9-109" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"VOCAB LENGTH"</span>,<span class="bu">len</span>(vocabulary))</span>
+<span id="cb9-110"><a href="#cb9-110" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> new_sentences</span>
+<span id="cb9-111"><a href="#cb9-111" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-112"><a href="#cb9-112" aria-hidden="true" tabindex="-1"></a>transactions<span class="op">=</span>read_and_clean(input_path,<span class="dv">400</span>,<span class="op">-</span><span class="dv">400</span>)</span>
+<span id="cb9-113"><a href="#cb9-113" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(transactions[<span class="dv">0</span>:<span class="dv">5</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>NUMBER OF SENTENCES FOUND: 3571
+TOTAL AVERAGE SENTEMENT: [0.05495659 0.59596556 0.34040045 0.3765529 ]
+VOCAB LENGTH 4108
+[['note', 'bad', 'experience', 'iphone', 'xr', 'phone'], ['camera', 'found', 'defective', 'non', 'functional'], ['amaon', 'careless'], ['havent', 'got', 'response', 'confirmation', 'replacing'], ['hanging', 'damaged', 'piece', 'worth', '91000', 'rupees']]</code></pre>
+</div>
+</div>
+<section id="analysis" class="level4">
+<h4 class="anchored" data-anchor-id="analysis">Analysis</h4>
+<p>In this part, I recleaned the text data with the news content that collected by the NewsAPI. I cleared out the stopwords, and cleared ou the special characters and punctuations. Than I created the transaction as needed.</p>
+</section>
+</section>
+<section id="visualize-sentiment" class="level3">
+<h3 class="anchored" data-anchor-id="visualize-sentiment">Visualize Sentiment</h3>
+<div class="cell" data-execution_count="10">
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> moving_ave(y,w<span class="op">=</span><span class="dv">100</span>):</span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>    <span class="co">#-----------------------</span></span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>    <span class="co"># INSERT CODE TO COMPUTE THE MOVING AVERAGE OF A SIGNAL Y</span></span>
+<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a>    <span class="co">#-----------------------</span></span>
+<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a>    mask<span class="op">=</span>np.ones((<span class="dv">1</span>,w))<span class="op">/</span>w<span class="op">;</span> mask<span class="op">=</span>mask[<span class="dv">0</span>,:]</span>
+<span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> np.convolve(y,mask,<span class="st">'same'</span>)</span>
+<span id="cb11-8"><a href="#cb11-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-9"><a href="#cb11-9" aria-hidden="true" tabindex="-1"></a><span class="co"># INSERT CODE TO VISUALIZE THE SENTIMENT ANALYSIS AS A TIME-SERIES (SEE PLOT FOR AN EXAMPLE)</span></span>
+<span id="cb11-10"><a href="#cb11-10" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> compute_sentiment :</span>
+<span id="cb11-11"><a href="#cb11-11" aria-hidden="true" tabindex="-1"></a>    neg<span class="op">=</span>moving_ave(sentiment[:,<span class="dv">0</span>],ave_window_size)<span class="op">;</span> </span>
+<span id="cb11-12"><a href="#cb11-12" aria-hidden="true" tabindex="-1"></a>    neg<span class="op">=</span>(neg<span class="op">-</span>np.mean(neg))<span class="op">/</span>np.std(neg)</span>
+<span id="cb11-13"><a href="#cb11-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-14"><a href="#cb11-14" aria-hidden="true" tabindex="-1"></a>    neu<span class="op">=</span>moving_ave(sentiment[:,<span class="dv">1</span>],ave_window_size)<span class="op">;</span> </span>
+<span id="cb11-15"><a href="#cb11-15" aria-hidden="true" tabindex="-1"></a>    neu<span class="op">=</span>(neu<span class="op">-</span>np.mean(neu))<span class="op">/</span>np.std(neu)</span>
+<span id="cb11-16"><a href="#cb11-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-17"><a href="#cb11-17" aria-hidden="true" tabindex="-1"></a>    pos<span class="op">=</span>moving_ave(sentiment[:,<span class="dv">2</span>],ave_window_size)<span class="op">;</span> </span>
+<span id="cb11-18"><a href="#cb11-18" aria-hidden="true" tabindex="-1"></a>    pos<span class="op">=</span>(pos<span class="op">-</span>np.mean(pos))<span class="op">/</span>np.std(pos)</span>
+<span id="cb11-19"><a href="#cb11-19" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb11-20"><a href="#cb11-20" aria-hidden="true" tabindex="-1"></a>    cmpd<span class="op">=</span>moving_ave(sentiment[:,<span class="dv">3</span>],ave_window_size)<span class="op">;</span> </span>
+<span id="cb11-21"><a href="#cb11-21" aria-hidden="true" tabindex="-1"></a>    cmpd<span class="op">=</span>(cmpd<span class="op">-</span>np.mean(cmpd))<span class="op">/</span>np.std(cmpd)</span>
+<span id="cb11-22"><a href="#cb11-22" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb11-23"><a href="#cb11-23" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-24"><a href="#cb11-24" aria-hidden="true" tabindex="-1"></a>    <span class="co"># plot</span></span>
+<span id="cb11-25"><a href="#cb11-25" aria-hidden="true" tabindex="-1"></a>    plt.figure(figsize<span class="op">=</span>(<span class="dv">8</span>,<span class="dv">7</span>))</span>
+<span id="cb11-26"><a href="#cb11-26" aria-hidden="true" tabindex="-1"></a>    indx<span class="op">=</span> np.linspace(<span class="dv">0</span>,<span class="bu">len</span>(sentiment),<span class="bu">len</span>(sentiment))</span>
+<span id="cb11-27"><a href="#cb11-27" aria-hidden="true" tabindex="-1"></a>    plt.plot(indx,neg,label<span class="op">=</span><span class="st">'negative'</span>)</span>
+<span id="cb11-28"><a href="#cb11-28" aria-hidden="true" tabindex="-1"></a>    plt.plot(indx,pos,label<span class="op">=</span><span class="st">'positive'</span>)</span>
+<span id="cb11-29"><a href="#cb11-29" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-30"><a href="#cb11-30" aria-hidden="true" tabindex="-1"></a>    plt.legend(loc<span class="op">=</span><span class="st">'upper left'</span>,fontsize<span class="op">=</span><span class="dv">12</span>)</span>
+<span id="cb11-31"><a href="#cb11-31" aria-hidden="true" tabindex="-1"></a>    plt.xlabel(<span class="st">'text chunks: progression of book'</span>)</span>
+<span id="cb11-32"><a href="#cb11-32" aria-hidden="true" tabindex="-1"></a>    plt.ylabel(<span class="st">'sentiment'</span>)</span>
+<span id="cb11-33"><a href="#cb11-33" aria-hidden="true" tabindex="-1"></a>    plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<p><img src="ARM_files/figure-html/cell-9-output-1.png" class="img-fluid"></p>
+</div>
+</div>
+</section>
+<section id="re-format-output" class="level3">
+<h3 class="anchored" data-anchor-id="re-format-output">Re-format output</h3>
+<div class="cell" data-execution_count="11">
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="co"># RE-FORMAT THE APRIORI OUTPUT INTO A PANDAS DATA-FRAME WITH COLUMNS "rhs","lhs","supp","conf","supp x conf","lift"</span></span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> reformat_results(results):</span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>    keep<span class="op">=</span>[]</span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">0</span>,<span class="bu">len</span>(results)):</span>
+<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a>        <span class="cf">for</span> j <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">0</span>,<span class="bu">len</span>(<span class="bu">list</span>(results[i]))):</span>
+<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a>            <span class="cf">if</span> j<span class="op">&gt;</span><span class="dv">1</span>:</span>
+<span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a>                <span class="cf">for</span> k <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">0</span>,<span class="bu">len</span>(<span class="bu">list</span>(results[i][j]))):</span>
+<span id="cb12-8"><a href="#cb12-8" aria-hidden="true" tabindex="-1"></a>                    <span class="cf">if</span> <span class="bu">len</span>(results[i][j][k][<span class="dv">0</span>]) <span class="op">!=</span> <span class="dv">0</span>:</span>
+<span id="cb12-9"><a href="#cb12-9" aria-hidden="true" tabindex="-1"></a>                        rhs<span class="op">=</span> <span class="bu">list</span>(results[i][j][k][<span class="dv">0</span>])</span>
+<span id="cb12-10"><a href="#cb12-10" aria-hidden="true" tabindex="-1"></a>                        lhs<span class="op">=</span> <span class="bu">list</span>(results[i][j][k][<span class="dv">1</span>])</span>
+<span id="cb12-11"><a href="#cb12-11" aria-hidden="true" tabindex="-1"></a>                        conf<span class="op">=</span> <span class="bu">float</span>(results[i][j][k][<span class="dv">2</span>])</span>
+<span id="cb12-12"><a href="#cb12-12" aria-hidden="true" tabindex="-1"></a>                        lift<span class="op">=</span> <span class="bu">float</span>(results[i][j][k][<span class="dv">3</span>])</span>
+<span id="cb12-13"><a href="#cb12-13" aria-hidden="true" tabindex="-1"></a>                        keep.append([rhs,lhs,supp,conf,supp<span class="op">*</span>conf,lift])</span>
+<span id="cb12-14"><a href="#cb12-14" aria-hidden="true" tabindex="-1"></a>            <span class="cf">if</span> j <span class="op">==</span> <span class="dv">1</span>:</span>
+<span id="cb12-15"><a href="#cb12-15" aria-hidden="true" tabindex="-1"></a>                supp<span class="op">=</span>results[i][j]</span>
+<span id="cb12-16"><a href="#cb12-16" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> pd.DataFrame(keep, columns<span class="op">=</span>[<span class="st">"rhs"</span>,<span class="st">"lhs"</span>,<span class="st">"supp"</span>,<span class="st">"conf"</span>,<span class="st">"supp x conf"</span>,<span class="st">"lift"</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell" data-execution_count="12">
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> convert_to_network(df):</span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(df)</span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a>    <span class="co">#BUILD GRAPH</span></span>
+<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a>    G <span class="op">=</span> nx.DiGraph()  <span class="co"># DIRECTED</span></span>
+<span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> row <span class="kw">in</span> df.iterrows():</span>
+<span id="cb13-7"><a href="#cb13-7" aria-hidden="true" tabindex="-1"></a>        <span class="co"># for column in df.columns:</span></span>
+<span id="cb13-8"><a href="#cb13-8" aria-hidden="true" tabindex="-1"></a>        lhs<span class="op">=</span><span class="st">"_"</span>.join(row[<span class="dv">1</span>][<span class="dv">0</span>])</span>
+<span id="cb13-9"><a href="#cb13-9" aria-hidden="true" tabindex="-1"></a>        rhs<span class="op">=</span><span class="st">"_"</span>.join(row[<span class="dv">1</span>][<span class="dv">1</span>])</span>
+<span id="cb13-10"><a href="#cb13-10" aria-hidden="true" tabindex="-1"></a>        conf<span class="op">=</span>row[<span class="dv">1</span>][<span class="dv">3</span>]<span class="op">;</span> <span class="co">#print(conf)</span></span>
+<span id="cb13-11"><a href="#cb13-11" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span>(lhs <span class="kw">not</span> <span class="kw">in</span> G.nodes): </span>
+<span id="cb13-12"><a href="#cb13-12" aria-hidden="true" tabindex="-1"></a>            G.add_node(lhs)</span>
+<span id="cb13-13"><a href="#cb13-13" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span>(rhs <span class="kw">not</span> <span class="kw">in</span> G.nodes): </span>
+<span id="cb13-14"><a href="#cb13-14" aria-hidden="true" tabindex="-1"></a>            G.add_node(rhs)</span>
+<span id="cb13-15"><a href="#cb13-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-16"><a href="#cb13-16" aria-hidden="true" tabindex="-1"></a>        edge<span class="op">=</span>(lhs,rhs)</span>
+<span id="cb13-17"><a href="#cb13-17" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> edge <span class="kw">not</span> <span class="kw">in</span> G.edges:</span>
+<span id="cb13-18"><a href="#cb13-18" aria-hidden="true" tabindex="-1"></a>            G.add_edge(lhs, rhs, weight<span class="op">=</span>conf)</span>
+<span id="cb13-19"><a href="#cb13-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-20"><a href="#cb13-20" aria-hidden="true" tabindex="-1"></a>    <span class="co"># print(G.nodes)</span></span>
+<span id="cb13-21"><a href="#cb13-21" aria-hidden="true" tabindex="-1"></a>    <span class="co"># print(G.edges)</span></span>
+<span id="cb13-22"><a href="#cb13-22" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> G</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell" data-execution_count="13">
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> plot_network(G):</span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>    <span class="co">#SPECIFIY X-Y POSITIONS FOR PLOTTING</span></span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>    pos<span class="op">=</span>nx.random_layout(G)</span>
+<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a>    <span class="co">#GENERATE PLOT</span></span>
+<span id="cb14-6"><a href="#cb14-6" aria-hidden="true" tabindex="-1"></a>    fig, ax <span class="op">=</span> plt.subplots()</span>
+<span id="cb14-7"><a href="#cb14-7" aria-hidden="true" tabindex="-1"></a>    fig.set_size_inches(<span class="dv">15</span>, <span class="dv">15</span>)</span>
+<span id="cb14-8"><a href="#cb14-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-9"><a href="#cb14-9" aria-hidden="true" tabindex="-1"></a>    <span class="co">#assign colors based on attributes</span></span>
+<span id="cb14-10"><a href="#cb14-10" aria-hidden="true" tabindex="-1"></a>    weights_e   <span class="op">=</span> [G[u][v][<span class="st">'weight'</span>] <span class="cf">for</span> u,v <span class="kw">in</span> G.edges()]</span>
+<span id="cb14-11"><a href="#cb14-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-12"><a href="#cb14-12" aria-hidden="true" tabindex="-1"></a>    <span class="co">#SAMPLE CMAP FOR COLORS </span></span>
+<span id="cb14-13"><a href="#cb14-13" aria-hidden="true" tabindex="-1"></a>    cmap<span class="op">=</span>plt.cm.get_cmap(<span class="st">'Blues'</span>)</span>
+<span id="cb14-14"><a href="#cb14-14" aria-hidden="true" tabindex="-1"></a>    colors_e    <span class="op">=</span> [cmap(G[u][v][<span class="st">'weight'</span>]<span class="op">*</span><span class="dv">10</span>) <span class="cf">for</span> u,v <span class="kw">in</span> G.edges()]</span>
+<span id="cb14-15"><a href="#cb14-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-16"><a href="#cb14-16" aria-hidden="true" tabindex="-1"></a>    <span class="co">#PLOT</span></span>
+<span id="cb14-17"><a href="#cb14-17" aria-hidden="true" tabindex="-1"></a>    nx.draw(</span>
+<span id="cb14-18"><a href="#cb14-18" aria-hidden="true" tabindex="-1"></a>    G,</span>
+<span id="cb14-19"><a href="#cb14-19" aria-hidden="true" tabindex="-1"></a>    edgecolors<span class="op">=</span><span class="st">"black"</span>,</span>
+<span id="cb14-20"><a href="#cb14-20" aria-hidden="true" tabindex="-1"></a>    edge_color<span class="op">=</span>colors_e,</span>
+<span id="cb14-21"><a href="#cb14-21" aria-hidden="true" tabindex="-1"></a>    node_size<span class="op">=</span><span class="dv">2000</span>,</span>
+<span id="cb14-22"><a href="#cb14-22" aria-hidden="true" tabindex="-1"></a>    linewidths<span class="op">=</span><span class="dv">2</span>,</span>
+<span id="cb14-23"><a href="#cb14-23" aria-hidden="true" tabindex="-1"></a>    font_size<span class="op">=</span><span class="dv">8</span>,</span>
+<span id="cb14-24"><a href="#cb14-24" aria-hidden="true" tabindex="-1"></a>    font_color<span class="op">=</span><span class="st">"white"</span>,</span>
+<span id="cb14-25"><a href="#cb14-25" aria-hidden="true" tabindex="-1"></a>    font_weight<span class="op">=</span><span class="st">"bold"</span>,</span>
+<span id="cb14-26"><a href="#cb14-26" aria-hidden="true" tabindex="-1"></a>    width<span class="op">=</span>weights_e,</span>
+<span id="cb14-27"><a href="#cb14-27" aria-hidden="true" tabindex="-1"></a>    with_labels<span class="op">=</span><span class="va">True</span>,</span>
+<span id="cb14-28"><a href="#cb14-28" aria-hidden="true" tabindex="-1"></a>    pos<span class="op">=</span>pos,</span>
+<span id="cb14-29"><a href="#cb14-29" aria-hidden="true" tabindex="-1"></a>    ax<span class="op">=</span>ax</span>
+<span id="cb14-30"><a href="#cb14-30" aria-hidden="true" tabindex="-1"></a>    )</span>
+<span id="cb14-31"><a href="#cb14-31" aria-hidden="true" tabindex="-1"></a>    ax.<span class="bu">set</span>(title<span class="op">=</span><span class="st">'Dracula'</span>)</span>
+<span id="cb14-32"><a href="#cb14-32" aria-hidden="true" tabindex="-1"></a>    plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="train-arm-model" class="level3">
+<h3 class="anchored" data-anchor-id="train-arm-model">Train ARM model</h3>
+<div class="cell" data-execution_count="14">
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="co"># TRAIN THE ARM MODEL USING THE "apriori" PACKAGE</span></span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'Transactions:'</span>,pd.DataFrame(transactions))</span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>results<span class="op">=</span><span class="bu">list</span>(apriori(transactions,min_support<span class="op">=</span> <span class="fl">0.05</span>,min_confidence<span class="op">=</span><span class="fl">0.05</span>,use_colnames<span class="op">=</span><span class="va">True</span>))</span>
+<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="bu">len</span>(results))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Transactions:            0          1           2             3           4          5    \
+0         note        bad  experience        iphone          xr      phone   
+1       camera      found   defective           non  functional       None   
+2        amaon   careless        None          None        None       None   
+3       havent        got    response  confirmation   replacing       None   
+4      hanging    damaged       piece         worth       91000     rupees   
+...        ...        ...         ...           ...         ...        ...   
+3566      good  excellent   excellent          love   excellent  excellent   
+3567   overall      great     product         loved        good       nice   
+3568      nice     colour     feature      fabulous    exultant   fabulous   
+3569     worth       good        good          good        good        buy   
+3570  excelent       good        good          good        good       bill   
+
+          6     7         8          9    ...   117   118   119   120   121  \
+0        None  None      None       None  ...  None  None  None  None  None   
+1        None  None      None       None  ...  None  None  None  None  None   
+2        None  None      None       None  ...  None  None  None  None  None   
+3        None  None      None       None  ...  None  None  None  None  None   
+4        None  None      None       None  ...  None  None  None  None  None   
+...       ...   ...       ...        ...  ...   ...   ...   ...   ...   ...   
+3566     good  best      deal  excellent  ...  None  None  None  None  None   
+3567  product  need   invoice       soft  ...  None  None  None  None  None   
+3568   amaing  None      None       None  ...  None  None  None  None  None   
+3569     fine    af      None       None  ...  None  None  None  None  None   
+3570  missing  good  defected      piece  ...  None  None  None  None  None   
+
+       122   123   124   125   126  
+0     None  None  None  None  None  
+1     None  None  None  None  None  
+2     None  None  None  None  None  
+3     None  None  None  None  None  
+4     None  None  None  None  None  
+...    ...   ...   ...   ...   ...  
+3566  None  None  None  None  None  
+3567  None  None  None  None  None  
+3568  None  None  None  None  None  
+3569  None  None  None  None  None  
+3570  None  None  None  None  None  
+
+[3571 rows x 127 columns]
+46</code></pre>
+</div>
+</div>
+<section id="analysis-1" class="level4">
+<h4 class="anchored" data-anchor-id="analysis-1">Analysis</h4>
+<p>In this part I applied the Apriori Algorithm to find put the frequent itemset of words that appear together in this text dataset.</p>
+</section>
+</section>
+<section id="visualize-the-results" class="level3">
+<h3 class="anchored" data-anchor-id="visualize-the-results">Visualize the results</h3>
+<div class="cell" data-execution_count="15">
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="co"># PLOT THE RESULTS AS A NETWORK-X OBJECT </span></span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>pd_results<span class="op">=</span>reformat_results(results)</span>
+<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a>G<span class="op">=</span>convert_to_network(pd_results)</span>
+<span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a>plot_network(G)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>                 rhs               lhs      supp      conf  supp x conf  \
+0                 []           [phone]  0.052086  0.394068     0.020526   
+1            [phone]                []  0.052086  0.174648     0.009097   
+2            [apple]           [phone]  0.051806  0.424312     0.021982   
+3            [phone]           [apple]  0.051806  0.173709     0.008999   
+4          [awesome]           [phone]  0.054327  0.579104     0.031461   
+5            [phone]         [awesome]  0.054327  0.182160     0.009896   
+6          [battery]          [camera]  0.059647  0.345219     0.020591   
+7           [camera]         [battery]  0.059647  0.434694     0.025928   
+8          [battery]            [good]  0.088211  0.510535     0.045035   
+9             [good]         [battery]  0.088211  0.391304     0.034517   
+10         [battery]          [iphone]  0.050126  0.290113     0.014542   
+11          [iphone]         [battery]  0.050126  0.251404     0.012602   
+12         [battery]            [life]  0.105013  0.607780     0.063825   
+13            [life]         [battery]  0.105013  0.942211     0.098944   
+14         [battery]           [phone]  0.071689  0.414911     0.029744   
+15           [phone]         [battery]  0.071689  0.240376     0.017232   
+16            [best]          [iphone]  0.050686  0.453634     0.022993   
+17          [iphone]            [best]  0.050686  0.254213     0.012885   
+18            [best]           [phone]  0.059087  0.528822     0.031247   
+19           [phone]            [best]  0.059087  0.198122     0.011706   
+20          [camera]            [good]  0.070849  0.516327     0.036581   
+21            [good]          [camera]  0.070849  0.314286     0.022267   
+22          [camera]           [phone]  0.054327  0.395918     0.021509   
+23           [phone]          [camera]  0.054327  0.182160     0.009896   
+24          [camera]         [quality]  0.055447  0.404082     0.022405   
+25         [quality]          [camera]  0.055447  0.607362     0.033676   
+26            [good]          [iphone]  0.063568  0.281988     0.017925   
+27          [iphone]            [good]  0.063568  0.318820     0.020267   
+28            [good]            [life]  0.063008  0.279503     0.017611   
+29            [life]            [good]  0.063008  0.565327     0.035620   
+30            [good]           [phone]  0.113414  0.503106     0.057059   
+31           [phone]            [good]  0.113414  0.380282     0.043129   
+32            [good]         [product]  0.080090  0.355280     0.028454   
+33         [product]            [good]  0.080090  0.493955     0.039561   
+34           [great]           [phone]  0.060487  0.622478     0.037652   
+35           [phone]           [great]  0.060487  0.202817     0.012268   
+36          [iphone]           [phone]  0.079250  0.397472     0.031499   
+37           [phone]          [iphone]  0.079250  0.265728     0.021059   
+38          [iphone]              [xr]  0.071409  0.358146     0.025575   
+39              [xr]          [iphone]  0.071409  0.730659     0.052175   
+40            [life]           [phone]  0.050966  0.457286     0.023306   
+41           [phone]            [life]  0.050966  0.170892     0.008710   
+42           [phone]         [product]  0.066368  0.222535     0.014769   
+43         [product]           [phone]  0.066368  0.409326     0.027166   
+44         [battery]      [life, good]  0.061047  0.353323     0.021569   
+45            [good]   [battery, life]  0.061047  0.270807     0.016532   
+46            [life]   [battery, good]  0.061047  0.547739     0.033438   
+47   [battery, good]            [life]  0.061047  0.692063     0.042249   
+48   [battery, life]            [good]  0.061047  0.581333     0.035489   
+49      [life, good]         [battery]  0.061047  0.968889     0.059148   
+50            [good]  [phone, product]  0.050126  0.222360     0.011146   
+51           [phone]   [good, product]  0.050126  0.168075     0.008425   
+52         [product]     [good, phone]  0.050126  0.309154     0.015497   
+53     [phone, good]         [product]  0.050126  0.441975     0.022154   
+54   [product, good]           [phone]  0.050126  0.625874     0.031373   
+55  [product, phone]            [good]  0.050126  0.755274     0.037859   
+
+        lift  
+0   1.321330  
+1   1.321330  
+2   1.422740  
+3   1.422740  
+4   1.941767  
+5   1.941767  
+6   2.515870  
+7   2.515870  
+8   2.264745  
+9   2.264745  
+10  1.455049  
+11  1.455049  
+12  5.453218  
+13  5.453218  
+14  1.391218  
+15  1.391218  
+16  2.275179  
+17  2.275179  
+18  1.773168  
+19  1.773168  
+20  2.290437  
+21  2.290437  
+22  1.327535  
+23  1.327535  
+24  4.426305  
+25  4.426305  
+26  1.414294  
+27  1.414294  
+28  2.507803  
+29  2.507803  
+30  1.686939  
+31  1.686939  
+32  2.191197  
+33  2.191197  
+34  2.087202  
+35  2.087202  
+36  1.332744  
+37  1.332744  
+38  3.664583  
+39  3.664583  
+40  1.533305  
+41  1.533305  
+42  1.372493  
+43  1.372493  
+44  5.607621  
+45  2.578809  
+46  6.209444  
+47  6.209444  
+48  2.578809  
+49  5.607621  
+50  3.350415  
+51  2.098588  
+52  2.725896  
+53  2.725896  
+54  2.098588  
+55  3.350415  </code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>/var/folders/j3/s32rl54j1f76nvbcx9mxg4yc0000gn/T/ipykernel_7293/467521208.py:8: FutureWarning: Series.__getitem__ treating keys as positions is deprecated. In a future version, integer keys will always be treated as labels (consistent with DataFrame behavior). To access a value by position, use `ser.iloc[pos]`
+  lhs="_".join(row[1][0])
+/var/folders/j3/s32rl54j1f76nvbcx9mxg4yc0000gn/T/ipykernel_7293/467521208.py:9: FutureWarning: Series.__getitem__ treating keys as positions is deprecated. In a future version, integer keys will always be treated as labels (consistent with DataFrame behavior). To access a value by position, use `ser.iloc[pos]`
+  rhs="_".join(row[1][1])
+/var/folders/j3/s32rl54j1f76nvbcx9mxg4yc0000gn/T/ipykernel_7293/467521208.py:10: FutureWarning: Series.__getitem__ treating keys as positions is deprecated. In a future version, integer keys will always be treated as labels (consistent with DataFrame behavior). To access a value by position, use `ser.iloc[pos]`
+  conf=row[1][3]; #print(conf)
+/var/folders/j3/s32rl54j1f76nvbcx9mxg4yc0000gn/T/ipykernel_7293/183469868.py:13: MatplotlibDeprecationWarning: The get_cmap function was deprecated in Matplotlib 3.7 and will be removed two minor releases later. Use ``matplotlib.colormaps[name]`` or ``matplotlib.colormaps.get_cmap(obj)`` instead.
+  cmap=plt.cm.get_cmap('Blues')</code></pre>
+</div>
+<div class="cell-output cell-output-display">
+<p><img src="ARM_files/figure-html/cell-14-output-3.png" class="img-fluid"></p>
+</div>
+</div>
+<section id="analysis-2" class="level4">
+<h4 class="anchored" data-anchor-id="analysis-2">Analysis</h4>
+<p>I set min_support= 0.05, min_confidence=0.05, because I tried several times with smaller min_support and the result is too large so it did not ran out any resuly, but with larger min_support, too little results came out. When min_support= 0.05, min_confidence=0.05, the length of result is 46. So i believe this is the optimal number.</p>
+<p>From the plot we can see thet the most connection are between iphone and its device model and the functions. Also there are many positive adjective that highly related to iphone and its functions. For example, “phone” are connected to “awesome” “best” “good_product” and “good_phone”, etc. Thus, we can actually see when people mention iphone or its devices and functions, the most adjective are positive. So, we can conclude that people are positive to the Apple products</p>
+</section>
+</section>
+</section>
+<section id="conclusion" class="level2">
+<h2 class="anchored" data-anchor-id="conclusion">Conclusion</h2>
+<p>In this part, I did data cleaning for the text data, and then created the transaction. After that, I trained the model and created the network and used Apriori package to dentifying the frequent individual items. Based on those I get the conclusion that, when people mentions Apple, they always mention its devices names, and also some positive adjective words. Thus, people has an positive attitude towards Apple products,</p>
+</section>
+<section id="imporvement" class="level2">
+<h2 class="anchored" data-anchor-id="imporvement">Imporvement</h2>
+<p>The result did provide some sense about people’s attitude related to apple products. But if we want to find out more about the its most competitive compeitors, those text dataset did not mention any, we maybe find a textdataset with more information with Apple and its competitors can be better analyzing its potential competitors.</p>
+
+
+</section>
+
+
+<div id="quarto-appendix" class="default"><section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes"><h2 class="anchored quarto-appendix-heading">Footnotes</h2>
+
+<ol>
+<li id="fn1"><p>Wikimedia Foundation. (2023, October 10). Association rule learning. Wikipedia. https://en.wikipedia.org/wiki/Association_rule_learning<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</ol>
+</section></div></main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+</body></html>

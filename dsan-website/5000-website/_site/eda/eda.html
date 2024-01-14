@@ -2,12 +2,12 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.3.433">
+<meta name="generator" content="quarto-1.3.450">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>DSAN-5000: Project - Data Exploration</title>
+<title>DSAN-5000: Project – eda</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -19,40 +19,6 @@ ul.task-list li input[type="checkbox"] {
   width: 0.8em;
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
-}
-/* CSS for syntax highlighting */
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
-}
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-  }
-pre.numberSource { margin-left: 3em;  padding-left: 4px; }
-div.sourceCode
-  {   }
-@media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 </style>
 
@@ -116,15 +82,70 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
     <a class="nav-link" href="../index.html" rel="" target="">
- <span class="menu-text">Home</span></a>
+ <span class="menu-text">Introduction</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../clustering/clustering.html" rel="" target="">
- <span class="menu-text">Clustering</span></a>
+    <a class="nav-link" href="../about_me/about.html" rel="" target="">
+ <span class="menu-text">About Me</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="https://github.com/anly501/dsan-5000-project-qinxuesherry/tree/main/codes" rel="" target="">
+ <span class="menu-text">Code</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="https://github.com/anly501/dsan-5000-project-qinxuesherry/tree/main/data" rel="" target="">
+ <span class="menu-text">Data</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../data_gathering/data_gathering.html" rel="" target="">
+ <span class="menu-text">Data Gathering</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../data_cleaning/data_cleaning.html" rel="" target="">
+ <span class="menu-text">Data cleaning</span></a>
+  </li>  
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-clustering" role="button" data-bs-toggle="dropdown" aria-expanded="false" rel="" target="">
+ <span class="menu-text">Clustering</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-clustering">    
+        <li>
+    <a class="dropdown-item" href="../clustering/clustering1.html" rel="" target="">
+ <span class="dropdown-text">Introduction</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../clustering/clustering.html" rel="" target="">
+ <span class="dropdown-text">Methods &amp; Codes</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../clustering/Results.html" rel="" target="">
+ <span class="dropdown-text">Results Analysis &amp; Conclusion</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="../dimensionality_reduction/reduction.html" rel="" target="">
+ <span class="menu-text">Dimensionality Reduction</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../decision_trees/tree.html" rel="" target="">
+ <span class="menu-text">Decision Trees</span></a>
   </li>  
   <li class="nav-item">
     <a class="nav-link active" href="../eda/eda.html" rel="" target="" aria-current="page">
  <span class="menu-text">Data Exploration</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../Naive_Bayes/Naive_Bayes.html" rel="" target="">
+ <span class="menu-text">Naïve Bayes</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../ARM/ARM.html" rel="" target="">
+ <span class="menu-text">ARM</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../conclusion/conclusion.html" rel="" target="">
+ <span class="menu-text">Conclusion</span></a>
   </li>  
 </ul>
             <div class="quarto-navbar-tools ms-auto">
@@ -142,81 +163,316 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#quick-look-at-the-data" id="toc-quick-look-at-the-data" class="nav-link active" data-scroll-target="#quick-look-at-the-data">Quick look at the data</a></li>
-  <li><a href="#basic-visualization" id="toc-basic-visualization" class="nav-link" data-scroll-target="#basic-visualization">Basic visualization</a></li>
+  <li><a href="#exploratory-data-analysis-eda" id="toc-exploratory-data-analysis-eda" class="nav-link active" data-scroll-target="#exploratory-data-analysis-eda">Exploratory Data Analysis (EDA)</a>
+  <ul class="collapse">
+  <li><a href="#introduction-to-eda" id="toc-introduction-to-eda" class="nav-link" data-scroll-target="#introduction-to-eda">Introduction to EDA:</a></li>
+  <li><a href="#main-goal" id="toc-main-goal" class="nav-link" data-scroll-target="#main-goal">Main Goal</a></li>
+  <li><a href="#news-articles-dataset" id="toc-news-articles-dataset" class="nav-link" data-scroll-target="#news-articles-dataset">News Articles’ dataset</a>
+  <ul class="collapse">
+  <li><a href="#data-understanding" id="toc-data-understanding" class="nav-link" data-scroll-target="#data-understanding">Data Understanding</a></li>
+  <li><a href="#data-visualization" id="toc-data-visualization" class="nav-link" data-scroll-target="#data-visualization">Data Visualization</a></li>
+  <li><a href="#correlation-analysis" id="toc-correlation-analysis" class="nav-link" data-scroll-target="#correlation-analysis">Correlation Analysis</a></li>
+  <li><a href="#hypothesis-generation" id="toc-hypothesis-generation" class="nav-link" data-scroll-target="#hypothesis-generation">Hypothesis Generation</a></li>
+  </ul></li>
+  <li><a href="#apple-stock-dataset" id="toc-apple-stock-dataset" class="nav-link" data-scroll-target="#apple-stock-dataset">Apple Stock dataset</a>
+  <ul class="collapse">
+  <li><a href="#data-understanding-1" id="toc-data-understanding-1" class="nav-link" data-scroll-target="#data-understanding-1">Data Understanding</a></li>
+  <li><a href="#descriptive-statistics" id="toc-descriptive-statistics" class="nav-link" data-scroll-target="#descriptive-statistics">Descriptive Statistics</a></li>
+  <li><a href="#data-visualization-1" id="toc-data-visualization-1" class="nav-link" data-scroll-target="#data-visualization-1">Data Visualization</a></li>
+  <li><a href="#outliers-detect" id="toc-outliers-detect" class="nav-link" data-scroll-target="#outliers-detect">Outliers Detect</a></li>
+  <li><a href="#hypothesis-generation-1" id="toc-hypothesis-generation-1" class="nav-link" data-scroll-target="#hypothesis-generation-1">Hypothesis Generation</a></li>
+  </ul></li>
+  <li><a href="#mobile_phone_rating-dataset" id="toc-mobile_phone_rating-dataset" class="nav-link" data-scroll-target="#mobile_phone_rating-dataset">Mobile_phone_rating dataset</a>
+  <ul class="collapse">
+  <li><a href="#data-understanding-2" id="toc-data-understanding-2" class="nav-link" data-scroll-target="#data-understanding-2">Data Understanding</a></li>
+  <li><a href="#data-visualization-2" id="toc-data-visualization-2" class="nav-link" data-scroll-target="#data-visualization-2">Data Visualization</a></li>
+  <li><a href="#correlation-analysis-1" id="toc-correlation-analysis-1" class="nav-link" data-scroll-target="#correlation-analysis-1">Correlation Analysis</a></li>
+  <li><a href="#descriptive-statistics-1" id="toc-descriptive-statistics-1" class="nav-link" data-scroll-target="#descriptive-statistics-1">Descriptive Statistics</a></li>
+  <li><a href="#hypothesis-generation-2" id="toc-hypothesis-generation-2" class="nav-link" data-scroll-target="#hypothesis-generation-2">Hypothesis Generation</a></li>
+  </ul></li>
+  <li><a href="#iphone_11_review_dataset" id="toc-iphone_11_review_dataset" class="nav-link" data-scroll-target="#iphone_11_review_dataset">iphone_11_review_dataset</a>
+  <ul class="collapse">
+  <li><a href="#data-understanding-3" id="toc-data-understanding-3" class="nav-link" data-scroll-target="#data-understanding-3">Data Understanding</a></li>
+  <li><a href="#data-visualization-3" id="toc-data-visualization-3" class="nav-link" data-scroll-target="#data-visualization-3">Data Visualization</a></li>
+  <li><a href="#descriptive-statistics-2" id="toc-descriptive-statistics-2" class="nav-link" data-scroll-target="#descriptive-statistics-2">Descriptive Statistics</a></li>
+  <li><a href="#hypothesis-generation-3" id="toc-hypothesis-generation-3" class="nav-link" data-scroll-target="#hypothesis-generation-3">Hypothesis Generation</a></li>
+  </ul></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default">
-<div class="quarto-title">
-<h1 class="title">Data Exploration</h1>
-</div>
 
 
-
-<div class="quarto-title-meta">
-
-    
-  
-    
-  </div>
-  
-
-</header>
-
-<p>Build out your website tab for exploratory data analysis</p>
-<section id="quick-look-at-the-data" class="level2">
-<h2 class="anchored" data-anchor-id="quick-look-at-the-data">Quick look at the data</h2>
-<div class="cell" data-execution_count="8">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Import seaborn</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> seaborn <span class="im">as</span> sns</span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Apply the default theme</span></span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>sns.set_theme(style<span class="op">=</span><span class="st">"whitegrid"</span>, palette<span class="op">=</span><span class="st">"pastel"</span>)</span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Load an example dataset</span></span>
-<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>tips <span class="op">=</span> sns.load_dataset(<span class="st">"tips"</span>)</span>
-<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(tips)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>     total_bill   tip     sex smoker   day    time  size
-0         16.99  1.01  Female     No   Sun  Dinner     2
-1         10.34  1.66    Male     No   Sun  Dinner     3
-2         21.01  3.50    Male     No   Sun  Dinner     3
-3         23.68  3.31    Male     No   Sun  Dinner     2
-4         24.59  3.61  Female     No   Sun  Dinner     4
-..          ...   ...     ...    ...   ...     ...   ...
-239       29.03  5.92    Male     No   Sat  Dinner     3
-240       27.18  2.00  Female    Yes   Sat  Dinner     2
-241       22.67  2.00    Male    Yes   Sat  Dinner     2
-242       17.82  1.75    Male     No   Sat  Dinner     2
-243       18.78  3.00  Female     No  Thur  Dinner     2
-
-[244 rows x 7 columns]</code></pre>
-</div>
-</div>
+<section id="exploratory-data-analysis-eda" class="level1">
+<h1>Exploratory Data Analysis (EDA)</h1>
+<section id="introduction-to-eda" class="level2">
+<h2 class="anchored" data-anchor-id="introduction-to-eda">Introduction to EDA:</h2>
+<p>In data analysis or data science initiatives, exploratory data analysis, or EDA, is an essential stage. Understanding the data, its structure, and its patterns requires a range of procedures and methods. Here are some general steps for the EDA process:</p>
+<ol type="1">
+<li>Data collection</li>
+<li>Data cleaning</li>
+<li>Data visualization</li>
+<li>Statistical analysis</li>
+<li>Feature engineering</li>
+<li>Correlation analysis</li>
+<li>Hypothesis Testing</li>
+<li>Documenting Insights and Findings</li>
+</ol>
 </section>
-<section id="basic-visualization" class="level2">
-<h2 class="anchored" data-anchor-id="basic-visualization">Basic visualization</h2>
-<div class="cell" data-execution_count="9">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Create a visualization</span></span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>sns.relplot(</span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>    data<span class="op">=</span>tips,</span>
-<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>    x<span class="op">=</span><span class="st">"total_bill"</span>, y<span class="op">=</span><span class="st">"tip"</span>, col<span class="op">=</span><span class="st">"time"</span>,</span>
-<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>    hue<span class="op">=</span><span class="st">"smoker"</span>, style<span class="op">=</span><span class="st">"smoker"</span>, size<span class="op">=</span><span class="st">"size"</span>,</span>
-<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display">
-<p><img src="eda_files/figure-html/cell-3-output-1.svg" class="img-fluid"></p>
-</div>
-</div>
+<section id="main-goal" class="level2">
+<h2 class="anchored" data-anchor-id="main-goal">Main Goal</h2>
+<p>In this part, I will use visualization tools to help the audience know more about my project, which will include text clouds, statistic distribution, correlation heatmap, etc. This will help the audience to understand the general partterns of the data, understand the analysis of the data.</p>
+</section>
+<section id="news-articles-dataset" class="level2">
+<h2 class="anchored" data-anchor-id="news-articles-dataset">News Articles’ dataset</h2>
+<section id="data-understanding" class="level3">
+<h3 class="anchored" data-anchor-id="data-understanding">Data Understanding</h3>
+<ul>
+<li>In this text dataset, the type for this dataset is categorical data.</li>
+</ul>
+</section>
+<section id="data-visualization" class="level3">
+<h3 class="anchored" data-anchor-id="data-visualization">Data Visualization</h3>
+<ul>
+<li>code in the news_cleanning.ipynb</li>
+</ul>
+<section id="word-cloud" class="level4">
+<h4 class="anchored" data-anchor-id="word-cloud">Word Cloud</h4>
+<ul>
+<li>Explaination: After I cleaned the data with Numpy and Pandas package as I needed, I use the Wordcloud package to output the most frequent appeared words in those articles. As shown, most words are describing its functions and devices. Most are natural, but also some obvious positive words, like “best, right”. Thus the public’s opinion are more in natrual and positive.</li>
+<li><div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../images/text_cloud_newsapi.png" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">text cloud for news articles</figcaption>
+</figure>
+</div></li>
+</ul>
+</section>
+</section>
+<section id="correlation-analysis" class="level3">
+<h3 class="anchored" data-anchor-id="correlation-analysis">Correlation Analysis</h3>
+<ul>
+<li>Explaination: I cleared out all the stopwords as needed, and get the most frequent words out to see the correlation between those key words. We can see that the color of words more close to white is more positive related, and the color more close to black is negative related.</li>
+<li><div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../images/corr_heat_newsapi.png" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">correlation heatmap for news articles</figcaption>
+</figure>
+</div></li>
+</ul>
+</section>
+<section id="hypothesis-generation" class="level3">
+<h3 class="anchored" data-anchor-id="hypothesis-generation">Hypothesis Generation</h3>
+<ul>
+<li>from the analysis from above, we can see most of the key words from the news are positive or natural, which means, the public has postive attitude towards apple products.</li>
+</ul>
+</section>
+</section>
+<section id="apple-stock-dataset" class="level2">
+<h2 class="anchored" data-anchor-id="apple-stock-dataset">Apple Stock dataset</h2>
+<section id="data-understanding-1" class="level3">
+<h3 class="anchored" data-anchor-id="data-understanding-1">Data Understanding</h3>
+<ul>
+<li>For this dataset, it’s all numerical data. The open/close price are closely relate to each other</li>
+<li>code in the code/EDA/apple_stock.ipynb file</li>
+</ul>
+</section>
+<section id="descriptive-statistics" class="level3">
+<h3 class="anchored" data-anchor-id="descriptive-statistics">Descriptive Statistics</h3>
+<ul>
+<li><div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../images/stock_statistics.png" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">statistics for apple stock</figcaption>
+</figure>
+</div></li>
+<li>As shwon in the table, we can the standard deviation for the apple stock is around 19, it show a floating with the apple stock within days.</li>
+<li>however the max and min are similar for each open/close price, shows a stable status for the apple stock.</li>
+</ul>
+</section>
+<section id="data-visualization-1" class="level3">
+<h3 class="anchored" data-anchor-id="data-visualization-1">Data Visualization</h3>
+<section id="open-price-line-plot" class="level4">
+<h4 class="anchored" data-anchor-id="open-price-line-plot">Open Price Line Plot</h4>
+<ul>
+<li>Explaination: I collected the dataset of stock price from Yahoo! finance, and used Matplotlib, plotly and seaborn to plot the stock price in line plot with the open price and the date.</li>
+<li><div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../images/stock_openprice.png" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">open price for apple stock</figcaption>
+</figure>
+</div></li>
+<li>We can see from this plot that the price is shift upward which is in a increasing trend, which indicates that the apple stock are more popular and everyone is wiliing to buy the shares so the prices is keeping increasing.</li>
+</ul>
+</section>
+<section id="trading-volume-line-plot" class="level4">
+<h4 class="anchored" data-anchor-id="trading-volume-line-plot">Trading volume Line Plot</h4>
+<ul>
+<li>Explaination: I collected the dataset of stock price from Yahoo! finance, and used Matplotlib, plotly and seaborn to plot the stock trading volume in each date in line plot</li>
+<li><div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../images/apple_stock_volume.png" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">open price for apple stock</figcaption>
+</figure>
+</div></li>
+<li>As shown, we can see the trading volume are decreasing during the time, which may indicate that the apple’s stock are less people buying, and it may related to the price.</li>
+</ul>
+</section>
+</section>
+<section id="outliers-detect" class="level3">
+<h3 class="anchored" data-anchor-id="outliers-detect">Outliers Detect</h3>
+<ul>
+<li><div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../images/stock_outliers.png" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Outliers for apple stock</figcaption>
+</figure>
+</div></li>
+<li>As shown, there’s no outliers for this stock, so, every points can be inclued in evaluating this data.</li>
+</ul>
+</section>
+<section id="hypothesis-generation-1" class="level3">
+<h3 class="anchored" data-anchor-id="hypothesis-generation-1">Hypothesis Generation</h3>
+<ul>
+<li>From the analysis from above, we can see the apple stock price is still increasing, and seems still be popular to the public. This may indicate the Apple product is still popular in the market.</li>
+</ul>
+</section>
+</section>
+<section id="mobile_phone_rating-dataset" class="level2">
+<h2 class="anchored" data-anchor-id="mobile_phone_rating-dataset">Mobile_phone_rating dataset</h2>
+<section id="data-understanding-2" class="level3">
+<h3 class="anchored" data-anchor-id="data-understanding-2">Data Understanding</h3>
+<ul>
+<li>For this dataset, below are their data type.</li>
+<li><div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../images/Mobile_phone_datatype.png" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Mobile Phone data type</figcaption>
+</figure>
+</div></li>
+<li>The launch price, camera, selfie, audio, display, battery ratings are all related to the rank.</li>
+</ul>
+</section>
+<section id="data-visualization-2" class="level3">
+<h3 class="anchored" data-anchor-id="data-visualization-2">Data Visualization</h3>
+<section id="dot-plot" class="level4">
+<h4 class="anchored" data-anchor-id="dot-plot">dot plot</h4>
+<ul>
+<li><div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../images/mobile_phone_dot.png" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">The relation of Launch Price and Buing Intent</figcaption>
+</figure>
+</div></li>
+<li>Used Seaborn</li>
+<li>It shows that the launch price actually determined whether willing to buy. When the price is around 750-1250 dollars, people are very willing to buy.</li>
+</ul>
+</section>
+<section id="box-plot" class="level4">
+<h4 class="anchored" data-anchor-id="box-plot">box plot</h4>
+<ul>
+<li><div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../images/mobile_phone_box.png" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">The relation between Buying Intent and Camera Rating</figcaption>
+</figure>
+</div></li>
+<li>Used Seaborn</li>
+<li>It also shows people willingness to buy are connected to the camera’s quality. the camera score that people very willing to buy is around 130-160 range. Also, the not willing’s box range is the widest, range from about 50-110. The median score for the not willing is around 80, and for moderately_willing is around 120, for very_willing is about 135.</li>
+</ul>
+</section>
+<section id="pie-chart" class="level4">
+<h4 class="anchored" data-anchor-id="pie-chart">pie chart</h4>
+<ul>
+<li><div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../images/mobile_phone_pie.png" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Top 50 Ranking Brands</figcaption>
+</figure>
+</div></li>
+<li>Used Matplotlib</li>
+<li>As shown in the graph, there are 20% Top 50 ranking phones are apples. Which shows, Apple is still one of the most popular brands in the market.</li>
+</ul>
+</section>
+</section>
+<section id="correlation-analysis-1" class="level3">
+<h3 class="anchored" data-anchor-id="correlation-analysis-1">Correlation Analysis</h3>
+<ul>
+<li><div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../images/mobile_phone_corr.png" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">The correlation between features</figcaption>
+</figure>
+</div></li>
+<li>Used heatmap</li>
+<li>It semmed that camera and launch price are correlated to each other. And the Launch price camera score and audio score are negatively correlated to each other.</li>
+</ul>
+</section>
+<section id="descriptive-statistics-1" class="level3">
+<h3 class="anchored" data-anchor-id="descriptive-statistics-1">Descriptive Statistics</h3>
+<ul>
+<li><div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../images/Mobile_phone_statistics.png" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">statistics for mobile phone</figcaption>
+</figure>
+</div></li>
+<li>the mean Launch price is around $773.5 and the mean score for selfie is around 130, which is obviously higher than others (this is becuase I used mean to insert missing value)</li>
+</ul>
+</section>
+<section id="hypothesis-generation-2" class="level3">
+<h3 class="anchored" data-anchor-id="hypothesis-generation-2">Hypothesis Generation</h3>
+<ul>
+<li>from the analysis we can analyze what kind of features would be popular around customers. This can be used for analysis whether apple would be best product among choices. It still prove that Apple is popular among customers.</li>
+</ul>
+</section>
+</section>
+<section id="iphone_11_review_dataset" class="level2">
+<h2 class="anchored" data-anchor-id="iphone_11_review_dataset">iphone_11_review_dataset</h2>
+<section id="data-understanding-3" class="level3">
+<h3 class="anchored" data-anchor-id="data-understanding-3">Data Understanding</h3>
+<ul>
+<li>This is a text record data, and it is a categorical data.</li>
+</ul>
+</section>
+<section id="data-visualization-3" class="level3">
+<h3 class="anchored" data-anchor-id="data-visualization-3">Data Visualization</h3>
+<ul>
+<li>frequency distribution</li>
+<li><div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../images/iphone_11_rating.png" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Iphone 11 ratings</figcaption>
+</figure>
+</div></li>
+<li>Used Seabron</li>
+<li>From the graph, we can see most people around 3600 people give 5.0 ratings and only about 350 people gives 1.0 and 2.0 rating. Which shows that most customers satisfied the apple products</li>
+</ul>
+</section>
+<section id="descriptive-statistics-2" class="level3">
+<h3 class="anchored" data-anchor-id="descriptive-statistics-2">Descriptive Statistics</h3>
+<ul>
+<li><div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../images/iphone_11_statistics.png" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">statistics for Ipohone11 ratings</figcaption>
+</figure>
+</div></li>
+<li>The mean rating is 4.48 which is very high, shows that everyone like iphone 11 and gave a high rating. The mean rating being at the upper limit of the scale is consistent with the value of 1.09, which shows some variation in the ratings but not an unduly high level of variability.</li>
+</ul>
+</section>
+<section id="hypothesis-generation-3" class="level3">
+<h3 class="anchored" data-anchor-id="hypothesis-generation-3">Hypothesis Generation</h3>
+<ul>
+<li>From the analysis we can analyze that most customers satisfied apple’s products, so apple may be still popular in the market.</li>
+</ul>
 
 
+</section>
+</section>
 </section>
 
 </main> <!-- /main -->

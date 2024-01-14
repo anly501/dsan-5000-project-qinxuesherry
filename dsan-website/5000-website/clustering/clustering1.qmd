@@ -1,0 +1,30 @@
+---
+title: "Clustering"
+---
+
+
+# Introduction
+- In my Mobile Phone Rating Dataset, the features include ratings about mobile phone functions. There are six features: Launch Price, camera rating, selfie rating, audio rating, display rating, and battery rating. 
+- The purpose of this clustering analysis is to do unsupervised learning to find out the possible clusters of the dataset and the optimal cluster numbers.
+
+# Theory: 
+1.  K means [^1]: 
+   - This is a clustering method that tries to cluster points in k clusters. Simply put, it is to put similar things into a group, unlike Classification; for a classifier, you usually need to tell it, "This thing is categorized into so-and-so." for some examples, ideally, a classifier will "learn" from the training set it gets, and thus have the ability to classify unknown data. 
+   - First, we need to identify the k value, which means how many clusters/groups we want our dataset to be separated. For each cluster, we can choose a center such that the distance from all points in the cluster to the center is less than the distance to the centers of the other clusters. Then, we need to calculate each point's distance between those centroids and separate those points according with the distances of the centroids. 
+   - Strength: The k-means algorithm has simple steps that are easy to understand and implement. It also has relatively low time complexity and is suitable for large-scale datasets.
+  
+  
+2. DBSAN [^2]: 
+  - This is a clustering method that tries to cluster points using density methods. By looking for high-density regions separated by low-density regions in the dataset, the separated high-density regions are treated as a separate category. 
+  - First, we need to get a point and find all the other points' distances that are less or equal eps. If the number of points is less than min_samples, then that point would be the noise. Otherwise, the point is the core point. Next, we need to visit all points that are within the distance of eps, and cluster them. Keep clustering points until all the points are visited.
+  - Strength: The DBSAN algorithm is insensitive to outliers in the dataset, and it's better than another algorithm that try to separate the dataset into clusters with complex shape.
+  
+3. Hierarchical clustering [^3]: 
+- This is a clustering method that trying to cluster points by separating them into different layers like a tree. In this clustering method, the most famous one is Agglomerative hierarchical clustering, which is a bottom-up hierarchical clustering. Each object is a cluster at the very beginning, and each time, according to certain criteria, the closest two clusters merge to generate a new cluster. So on and so forth, until eventually, all objects belong to a cluster.
+- First, we make each point a cluster, then merge the two closest clusters, calculate the proximity matrix, and update the proximity matrix. Repeat merging clusters and update the proximity matrix until only one cluster exists.
+- Strength: Agglomerative hierarchical clustering is insensitivity to outliers in the dataset.
+  
+# Reference
+[^1]: “K-Means Clustering.” Wikipedia, Wikimedia Foundation, 12 Oct. 2023, en.wikipedia.org/wiki/K-means_clustering. 
+[^2]: “DBSCAN.” Wikipedia, Wikimedia Foundation, 27 Oct. 2023, en.wikipedia.org/wiki/DBSCAN. 
+[^3]: “Hierarchical Clustering.” Wikipedia, Wikimedia Foundation, 10 Oct. 2023, en.wikipedia.org/wiki/Hierarchical_clustering. 

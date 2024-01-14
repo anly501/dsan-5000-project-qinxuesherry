@@ -1,0 +1,45 @@
+---
+title: "R Notebook"
+output: html_notebook
+---
+
+This is an [R Markdown](http://rmarkdown.rstudio.com) Notebook. When you execute code within the notebook, the results appear beneath the code. 
+
+Try executing this chunk by clicking the *Run* button within the chunk or by placing your cursor inside it and pressing *Cmd+Shift+Enter*. 
+
+```{r}
+# Load the required libraries
+library(rvest)
+
+# Define the URL of the news website you want to scrape
+url <- "https://www.tomsguide.com/us/best-apple-iphone,review-6348.html"  # Replace with the actual URL
+
+# Send an HTTP GET request to the URL and read the HTML content
+webpage <- read_html(url)
+
+# Use CSS selectors to extract news headlines and links
+# Replace these selectors with the actual ones used on the target website
+headlines <- webpage %>% 
+  html_nodes("h2") %>%  # Replace with the CSS selector for headlines
+  html_text()
+
+content <- webpage %>% 
+  html_nodes("p") %>%  # Replace with the CSS selector for headlines
+  html_text()
+
+links <- webpage %>%
+  html_nodes("a") %>%  # Replace with the CSS selector for links
+  html_attr("href")
+
+# Print the extracted headlines and links
+#cat("Headlines:\n")
+#cat(headlines, sep = "\n")
+#cat("\n\nLinks:\n")
+#cat(links, sep = "\n")
+#cat("content:\n")
+print(content)
+write.csv(content,"apple_news.csv")
+
+```
+
+

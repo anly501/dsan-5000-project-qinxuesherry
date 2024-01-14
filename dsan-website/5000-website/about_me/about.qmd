@@ -1,0 +1,38 @@
+---
+title: "Xue Qin"
+---
+![](/images/sherry_image.jpg)
+
+
+## About Me
+My name is Xue Qin and I'm currently pursuing a Master's degree in Data Science and Analytics at the prestigious Georgetown University. 
+I was born in Nanchong, Sichuan Province, China and came to the United States since high school.
+
+I graduated from the University of Minnesota, Twin Cities with a major in Finance and minors in Computer Science and German. I had past internships working in the Industrial Security Company, China Railway Investment Company, Tao Capital, and Sichuan Port and Shipping Group. Most of my work is related to business analysis, investment analysis, and data analysis with my programming skills in Python, R, Sql, etc.
+
+I have a strong interest in data science because it combines my love of solving problems with the ability of data to spur creativity and inform important choices. I get excited when I find hidden patterns and insights in complex datasets since each one has the power to influence and transform entire sectors. I've always been fascinated by how data science integrates many fields like computer science, statistics, and domain knowledge to produce useful findings. My interest has been stoked by the possibility of promoting technical advancement and using data-driven solutions to have a real impact on society. I am drawn to the field's dynamic character because it requires ongoing learning and technology adaptation as part of the process. For me, data science is more than a career path; it is a commitment to lifelong learning and a way to fulfill my curiosity about the world around me through data.
+
+
+## Education Background
+  * 2019 - 2023: University of Minnesota, Twin Cities| Finance (major)/ Computer Science (minor) / German (minor)
+  * 2023 - current: Georgetown University | Data Science and Analytics
+
+::: {layout-ncol=2}
+### Academic Interest
+
+  * Machine Learning Algorithms
+  * Data Visualization
+  * HTML design
+  * Nature Language Processing
+
+### Hobby
+
+  * Photography
+  * Painting
+  * Reading
+:::
+
+## Contact Info
+  * Email: xq68@georgetown.edu
+  * Phone: (612)987-2866
+  * LinkedIn: <a href="https://www.linkedin.com/in/xue-qin-sherry/">Xue Qin</a>
